@@ -31,7 +31,7 @@
     "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js"
   },
   "author": "Uwe Wiemer",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/enzyme": "^2.7.6",
     "@types/jest": "^19.2.2",

@@ -1,6 +1,8 @@
 # ircos
 [![Travis](https://img.shields.io/travis/Hallowatcher/ircos.svg)](https://travis-ci.org/Hallowatcher/ircos)
 [![Codecov](https://img.shields.io/codecov/c/github/Hallowatcher/ircos.svg)](https://codecov.io/gh/Hallowatcher/ircos)
+[![license](https://img.shields.io/github/license/Hallowatcher/ircos.svg)](https://github.com/Hallowatcher/ircos/blob/master/LICENSE)
+[![David](https://img.shields.io/david/Hallowatcher/ircos.svg)]()
 
 An IRC client built and refined for osu!
 

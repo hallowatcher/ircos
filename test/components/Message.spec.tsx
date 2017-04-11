@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { Message, UserType } from '../../src/components/Message'
 import * as enzyme from 'enzyme';
+import * as moment from 'moment';
 
 describe('Message', function () {
 
@@ -11,7 +12,7 @@ describe('Message', function () {
     user = 'foo123'
     message = 'bar456'
     component = enzyme.shallow(
-      <Message user={user} message={message} sentDate={new Date(Date.UTC(2017, 1, 1))} />
+      <Message user={user} message={message} sentDate={moment.utc('2017-01-01T00:00:00.000Z')} />
     )
   })
 

@@ -12,7 +12,6 @@ import {
 
 import { Tab } from '../components/Tab';
 import { AddTab } from '../components/AddTab';
-import { Message, UserType } from '../components/Message';
 import { ChatView } from '../components/ChatView';
 import { JoinModal } from './JoinModal';
 

@@ -17,7 +17,7 @@ ShallowWrapper {
         }
     >
         [
-        01
+        00
         :
         00
         ]
@@ -51,7 +51,7 @@ ShallowWrapper {
             }
       >
             [
-            01
+            00
             :
             00
             ]
@@ -84,7 +84,7 @@ ShallowWrapper {
       "_context": Object {},
       "_currentElement": <Message
         message="bar456"
-        sentDate={2017-02-01T00:00:00.000Z}
+        sentDate={"2017-01-01T00:00:00.000Z"}
         user="foo123"
         userType={1}
 />,
@@ -96,7 +96,7 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "message": "bar456",
-          "sentDate": 2017-02-01T00:00:00.000Z,
+          "sentDate": "2017-01-01T00:00:00.000Z",
           "user": "foo123",
           "userType": 1,
         },
@@ -129,7 +129,7 @@ ShallowWrapper {
                     }
           >
                     [
-                    01
+                    00
                     :
                     00
                     ]
@@ -163,7 +163,7 @@ ShallowWrapper {
                     }
           >
                     [
-                    01
+                    00
                     :
                     00
                     ]
@@ -200,7 +200,7 @@ ShallowWrapper {
   "root": [Circular],
   "unrendered": <Message
     message="bar456"
-    sentDate={2017-02-01T00:00:00.000Z}
+    sentDate={"2017-01-01T00:00:00.000Z"}
     user="foo123"
     userType={1}
 />,
@@ -224,7 +224,7 @@ ShallowWrapper {
         }
     >
         [
-        01
+        00
         :
         00
         ]
@@ -258,7 +258,7 @@ ShallowWrapper {
             }
       >
             [
-            01
+            00
             :
             00
             ]
@@ -291,7 +291,7 @@ ShallowWrapper {
       "_context": Object {},
       "_currentElement": <Message
         message="bar456"
-        sentDate={2017-02-01T00:00:00.000Z}
+        sentDate={"2017-01-01T00:00:00.000Z"}
         user="foo123"
 />,
       "_debugID": 1,
@@ -302,7 +302,7 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "message": "bar456",
-          "sentDate": 2017-02-01T00:00:00.000Z,
+          "sentDate": "2017-01-01T00:00:00.000Z",
           "user": "foo123",
         },
         "refs": Object {},
@@ -334,7 +334,7 @@ ShallowWrapper {
                     }
           >
                     [
-                    01
+                    00
                     :
                     00
                     ]
@@ -368,7 +368,7 @@ ShallowWrapper {
                     }
           >
                     [
-                    01
+                    00
                     :
                     00
                     ]
@@ -405,7 +405,7 @@ ShallowWrapper {
   "root": [Circular],
   "unrendered": <Message
     message="bar456"
-    sentDate={2017-02-01T00:00:00.000Z}
+    sentDate={"2017-01-01T00:00:00.000Z"}
     user="foo123"
 />,
 }
@@ -428,7 +428,7 @@ ShallowWrapper {
         }
     >
         [
-        01
+        00
         :
         00
         ]
@@ -462,7 +462,7 @@ ShallowWrapper {
             }
       >
             [
-            01
+            00
             :
             00
             ]
@@ -495,7 +495,7 @@ ShallowWrapper {
       "_context": Object {},
       "_currentElement": <Message
         message="bar456"
-        sentDate={2017-02-01T00:00:00.000Z}
+        sentDate={"2017-01-01T00:00:00.000Z"}
         user="foo123"
         userType={2}
 />,
@@ -507,7 +507,7 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "message": "bar456",
-          "sentDate": 2017-02-01T00:00:00.000Z,
+          "sentDate": "2017-01-01T00:00:00.000Z",
           "user": "foo123",
           "userType": 2,
         },
@@ -540,7 +540,7 @@ ShallowWrapper {
                     }
           >
                     [
-                    01
+                    00
                     :
                     00
                     ]
@@ -574,7 +574,7 @@ ShallowWrapper {
                     }
           >
                     [
-                    01
+                    00
                     :
                     00
                     ]
@@ -611,7 +611,7 @@ ShallowWrapper {
   "root": [Circular],
   "unrendered": <Message
     message="bar456"
-    sentDate={2017-02-01T00:00:00.000Z}
+    sentDate={"2017-01-01T00:00:00.000Z"}
     user="foo123"
     userType={2}
 />,

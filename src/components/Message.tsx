@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as moment from 'moment';
 
 export enum UserType {
   regular,
@@ -9,7 +10,7 @@ export enum UserType {
 type Props = {
   user: string,
   message: string,
-  sentDate: Date,
+  sentDate: moment.Moment,
   userType?: UserType
 }
 
@@ -49,9 +50,11 @@ export class Message extends React.Component<Props, any> {
         break;
     }
 
+    let momentDate = moment(this.props.sentDate);
+
     // Build date
-    const hours = ('0' + this.props.sentDate.getHours()).slice(-2);
-    const minutes = ('0' + this.props.sentDate.getMinutes()).slice(-2);
+    const hours = ('0' + momentDate.hours()).slice(-2);
+    const minutes = ('0' + momentDate.minutes()).slice(-2);
 
     return (
       <div>

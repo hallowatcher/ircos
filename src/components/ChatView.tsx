@@ -2,6 +2,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Message, UserType } from './Message';
+import * as moment from 'moment';
 
 interface Props {
   messages: any[]
@@ -24,7 +25,7 @@ export class ChatView extends React.Component<Props, any> {
                   message={msg.text}
                   user={msg.name}
                   userType={userType}
-                  sentDate={msg.date}
+                  sentDate={moment(msg.date)}
                 />;
       })
   }

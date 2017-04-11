@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTab should render 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    onClick={[Function]}
+    style={
+        Object {
+            "WebkitUserSelect": "none",
+            "alignItems": "center",
+            "backgroundColor": "rgb(241, 196, 15)",
+            "boxSizing": "border-box",
+            "color": "white",
+            "cursor": "pointer",
+            "display": "flex",
+            "fontWeight": 800,
+            "height": 25,
+            "margin": "0 2px",
+            "padding": "10px",
+            "transform": "skew(-15deg)",
+          }
+    }
+>
+    <span
+        style={
+            Object {
+                "transform": "skew(15deg)",
+              }
+        }
+    >
+        +
+    </span>
+</div>,
+  "nodes": Array [
+    <div
+      onClick={[Function]}
+      style={
+            Object {
+                  "WebkitUserSelect": "none",
+                  "alignItems": "center",
+                  "backgroundColor": "rgb(241, 196, 15)",
+                  "boxSizing": "border-box",
+                  "color": "white",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "fontWeight": 800,
+                  "height": 25,
+                  "margin": "0 2px",
+                  "padding": "10px",
+                  "transform": "skew(-15deg)",
+                }
+      }
+>
+      <span
+            style={
+                  Object {
+                        "transform": "skew(15deg)",
+                      }
+            }
+      >
+            +
+      </span>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <AddTab
+        clickAddTab={[Function]}
+/>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": AddTab {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "clickAddTab": [Function],
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          onClick={[Function]}
+          style={
+                    Object {
+                              "WebkitUserSelect": "none",
+                              "alignItems": "center",
+                              "backgroundColor": "rgb(241, 196, 15)",
+                              "boxSizing": "border-box",
+                              "color": "white",
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "fontWeight": 800,
+                              "height": 25,
+                              "margin": "0 2px",
+                              "padding": "10px",
+                              "transform": "skew(-15deg)",
+                            }
+          }
+>
+          <span
+                    style={
+                              Object {
+                                        "transform": "skew(15deg)",
+                                      }
+                    }
+          >
+                    +
+          </span>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          onClick={[Function]}
+          style={
+                    Object {
+                              "WebkitUserSelect": "none",
+                              "alignItems": "center",
+                              "backgroundColor": "rgb(241, 196, 15)",
+                              "boxSizing": "border-box",
+                              "color": "white",
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "fontWeight": 800,
+                              "height": 25,
+                              "margin": "0 2px",
+                              "padding": "10px",
+                              "transform": "skew(-15deg)",
+                            }
+          }
+>
+          <span
+                    style={
+                              Object {
+                                        "transform": "skew(15deg)",
+                                      }
+                    }
+          >
+                    +
+          </span>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <AddTab
+    clickAddTab={[Function]}
+/>,
+}
+`;

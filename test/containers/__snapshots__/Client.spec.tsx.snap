@@ -1,0 +1,527 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Client should render 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    style={
+        Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "height": "100%",
+            "overflow": "hidden",
+            "width": "100%",
+          }
+    }
+>
+    <JoinModal
+        isOpen={false}
+        joinChannel={[Function]}
+        onClose={[Function]}
+    />
+    <div
+        style={
+            Object {
+                "backgroundColor": "#FE4590",
+                "display": "flex",
+                "flexDirection": "row",
+                "flexShrink": 0,
+              }
+        }
+    >
+        <div
+            style={
+                Object {
+                    "alignItems": "flex-end",
+                    "display": "flex",
+                    "flexGrow": 1,
+                    "overflowX": "auto",
+                    "overflowY": "hidden",
+                    "padding": "0 5px",
+                  }
+            }
+        >
+            <AddTab
+                clickAddTab={[Function]}
+            />
+        </div>
+        <div
+            style={
+                Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.4)",
+                    "color": "white",
+                    "display": "flex",
+                  }
+            }
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(255, 255, 255, 0.8)",
+                        "height": "35px",
+                        "width": "35px",
+                      }
+                }
+            >
+                <img
+                    src="https://a.ppy.sh/1_1262304000000.jpg"
+                    style={
+                        Object {
+                            "maxHeight": "100%",
+                          }
+                    }
+                />
+            </div>
+            <div
+                style={
+                    Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "padding": 5,
+                      }
+                }
+            />
+        </div>
+    </div>
+    <ChatView
+        messages={Array []}
+        selfNick=""
+        style={
+            Object {
+                "flexGrow": 1,
+                "overflowX": "hidden",
+                "overflowY": "auto",
+                "wordBreak": "break-word",
+              }
+        }
+    />
+    <form
+        onSubmit={[Function]}
+    >
+        <input
+            onChange={[Function]}
+            placeholder="Enter a message..."
+            type="text"
+            value=""
+        />
+        <input
+            type="submit"
+            value="Submit"
+        />
+    </form>
+</div>,
+  "nodes": Array [
+    <div
+      style={
+            Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "height": "100%",
+                  "overflow": "hidden",
+                  "width": "100%",
+                }
+      }
+>
+      <JoinModal
+            isOpen={false}
+            joinChannel={[Function]}
+            onClose={[Function]}
+      />
+      <div
+            style={
+                  Object {
+                        "backgroundColor": "#FE4590",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "flexShrink": 0,
+                      }
+            }
+      >
+            <div
+                  style={
+                        Object {
+                              "alignItems": "flex-end",
+                              "display": "flex",
+                              "flexGrow": 1,
+                              "overflowX": "auto",
+                              "overflowY": "hidden",
+                              "padding": "0 5px",
+                            }
+                  }
+            >
+                  <AddTab
+                        clickAddTab={[Function]}
+                  />
+            </div>
+            <div
+                  style={
+                        Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.4)",
+                              "color": "white",
+                              "display": "flex",
+                            }
+                  }
+            >
+                  <div
+                        style={
+                              Object {
+                                    "backgroundColor": "rgba(255, 255, 255, 0.8)",
+                                    "height": "35px",
+                                    "width": "35px",
+                                  }
+                        }
+                  >
+                        <img
+                              src="https://a.ppy.sh/1_1262304000000.jpg"
+                              style={
+                                    Object {
+                                          "maxHeight": "100%",
+                                        }
+                              }
+                        />
+                  </div>
+                  <div
+                        style={
+                              Object {
+                                    "alignItems": "center",
+                                    "display": "flex",
+                                    "padding": 5,
+                                  }
+                        }
+                  />
+            </div>
+      </div>
+      <ChatView
+            messages={Array []}
+            selfNick=""
+            style={
+                  Object {
+                        "flexGrow": 1,
+                        "overflowX": "hidden",
+                        "overflowY": "auto",
+                        "wordBreak": "break-word",
+                      }
+            }
+      />
+      <form
+            onSubmit={[Function]}
+      >
+            <input
+                  onChange={[Function]}
+                  placeholder="Enter a message..."
+                  type="text"
+                  value=""
+            />
+            <input
+                  type="submit"
+                  value="Submit"
+            />
+      </form>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Client
+        channelLength={5}
+        channels={Array []}
+        closeChannel={[Function]}
+        currentChannel=""
+        joinChannel={[Function]}
+        makeCurrentChannel={[Function]}
+        messages={Array []}
+        nick=""
+        sendMessage={[Function]}
+        userId={1}
+/>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Client {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "displayMessages": Array [],
+        "displayMessagesAmount": 50,
+        "props": Object {
+          "channelLength": 5,
+          "channels": Array [],
+          "closeChannel": [Function],
+          "currentChannel": "",
+          "joinChannel": [Function],
+          "makeCurrentChannel": [Function],
+          "messages": Array [],
+          "nick": "",
+          "sendMessage": [Function],
+          "userId": 1,
+        },
+        "refs": Object {},
+        "state": Object {
+          "msg": "",
+          "showJoinModal": false,
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          style={
+                    Object {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "height": "100%",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+          }
+>
+          <JoinModal
+                    isOpen={false}
+                    joinChannel={[Function]}
+                    onClose={[Function]}
+          />
+          <div
+                    style={
+                              Object {
+                                        "backgroundColor": "#FE4590",
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexShrink": 0,
+                                      }
+                    }
+          >
+                    <div
+                              style={
+                                        Object {
+                                                  "alignItems": "flex-end",
+                                                  "display": "flex",
+                                                  "flexGrow": 1,
+                                                  "overflowX": "auto",
+                                                  "overflowY": "hidden",
+                                                  "padding": "0 5px",
+                                                }
+                              }
+                    >
+                              <AddTab
+                                        clickAddTab={[Function]}
+                              />
+                    </div>
+                    <div
+                              style={
+                                        Object {
+                                                  "backgroundColor": "rgba(255, 255, 255, 0.4)",
+                                                  "color": "white",
+                                                  "display": "flex",
+                                                }
+                              }
+                    >
+                              <div
+                                        style={
+                                                  Object {
+                                                            "backgroundColor": "rgba(255, 255, 255, 0.8)",
+                                                            "height": "35px",
+                                                            "width": "35px",
+                                                          }
+                                        }
+                              >
+                                        <img
+                                                  src="https://a.ppy.sh/1_1262304000000.jpg"
+                                                  style={
+                                                            Object {
+                                                                      "maxHeight": "100%",
+                                                                    }
+                                                  }
+                                        />
+                              </div>
+                              <div
+                                        style={
+                                                  Object {
+                                                            "alignItems": "center",
+                                                            "display": "flex",
+                                                            "padding": 5,
+                                                          }
+                                        }
+                              />
+                    </div>
+          </div>
+          <ChatView
+                    messages={Array []}
+                    selfNick=""
+                    style={
+                              Object {
+                                        "flexGrow": 1,
+                                        "overflowX": "hidden",
+                                        "overflowY": "auto",
+                                        "wordBreak": "break-word",
+                                      }
+                    }
+          />
+          <form
+                    onSubmit={[Function]}
+          >
+                    <input
+                              onChange={[Function]}
+                              placeholder="Enter a message..."
+                              type="text"
+                              value=""
+                    />
+                    <input
+                              type="submit"
+                              value="Submit"
+                    />
+          </form>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          style={
+                    Object {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "height": "100%",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+          }
+>
+          <JoinModal
+                    isOpen={false}
+                    joinChannel={[Function]}
+                    onClose={[Function]}
+          />
+          <div
+                    style={
+                              Object {
+                                        "backgroundColor": "#FE4590",
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexShrink": 0,
+                                      }
+                    }
+          >
+                    <div
+                              style={
+                                        Object {
+                                                  "alignItems": "flex-end",
+                                                  "display": "flex",
+                                                  "flexGrow": 1,
+                                                  "overflowX": "auto",
+                                                  "overflowY": "hidden",
+                                                  "padding": "0 5px",
+                                                }
+                              }
+                    >
+                              <AddTab
+                                        clickAddTab={[Function]}
+                              />
+                    </div>
+                    <div
+                              style={
+                                        Object {
+                                                  "backgroundColor": "rgba(255, 255, 255, 0.4)",
+                                                  "color": "white",
+                                                  "display": "flex",
+                                                }
+                              }
+                    >
+                              <div
+                                        style={
+                                                  Object {
+                                                            "backgroundColor": "rgba(255, 255, 255, 0.8)",
+                                                            "height": "35px",
+                                                            "width": "35px",
+                                                          }
+                                        }
+                              >
+                                        <img
+                                                  src="https://a.ppy.sh/1_1262304000000.jpg"
+                                                  style={
+                                                            Object {
+                                                                      "maxHeight": "100%",
+                                                                    }
+                                                  }
+                                        />
+                              </div>
+                              <div
+                                        style={
+                                                  Object {
+                                                            "alignItems": "center",
+                                                            "display": "flex",
+                                                            "padding": 5,
+                                                          }
+                                        }
+                              />
+                    </div>
+          </div>
+          <ChatView
+                    messages={Array []}
+                    selfNick=""
+                    style={
+                              Object {
+                                        "flexGrow": 1,
+                                        "overflowX": "hidden",
+                                        "overflowY": "auto",
+                                        "wordBreak": "break-word",
+                                      }
+                    }
+          />
+          <form
+                    onSubmit={[Function]}
+          >
+                    <input
+                              onChange={[Function]}
+                              placeholder="Enter a message..."
+                              type="text"
+                              value=""
+                    />
+                    <input
+                              type="submit"
+                              value="Submit"
+                    />
+          </form>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Client
+    channelLength={5}
+    channels={Array []}
+    closeChannel={[Function]}
+    currentChannel=""
+    joinChannel={[Function]}
+    makeCurrentChannel={[Function]}
+    messages={Array []}
+    nick=""
+    sendMessage={[Function]}
+    userId={1}
+/>,
+}
+`;

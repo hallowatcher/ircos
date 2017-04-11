@@ -1,0 +1,75 @@
+{
+  "name": "ircos",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest",
+    "start": "electron ."
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/test/.*\\.(test|spec)\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "src/index.tsx"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "coverageReporters": [
+      "html"
+    ],
+    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js"
+  },
+  "author": "Uwe Wiemer",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/enzyme": "^2.7.6",
+    "@types/jest": "^19.2.2",
+    "@types/jsdom": "^2.0.30",
+    "@types/react-addons-test-utils": "^0.14.17",
+    "@types/redux-mock-store": "0.0.7",
+    "awesome-typescript-loader": "^3.1.2",
+    "electron": "^1.6.2",
+    "enzyme": "^2.8.0",
+    "jest": "^19.0.2",
+    "mockdate": "^2.0.1",
+    "react-addons-test-utils": "^15.4.2",
+    "redux-mock-store": "^1.2.2",
+    "source-map-loader": "^0.2.0",
+    "ts-jest": "^19.0.6",
+    "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "@types/irc": "^0.3.32",
+    "@types/react": "^15.0.16",
+    "@types/react-dom": "^0.14.23",
+    "@types/react-modal": "^1.6.4",
+    "@types/react-redux": "^4.4.37",
+    "@types/redux": "^3.6.0",
+    "@types/redux-immutable": "^3.0.33",
+    "@types/redux-logger": "^2.6.34",
+    "axios": "^0.15.3",
+    "enzyme": "^2.8.0",
+    "immutable": "^3.8.1",
+    "irc": "github:matrix-org/node-irc",
+    "jest": "^19.0.2",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-modal": "^1.7.3",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "redux-immutable": "^4.0.0",
+    "redux-logger": "^2.8.2",
+    "redux-thunk": "^2.2.0"
+  }
+}

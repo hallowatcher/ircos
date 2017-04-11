@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Exo 2';
+    font-weight: 400;
+    src: url("Exo2-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-style: italic;
+    font-weight: 400;
+    src: url("Exo2-Italic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-weight: bold;
+    src: url("Exo2-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-weight: 600;
+    src: url("Exo2-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-weight: 300;
+    src: url("Exo2-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-weight: 300;
+    font-style: italic;
+    src: url("Exo2-LightItalic.otf") format("opentype");
+}

@@ -7,5 +7,5 @@ node_js:
 install:
   - npm install -g codecov
   - npm install
-after_success:
+after_script:
   - codecov

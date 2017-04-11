@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Message, UserType } from '../../src/components/Message'
 import * as enzyme from 'enzyme';
 
-describe('AddTab', function () {
+describe('Message', function () {
 
   let component: enzyme.ShallowWrapper<any, any>
   let user, message
@@ -11,7 +11,7 @@ describe('AddTab', function () {
     user = 'foo123'
     message = 'bar456'
     component = enzyme.shallow(
-      <Message user={user} message={message} sentDate={new Date(2017, 1, 1)} />
+      <Message user={user} message={message} sentDate={new Date(Date.UTC(2017, 1, 1))} />
     )
   })
 

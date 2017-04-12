@@ -1,8 +1,8 @@
 # ircos
 [![Travis](https://img.shields.io/travis/Hallowatcher/ircos.svg)](https://travis-ci.org/Hallowatcher/ircos)
 [![Codecov](https://img.shields.io/codecov/c/github/Hallowatcher/ircos.svg)](https://codecov.io/gh/Hallowatcher/ircos)
-[![license](https://img.shields.io/github/license/Hallowatcher/ircos.svg)](https://github.com/Hallowatcher/ircos/blob/master/LICENSE)
 [![David](https://img.shields.io/david/Hallowatcher/ircos.svg)]()
+[![license](https://img.shields.io/github/license/Hallowatcher/ircos.svg)](LICENSE)
 
 An IRC client built and refined for osu!
 
@@ -65,11 +65,11 @@ Ignore these for now.
 
 ## Authors
 
-* **Uwe Wiemer** - *Initial work* - [hallowatcher](https://github.com/hallowatcher)
+* **Uwe Wiemer** - [hallowatcher](https://github.com/hallowatcher)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 

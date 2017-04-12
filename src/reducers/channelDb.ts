@@ -1,6 +1,6 @@
 import { Map, List } from 'immutable';
 
-export default function (state: any, action: any) {
+export default function (state: Map<any, any>, action: any) {
   switch (action.type) {
     case 'JOINED_CHANNEL':
       return joinedChannel(state, action);

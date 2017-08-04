@@ -10,6 +10,7 @@ ShallowWrapper {
   "length": 1,
   "node": <Modal
     ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
     closeTimeoutMS={0}
     contentLabel="Join channel"
     isOpen={false}
@@ -48,6 +49,7 @@ ShallowWrapper {
   "nodes": Array [
     <Modal
       ariaHideApp={true}
+      bodyOpenClassName="ReactModal__Body--open"
       closeTimeoutMS={0}
       contentLabel="Join channel"
       isOpen={false}
@@ -130,6 +132,7 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <Modal
           ariaHideApp={true}
+          bodyOpenClassName="ReactModal__Body--open"
           closeTimeoutMS={0}
           contentLabel="Join channel"
           isOpen={false}
@@ -168,6 +171,7 @@ ShallowWrapper {
         "_debugID": 2,
         "_renderedOutput": <Modal
           ariaHideApp={true}
+          bodyOpenClassName="ReactModal__Body--open"
           closeTimeoutMS={0}
           contentLabel="Join channel"
           isOpen={false}

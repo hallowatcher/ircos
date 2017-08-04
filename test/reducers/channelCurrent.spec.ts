@@ -27,7 +27,7 @@ describe('Current channel reducer', () => {
   it('should leave channel and join next', () => {
     let initialState = Immutable.fromJS({ name: null, messages: null });
     let expectedState = { name: 'someChannel', messages: [] };
-    let actualState = channelCurrentReducer(initialState, { type: 'LEFT_CHANNEL', payload: { nextChannelObj: { name: 'someChannel', messages: [] } } });
+    let actualState = channelCurrentReducer(initialState, { type: 'LEFT_CHANNEL', payload: { nextChannel: { name: 'someChannel', messages: [] } } });
 
     expect(actualState.toJS()).toEqual(expectedState);
   });

@@ -1,5 +1,6 @@
 
 import * as actions from '../../src/actions/client'
+import { State } from '../../src/reducers'
 import * as Immutable from 'immutable'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
@@ -19,11 +20,11 @@ describe('Client actions', function () {
     // Mock date
     MockDate.set(datenow)
 
-    const initialState = Immutable.fromJS({
+    const initialState = Immutable.fromJS(<State>{
       userInfo: {
         userName: nick
       },
-      channels: {
+      channelDb: {
         '#osu': {},
         '#english': {}
       }
@@ -132,11 +133,11 @@ describe('Client actions', function () {
 
   it('should change to nothing if last channel is closed', function () {
 
-    const tempInitialState = Immutable.fromJS({
+    const tempInitialState = Immutable.fromJS(<State>{
       userInfo: {
         userName: nick
       },
-      channels: {
+      channelDb: {
         '#osu': {}
       }
     })
@@ -155,11 +156,11 @@ describe('Client actions', function () {
 
   it('should leave private chat', function () {
 
-    const tempInitialState = Immutable.fromJS({
+    const tempInitialState = Immutable.fromJS(<State>{
       userInfo: {
         userName: nick
       },
-      channels: {
+      channelDb: {
         'player': {}
       }
     })

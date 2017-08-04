@@ -8,7 +8,15 @@ import channelCurrent from './channelCurrent';
 import userInfo from './userInfo';
 import settings from './settings';
 
-export const initialState: Immutable.Map<any, any> = Immutable.fromJS({
+export interface State {
+  serverInfo,
+  userInfo,
+  settings,
+  channelDb,
+  channelCurrent
+}
+
+export const initialState: Immutable.Map<any, any> = Immutable.fromJS(<State>{
   serverInfo: {
     connecting: false,
     connected: false,

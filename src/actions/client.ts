@@ -118,7 +118,7 @@ export function sendMessage(channel: string, message: string) {
 export function leaveChannel(channel: string) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return new Promise((resolve, reject) => {
-      let channels = Object.keys(getState().get('channels').toJS());
+      let channels = Object.keys(getState().get('channelDb').toJS());
       let nextChannel = '';
 
       if (channels.indexOf(channel) === -1)
@@ -137,7 +137,7 @@ export function leaveChannel(channel: string) {
       let nextChannelObj = {name: null, messages: []}
       if (nextChannel !== '') {
         nextChannelObj.name = nextChannel;
-        nextChannelObj.messages = getState().getIn(['channels', channel, 'messages']);
+        nextChannelObj.messages = getState().getIn(['channelDb', channel, 'messages']);
       }
 
       dispatch({ type: 'LEFT_CHANNEL', payload: { channel, nextChannel: nextChannelObj } });
@@ -151,7 +151,7 @@ export function leaveChannel(channel: string) {
 export function fetchMessages(channel: string, amount: number) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return new Promise((resolve) => {
-      resolve(getState().getIn(['channels', channel, 'messages']).slice(amount * -1));
+      resolve(getState().getIn(['channelDb', channel, 'messages']).slice(amount * -1));
     })
   }
 }

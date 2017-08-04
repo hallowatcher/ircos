@@ -23,7 +23,7 @@ function makeCurrentChannel(state: Map<any, any>, action: any) {
 }
 
 function leftChannel(state: Map<any, any>, action: any) {
-  return state.set('name', action.payload.nextChannelObj.name).set('messages', action.payload.nextChannelObj.messages);
+  return state.set('name', action.payload.nextChannel.name).set('messages', action.payload.nextChannel.messages);
 }
 
 function receivedMessage(state: Map<any, any>, action: any) {

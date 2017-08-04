@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 // Middleware
 import thunk from 'redux-thunk';
-import * as logger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 
 import App from './containers/App';
 import Reducers, { initialState } from './reducers';
@@ -24,7 +24,11 @@ const predicate = (getState: any, action: any) => {
   return true;
 }
 
-const store = createStore( Reducers, initialState, applyMiddleware( thunk, logger({ stateTransformer, predicate }) ) );
+const store = createStore(
+  Reducers,
+  initialState,
+  applyMiddleware( thunk, createLogger({ stateTransformer, predicate }) )
+);
 
 export function render() {
   ReactDOM.render(

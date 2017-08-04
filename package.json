@@ -18,6 +18,7 @@
       "js"
     ],
     "collectCoverage": true,
+    "mapCoverage": true,
     "coveragePathIgnorePatterns": [
       "src/index.tsx"
     ],
@@ -27,8 +28,7 @@
     ],
     "coverageReporters": [
       "html"
-    ],
-    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js"
+    ]
   },
   "author": "Uwe Wiemer",
   "license": "MIT",
@@ -52,7 +52,6 @@
     "@types/irc": "^0.3.32",
     "@types/react": "^16.0.0",
     "@types/react-dom": "^15.5.2",
-    "@types/react-modal": "^1.6.8",
     "@types/react-redux": "^4.4.47",
     "@types/redux": "^3.6.0",
     "@types/redux-immutable": "^3.0.34",

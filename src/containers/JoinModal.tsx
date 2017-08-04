@@ -1,11 +1,11 @@
 
 import * as React from 'react';
-import * as Modal from 'react-modal';
+import Modal from 'react-modal';
 
 type State = {
   isOpen: boolean,
   onClose: () => void
-  joinChannel: (channel: string) => void
+  joinChannel: (event: any) => void
 }
 
 const styles = {

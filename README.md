@@ -1,8 +1,8 @@
 # ircos
-[![Travis](https://img.shields.io/travis/Hallowatcher/ircos.svg)](https://travis-ci.org/Hallowatcher/ircos)
-[![Codecov](https://img.shields.io/codecov/c/github/Hallowatcher/ircos.svg)](https://codecov.io/gh/Hallowatcher/ircos)
-[![David](https://img.shields.io/david/Hallowatcher/ircos.svg)]()
-[![license](https://img.shields.io/github/license/Hallowatcher/ircos.svg)](LICENSE)
+[![Travis](https://img.shields.io/travis/hallowatcher/ircos.svg)](https://travis-ci.org/hallowatcher/ircos)
+[![Codecov](https://img.shields.io/codecov/c/github/hallowatcher/ircos.svg)](https://codecov.io/gh/hallowatcher/ircos)
+[![David](https://img.shields.io/david/hallowatcher/ircos.svg)]()
+[![license](https://img.shields.io/github/license/hallowatcher/ircos.svg)](LICENSE)
 
 An IRC client built and refined for osu!
 

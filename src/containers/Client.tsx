@@ -6,8 +6,7 @@ import {
   makeCurrentChannel,
   sendMessage,
   leaveChannel,
-  join,
-  fetchMessages
+  join
 } from '../actions/client';
 
 import { Tab } from '../components/Tab';

@@ -146,12 +146,3 @@ export function leaveChannel(channel: string) {
     
   }
 }
-
-/* Messages */
-export function fetchMessages(channel: string, amount: number) {
-  return (dispatch: any, getState: () => Map<any, any>) => {
-    return new Promise((resolve) => {
-      resolve(getState().getIn(['channelDb', channel, 'messages']).slice(amount * -1));
-    })
-  }
-}

@@ -59,32 +59,6 @@ export class ChatView extends React.Component<Props, any> {
     ReactDOM.findDOMNode(container).scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
   }
 
-  // onScroll() {
-  //   const container = this.refs.container as HTMLDivElement; 
-  //   const scrollPos = container.scrollTop;
-
-  //   if (scrollPos === 0) {
-  //     this.scrollAtTop = true;
-  //     this.multiplier++;
-  //     this.fetchMessages(this.multiplier);
-  //   }
-  // }
-
-  // fetchMessages(multiplier) {
-
-  //   // Fetch messages
-  //   this.props.fetchMessages(multiplier).then((val) => {
-  //     console.log('fetched messages')
-
-  //     // Scroll back to where we were
-  //     const container = this.refs.container as HTMLDivElement;
-  //     const numMessages = container.childNodes.length;
-  //     this.topMessage = numMessages === 0 ? null : container.childNodes[0]
-  //     ReactDOM.findDOMNode(this.topMessage).scrollIntoView();
-  //   })
-
-  // }
-
   render() {
     return (
       <div style={this.props.style} ref="container">

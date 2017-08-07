@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatView should not scroll to bottom 1`] = `
+<ChatView
+  messages={
+    Array [
+      Object {
+        "date": "2017-01-01T00:00:00.000Z",
+        "name": "nick",
+        "text": "text",
+      },
+    ]
+  }
+  selfNick="nick"
+>
+  <div>
+    <Message
+      message="text"
+      sentDate={"2017-01-01T00:00:00.000Z"}
+      user="nick"
+      userType={2}
+    >
+      <div>
+        <span
+          style={
+            Object {
+              "color": "#b2b2b2",
+            }
+          }
+        >
+          [
+          00
+          :
+          00
+          ]
+        </span>
+         
+        <span
+          style={
+            Object {
+              "color": "#CECECE",
+              "fontWeight": 800,
+            }
+          }
+        >
+          nick
+          :
+        </span>
+         
+        <span
+          style={Object {}}
+        >
+          text
+        </span>
+      </div>
+    </Message>
+  </div>
+</ChatView>
+`;
+
+exports[`ChatView should render 1`] = `
+<ChatView
+  messages={Array []}
+  selfNick="nick"
+>
+  <div />
+</ChatView>
+`;
+
+exports[`ChatView should render message as self 1`] = `
+<ChatView
+  messages={
+    Array [
+      Object {
+        "date": "2017-01-01T00:00:00.000Z",
+        "name": "nick",
+        "text": "text",
+      },
+    ]
+  }
+  selfNick="nick"
+>
+  <div>
+    <Message
+      message="text"
+      sentDate={"2017-01-01T00:00:00.000Z"}
+      user="nick"
+      userType={2}
+    >
+      <div>
+        <span
+          style={
+            Object {
+              "color": "#b2b2b2",
+            }
+          }
+        >
+          [
+          00
+          :
+          00
+          ]
+        </span>
+         
+        <span
+          style={
+            Object {
+              "color": "#CECECE",
+              "fontWeight": 800,
+            }
+          }
+        >
+          nick
+          :
+        </span>
+         
+        <span
+          style={Object {}}
+        >
+          text
+        </span>
+      </div>
+    </Message>
+  </div>
+</ChatView>
+`;
+
+exports[`ChatView should render messages 1`] = `
+<ChatView
+  messages={
+    Array [
+      Object {
+        "date": "2017-01-01T00:00:00.000Z",
+        "name": "name",
+        "text": "text",
+      },
+    ]
+  }
+  selfNick="nick"
+>
+  <div>
+    <Message
+      message="text"
+      sentDate={"2017-01-01T00:00:00.000Z"}
+      user="name"
+      userType={0}
+    >
+      <div>
+        <span
+          style={
+            Object {
+              "color": "#b2b2b2",
+            }
+          }
+        >
+          [
+          00
+          :
+          00
+          ]
+        </span>
+         
+        <span
+          style={
+            Object {
+              "color": "#ffc561",
+              "fontWeight": 800,
+            }
+          }
+        >
+          name
+          :
+        </span>
+         
+        <span
+          style={Object {}}
+        >
+          text
+        </span>
+      </div>
+    </Message>
+  </div>
+</ChatView>
+`;

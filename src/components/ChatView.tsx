@@ -38,19 +38,20 @@ export class ChatView extends React.Component<Props, any> {
 
   componentWillUpdate(nextProps: Props) {
     this.historyChanged = nextProps.messages.length !== this.props.messages.length;
-    if (this.historyChanged) {
-      const container = this.refs.container as HTMLDivElement; 
-      const scrollPos = container.scrollTop;
-      const scrollBottom = container.scrollHeight - container.clientHeight;
-      this.scrollAtBottom = (scrollBottom <= 0) || (scrollPos === scrollBottom)
-    }
+    if (!this.historyChanged || !this.refs.container) return;
+
+    const container = this.refs.container as HTMLDivElement;
+    const scrollPos = container.scrollTop;
+    const scrollBottom = container.scrollHeight - container.clientHeight;
+    this.scrollAtBottom = (scrollBottom <= 0) || (scrollPos === scrollBottom)
   }
 
   componentDidUpdate() {
     if (this.scrollAtBottom)
-      this.scrollToBottom();
+      this.scrollToBottom(); 
   }
 
+  /* istanbul ignore next */
   scrollToBottom() {
     const container = this.refs.container as HTMLDivElement;
     const scrollHeight = container.scrollHeight;

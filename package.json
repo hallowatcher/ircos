@@ -40,6 +40,7 @@
     "awesome-typescript-loader": "^3.1.2",
     "electron": "^1.7.5",
     "enzyme": "^2.9.1",
+    "enzyme-to-json": "^1.5.1",
     "jest": "^20.0.4",
     "mockdate": "^2.0.1",
     "react-test-renderer": "^15.6.1",
@@ -50,7 +51,6 @@
   },
   "dependencies": {
     "@types/irc": "^0.3.32",
-    "@types/react": "^16.0.0",
     "@types/react-dom": "^15.5.2",
     "@types/react-redux": "^4.4.47",
     "@types/redux": "^3.6.0",

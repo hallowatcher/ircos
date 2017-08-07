@@ -10,41 +10,113 @@ ShallowWrapper {
   "length": 1,
   "node": <form
     onSubmit={[Function]}
+    style={
+        Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "10px",
+          }
+    }
 >
+    <h1>
+        ircos
+    </h1>
     <input
         name="user"
         onChange={[Function]}
+        placeholder="Username"
+        style={
+            Object {
+                "border": 0,
+                "borderLeft": "3px solid rgba(0, 0, 0, 0.5)",
+                "outline": "none",
+                "padding": "4px",
+              }
+        }
         type="text"
         value=""
     />
     <input
         name="pass"
         onChange={[Function]}
+        placeholder="Password"
+        style={
+            Object {
+                "border": 0,
+                "borderLeft": "3px solid rgba(0, 0, 0, 0.5)",
+                "outline": "none",
+                "padding": "4px",
+              }
+        }
         type="password"
         value=""
     />
     <input
+        style={
+            Object {
+                "border": 0,
+                "padding": "4px",
+              }
+        }
         type="submit"
+        value="Login!"
     />
 </form>,
   "nodes": Array [
     <form
       onSubmit={[Function]}
+      style={
+            Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "padding": "10px",
+                }
+      }
 >
+      <h1>
+            ircos
+      </h1>
       <input
             name="user"
             onChange={[Function]}
+            placeholder="Username"
+            style={
+                  Object {
+                        "border": 0,
+                        "borderLeft": "3px solid rgba(0, 0, 0, 0.5)",
+                        "outline": "none",
+                        "padding": "4px",
+                      }
+            }
             type="text"
             value=""
       />
       <input
             name="pass"
             onChange={[Function]}
+            placeholder="Password"
+            style={
+                  Object {
+                        "border": 0,
+                        "borderLeft": "3px solid rgba(0, 0, 0, 0.5)",
+                        "outline": "none",
+                        "padding": "4px",
+                      }
+            }
             type="password"
             value=""
       />
       <input
+            style={
+                  Object {
+                        "border": 0,
+                        "padding": "4px",
+                      }
+            }
             type="submit"
+            value="Login!"
       />
 </form>,
   ],
@@ -91,41 +163,113 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <form
           onSubmit={[Function]}
+          style={
+                    Object {
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "padding": "10px",
+                            }
+          }
 >
+          <h1>
+                    ircos
+          </h1>
           <input
                     name="user"
                     onChange={[Function]}
+                    placeholder="Username"
+                    style={
+                              Object {
+                                        "border": 0,
+                                        "borderLeft": "3px solid rgba(0, 0, 0, 0.5)",
+                                        "outline": "none",
+                                        "padding": "4px",
+                                      }
+                    }
                     type="text"
                     value=""
           />
           <input
                     name="pass"
                     onChange={[Function]}
+                    placeholder="Password"
+                    style={
+                              Object {
+                                        "border": 0,
+                                        "borderLeft": "3px solid rgba(0, 0, 0, 0.5)",
+                                        "outline": "none",
+                                        "padding": "4px",
+                                      }
+                    }
                     type="password"
                     value=""
           />
           <input
+                    style={
+                              Object {
+                                        "border": 0,
+                                        "padding": "4px",
+                                      }
+                    }
                     type="submit"
+                    value="Login!"
           />
 </form>,
         "_debugID": 2,
         "_renderedOutput": <form
           onSubmit={[Function]}
+          style={
+                    Object {
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "padding": "10px",
+                            }
+          }
 >
+          <h1>
+                    ircos
+          </h1>
           <input
                     name="user"
                     onChange={[Function]}
+                    placeholder="Username"
+                    style={
+                              Object {
+                                        "border": 0,
+                                        "borderLeft": "3px solid rgba(0, 0, 0, 0.5)",
+                                        "outline": "none",
+                                        "padding": "4px",
+                                      }
+                    }
                     type="text"
                     value=""
           />
           <input
                     name="pass"
                     onChange={[Function]}
+                    placeholder="Password"
+                    style={
+                              Object {
+                                        "border": 0,
+                                        "borderLeft": "3px solid rgba(0, 0, 0, 0.5)",
+                                        "outline": "none",
+                                        "padding": "4px",
+                                      }
+                    }
                     type="password"
                     value=""
           />
           <input
+                    style={
+                              Object {
+                                        "border": 0,
+                                        "padding": "4px",
+                                      }
+                    }
                     type="submit"
+                    value="Login!"
           />
 </form>,
       },

@@ -11,31 +11,63 @@ ShallowWrapper {
   "node": <div
     style={
         Object {
+            "alignContent": "center",
+            "alignItems": "center",
+            "backgroundColor": "#acadaf",
+            "display": "flex",
+            "flexDirection": "column",
             "height": "100%",
+            "justifyContent": "center",
             "margin": 0,
             "padding": 0,
             "width": "100%",
           }
     }
 >
-    <LoginForm
-        submitLogin={[Function]}
-    />
+    <div
+        style={
+            Object {
+                "alignSelf": "center",
+                "backgroundColor": "white",
+                "boxShadow": "0 0 4px rgba(0, 0, 0, 0.35)",
+              }
+        }
+    >
+        <LoginForm
+            submitLogin={[Function]}
+        />
+    </div>
 </div>,
   "nodes": Array [
     <div
       style={
             Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "backgroundColor": "#acadaf",
+                  "display": "flex",
+                  "flexDirection": "column",
                   "height": "100%",
+                  "justifyContent": "center",
                   "margin": 0,
                   "padding": 0,
                   "width": "100%",
                 }
       }
 >
-      <LoginForm
-            submitLogin={[Function]}
-      />
+      <div
+            style={
+                  Object {
+                        "alignSelf": "center",
+                        "backgroundColor": "white",
+                        "boxShadow": "0 0 4px rgba(0, 0, 0, 0.35)",
+                      }
+            }
+      >
+            <LoginForm
+                  submitLogin={[Function]}
+            />
+      </div>
 </div>,
   ],
   "options": Object {},
@@ -79,31 +111,63 @@ ShallowWrapper {
         "_currentElement": <div
           style={
                     Object {
+                              "alignContent": "center",
+                              "alignItems": "center",
+                              "backgroundColor": "#acadaf",
+                              "display": "flex",
+                              "flexDirection": "column",
                               "height": "100%",
+                              "justifyContent": "center",
                               "margin": 0,
                               "padding": 0,
                               "width": "100%",
                             }
           }
 >
-          <LoginForm
-                    submitLogin={[Function]}
-          />
+          <div
+                    style={
+                              Object {
+                                        "alignSelf": "center",
+                                        "backgroundColor": "white",
+                                        "boxShadow": "0 0 4px rgba(0, 0, 0, 0.35)",
+                                      }
+                    }
+          >
+                    <LoginForm
+                              submitLogin={[Function]}
+                    />
+          </div>
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
           style={
                     Object {
+                              "alignContent": "center",
+                              "alignItems": "center",
+                              "backgroundColor": "#acadaf",
+                              "display": "flex",
+                              "flexDirection": "column",
                               "height": "100%",
+                              "justifyContent": "center",
                               "margin": 0,
                               "padding": 0,
                               "width": "100%",
                             }
           }
 >
-          <LoginForm
-                    submitLogin={[Function]}
-          />
+          <div
+                    style={
+                              Object {
+                                        "alignSelf": "center",
+                                        "backgroundColor": "white",
+                                        "boxShadow": "0 0 4px rgba(0, 0, 0, 0.35)",
+                                      }
+                    }
+          >
+                    <LoginForm
+                              submitLogin={[Function]}
+                    />
+          </div>
 </div>,
       },
       "_renderedNodeType": 0,

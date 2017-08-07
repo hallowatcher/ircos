@@ -18,7 +18,8 @@ export default function (state: Map<any, any>, action: any) {
 }
 
 function joinedChannel(state: Map<any, any>, action: any) {
-  state = state.set(action.payload, Map({
+  state = state.set(action.payload.toLowerCase(), Map({
+    displayName: action.payload,
     messages: List()
   }));
 
@@ -30,7 +31,7 @@ function receivedMessage(state: Map<any, any>, action: any) {
   let { nick, to, text, date } = action.payload;
 
   state = state.updateIn(
-    [to, 'messages'],
+    [to.toLowerCase(), 'messages'],
     messages => messages.push({name: nick, text: text, date: date})
   )
 
@@ -42,11 +43,11 @@ function receivedPm(state: Map<any, any>, action: any) {
   let { nick, text, date } = action.payload;
 
   // Check if the channel has been previously opened
-  if (state.get(nick) === undefined)
+  if (state.get(nick.toLowerCase()) === undefined)
     state = joinedChannel(state, { payload: nick })
 
   state = state.updateIn(
-    [nick, 'messages'],
+    [nick.toLowerCase(), 'messages'],
     messages => messages.push({name: nick, text: text, date: date})
   )
 
@@ -59,7 +60,7 @@ function sentMessage(state: Map<any, any>, action: any) {
   let {nick, channel, message, date} = action.payload;
 
   state = state.updateIn(
-    [channel, 'messages'],
+    [channel.toLowerCase(), 'messages'],
     messages => messages.push({name: nick, text: message, date})
   )
   return state;
@@ -69,5 +70,5 @@ function leftChannel(state: Map<any, any>, action: any) {
   let { channel } = action.payload
 
   // Filter is used here so the tab order is preserved
-  return state.filter((val: any, key: any) => key !== channel);
+  return state.filter((val: any, key: any) => key.toLowerCase() !== channel.toLowerCase());
 }

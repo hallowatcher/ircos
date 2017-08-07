@@ -12,7 +12,7 @@ describe('Channel DB reducer', () => {
   it('should join a channel', () => {
     let initialState = Immutable.fromJS({});
     let actualState = channelDbReducer(initialState, { type: 'JOINED_CHANNEL', payload: '#osu' });
-    let expectedState = { '#osu': { messages: [] } };
+    let expectedState = { '#osu': { displayName: '#osu', messages: [] } };
     expect(actualState.toJS()).toEqual(expectedState);
   });
 
@@ -32,10 +32,10 @@ describe('Channel DB reducer', () => {
   });
 
   it('should receive a pm', () => {
-    let initialState = Immutable.fromJS({ 'hallowatcher': { messages: [] } });
+    let initialState = Immutable.fromJS({ 'hallowatcher': { displayName: 'hallowatcher', messages: [] } });
     let message = { nick: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }
     let actualState = channelDbReducer(initialState, { type: 'RECEIVED_PM', payload: message });
-    let expectedState = { 'hallowatcher': { messages: [{ name: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }] } };
+    let expectedState = { 'hallowatcher': { displayName: 'hallowatcher', messages: [{ name: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }] } };
     expect(actualState.toJS()).toEqual(expectedState);
   });
 
@@ -43,7 +43,7 @@ describe('Channel DB reducer', () => {
     let initialState = Immutable.fromJS({});
     let message = { nick: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }
     let actualState = channelDbReducer(initialState, { type: 'RECEIVED_PM', payload: message });
-    let expectedState = { 'hallowatcher': { messages: [{ name: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }] } };
+    let expectedState = { 'hallowatcher': { displayName: 'hallowatcher', messages: [{ name: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }] } };
     expect(actualState.toJS()).toEqual(expectedState);
   });
 

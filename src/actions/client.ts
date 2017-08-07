@@ -119,16 +119,18 @@ export function leaveChannel(channel: string) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return new Promise((resolve, reject) => {
       let channels = Object.keys(getState().get('channelDb').toJS());
-      let nextChannel = '';
+      let currentChannel = getState().getIn(['channelCurrent', 'name']);
+      let nextChannel = currentChannel || '';
 
       if (channels.indexOf(channel) === -1)
         return reject('Channel not found!')
 
       // Handle changing to next/previous channel when closing tabs
-      if (channels[channels.length - 1] === channel && channels.length > 1)
+      if (channels[channels.length - 1] === currentChannel && channel === currentChannel && channels.length > 1) {
         nextChannel = channels[channels.length - 2];
-      else if (channels.length > 1)
+      } else if (channel === currentChannel && channels.length > 1) {
         nextChannel = channels[channels.indexOf(channel) + 1];
+      }
 
       // Leave from IRC if it's a channel
       if (channel.charAt(0) === '#')
@@ -137,7 +139,7 @@ export function leaveChannel(channel: string) {
       let nextChannelObj = {name: null, messages: []}
       if (nextChannel !== '') {
         nextChannelObj.name = nextChannel;
-        nextChannelObj.messages = getState().getIn(['channelDb', channel, 'messages']);
+        nextChannelObj.messages = getState().getIn(['channelDb', nextChannel, 'messages']);
       }
 
       dispatch({ type: 'LEFT_CHANNEL', payload: { channel, nextChannel: nextChannelObj } });

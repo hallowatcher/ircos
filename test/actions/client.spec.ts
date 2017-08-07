@@ -24,6 +24,10 @@ describe('Client actions', function () {
       userInfo: {
         userName: nick
       },
+      channelCurrent: {
+        name: '#osu',
+        messages: []
+      },
       channelDb: {
         '#osu': {},
         '#english': {}
@@ -120,8 +124,24 @@ describe('Client actions', function () {
   })
 
   it('should change to correct channel when leaving last one', function () {
+    const initialState = Immutable.fromJS(<State>{
+      userInfo: {
+        userName: nick
+      },
+      channelCurrent: {
+        name: '#english',
+        messages: []
+      },
+      channelDb: {
+        '#osu': {},
+        '#german': {},
+        '#english': {}
+      }
+    })
+    store = mockStore(initialState)
+
     const channel = '#english'
-    const nextChannel = { name: '#osu', messages: undefined }
+    const nextChannel = { name: '#german', messages: undefined }
     const expectedActions = [
       { type: 'LEFT_CHANNEL', payload: { channel, nextChannel } }
     ]

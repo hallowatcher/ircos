@@ -27,7 +27,7 @@ function leftChannel(state: Map<any, any>, action: any) {
 }
 
 function receivedMessage(state: Map<any, any>, action: any) {
-  if (action.payload.to === state.get('name')) 
+  if (action.payload.to.toLowerCase() === state.get('name').toLowerCase()) 
     return state.updateIn(
       ['messages'],
       messages => messages.push({name: action.payload.nick, text: action.payload.text, date: action.payload.date})
@@ -37,7 +37,7 @@ function receivedMessage(state: Map<any, any>, action: any) {
 }
 
 function receivedPm(state: Map<any, any>, action: any) {
-  if (action.payload.nick === state.get('name')) 
+  if (action.payload.nick.toLowerCase() === state.get('name').toLowerCase()) 
     return state.updateIn(
       ['messages'],
       messages => messages.push({name: action.payload.nick, text: action.payload.text, date: action.payload.date})
@@ -47,7 +47,7 @@ function receivedPm(state: Map<any, any>, action: any) {
 }
 
 function sentMessage(state: Map<any, any>, action: any) {
-  if (action.payload.channel === state.get('name')) 
+  if (action.payload.channel.toLowerCase() === state.get('name').toLowerCase()) 
     return state.updateIn(
       ['messages'],
       messages => messages.push({name: action.payload.nick, text: action.payload.message, date: action.payload.date})

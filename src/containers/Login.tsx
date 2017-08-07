@@ -11,14 +11,27 @@ const divStyle: React.CSSProperties = {
   margin: 0,
   padding: 0,
   width: '100%',
-  height: '100%'
+  height: '100%',
+  backgroundColor: '#acadaf',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  alignContent: 'center'
+}
+const divChild: React.CSSProperties = {
+  backgroundColor: 'white',
+  alignSelf: 'center',
+  boxShadow: '0 0 4px rgba(0, 0, 0, 0.35)'
 }
 
 export class Login extends React.Component<Props, null> {
   render() {
     return (
       <div style={divStyle}>
-        <LoginForm submitLogin={this.props.createConnection.bind(this)} />
+        <div style={divChild}>
+          <LoginForm submitLogin={this.props.createConnection.bind(this)} />
+        </div>
       </div>
     )
   }

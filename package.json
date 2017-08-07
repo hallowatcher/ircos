@@ -27,7 +27,7 @@
       "src/**/*.tsx"
     ],
     "coverageReporters": [
-      "html"
+      "lcov"
     ]
   },
   "author": "Uwe Wiemer",

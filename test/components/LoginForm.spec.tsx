@@ -9,10 +9,15 @@ describe('AddTab', function () {
   let submitLogin: any
   beforeEach(function () {
     submitLogin = jest.fn()
-    component = enzyme.shallow(<LoginForm submitLogin={submitLogin} />)
+    component = enzyme.shallow(<LoginForm submitLogin={submitLogin} error={null} />)
   })
 
   it('should render', function () {
+    expect(component).toMatchSnapshot()
+  })
+
+  it('should render with error', function () {
+    component = enzyme.shallow(<LoginForm submitLogin={submitLogin} error={'Error'} />)
     expect(component).toMatchSnapshot()
   })
 

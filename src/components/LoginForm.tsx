@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 type Props = {
+  error: string
   submitLogin: (user: string, pass: string) => void
 }
 
@@ -28,6 +29,11 @@ const buttonStyle: React.CSSProperties = {
   padding: '4px'
 }
 
+const errorStyle: React.CSSProperties = {
+  color: 'rgba(255, 0, 0, 0.65)',
+  fontSize: 14
+}
+
 export class LoginForm extends React.Component<Props, State> {
 
   constructor(props: any) {
@@ -53,9 +59,14 @@ export class LoginForm extends React.Component<Props, State> {
   }
 
   render() {
+    let error = null;
+    if (this.props.error)
+      error = <div style={errorStyle}>{this.props.error}</div>;
+
     return (
       <form onSubmit={this.handleSubmit.bind(this)} style={formStyle}>
         <h1>ircos</h1>
+        {error}
         <input type="text" name="user" placeholder="Username" style={inputStyle} value={this.state.user} onChange={this.inputChanged.bind(this)} />
         <input type="password" name="pass" placeholder="Password" style={inputStyle} value={this.state.pass} onChange={this.inputChanged.bind(this)} />
         <input type="submit" style={buttonStyle} value="Login!" />

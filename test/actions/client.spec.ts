@@ -79,6 +79,20 @@ describe('Client actions', function () {
     })
   })
 
+  it('should fail to connect with wrong credentials', function () {
+    const expectedActions = [
+      { type: 'CONNECTING_TO_SERVER' },
+      { type: 'LOGIN_ERROR' }
+    ]
+
+    return store.dispatch(actions.createConnection('error', pass))
+      .then(() => {
+        throw new Error('Shouldn\'t resolve!')
+      }, (err) => {
+        expect(store.getActions()).toEqual(expectedActions)
+      })
+  })
+
   it('should fetch someone\'s user info', function () {
 
     let user = 'someoneElse'

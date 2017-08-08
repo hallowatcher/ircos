@@ -24,7 +24,15 @@ export function createConnection(user: string, pass: string) {
         dispatch(receivedPm(nick, text, new Date()))
       });
 
+      client.on('error', () => {
+        client.removeAllListeners('error');
+        client.disconnect(null, null);
+        dispatch(loginError())
+        reject('Login error');
+      })
+
       client.connect(0, () => {
+        client.removeAllListeners('error');
         dispatch(connectedToServer(user));
         dispatch(getUserInfo(user))
 
@@ -53,6 +61,10 @@ export function getUserInfo(user: string) {
           dispatch({ type: 'USER_INFO_FETCHED', payload: {userName: user, userInfo} })
       })
   }
+}
+
+export function loginError() {
+  return { type: 'LOGIN_ERROR' }
 }
 
 export function connectingToServer() {

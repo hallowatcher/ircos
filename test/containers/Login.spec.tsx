@@ -9,7 +9,7 @@ describe('Login', function () {
   beforeEach(function () {
     createConnection = jest.fn()
     component = enzyme.shallow(
-    <Login createConnection={createConnection} />)
+    <Login createConnection={createConnection} error={null} />)
   })
 
   it('should render', function () {

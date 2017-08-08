@@ -3,7 +3,11 @@ import { connect } from 'react-redux';
 import { LoginForm } from '../components/LoginForm';
 import { createConnection } from '../actions/client';
 
-type Props = {
+type StateProps = {
+  error: string
+}
+
+type DispatchProps = {
   createConnection: any
 }
 
@@ -25,12 +29,12 @@ const divChild: React.CSSProperties = {
   boxShadow: '0 0 4px rgba(0, 0, 0, 0.35)'
 }
 
-export class Login extends React.Component<Props, null> {
+export class Login extends React.Component<StateProps & DispatchProps, null> {
   render() {
     return (
       <div style={divStyle}>
         <div style={divChild}>
-          <LoginForm submitLogin={this.props.createConnection.bind(this)} />
+          <LoginForm error={this.props.error} submitLogin={this.props.createConnection.bind(this)} />
         </div>
       </div>
     )
@@ -38,11 +42,18 @@ export class Login extends React.Component<Props, null> {
 }
 
 /* istanbul ignore next */
-function dispatchToProps(dispatch: any) {
+function stateToProps(state: any): StateProps {
+  return {
+    error: state.getIn(['serverInfo', 'error'])
+  }
+}
+
+/* istanbul ignore next */
+function dispatchToProps(dispatch: any): DispatchProps {
    return {
     createConnection: (user: string, pass: string) => { dispatch( createConnection(user, pass) ) }
   }
 }
 
 /* istanbul ignore next */
-export default connect<any, any, any>(null, dispatchToProps)(Login);
+export default connect<any, any, any>(stateToProps, dispatchToProps)(Login);

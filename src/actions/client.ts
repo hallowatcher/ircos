@@ -23,7 +23,7 @@ export function createConnection(user: string, pass: string) {
       client.on('pm', (nick: string, text: string) => {
         dispatch(receivedPm(nick, text, new Date()))
       });
-      
+
       client.connect(0, () => {
         dispatch(connectedToServer(user));
         dispatch(getUserInfo(user))
@@ -74,14 +74,18 @@ export function receivedPm(nick: string, text: string, date: Date) {
 export function join(channel: string) {
   return (dispatch: any) => {
     return new Promise((resolve, reject) => {
+
+      dispatch(openChannel(channel));
       
       if (channel.charAt(0) !== '#') {
         // If channel is a user
-        dispatch(joined(channel));
+        dispatch(receivedMessage('System', channel, `Connected to ${channel}!`, new Date()));
       } else {
         // Else it's a channel
-        client.join(channel);
-        dispatch(joined(channel));
+        dispatch(receivedMessage('System', channel, `Connecting to ${channel}...`, new Date()));
+        client.join(channel, () => {
+          dispatch(receivedMessage('System', channel, `Connected to ${channel}!`, new Date()));
+        });
       }
 
       resolve();
@@ -89,8 +93,8 @@ export function join(channel: string) {
   }
 }
 
-export function joined(channel: string) {
-  return { type: 'JOINED_CHANNEL', payload: channel }
+export function openChannel(channel: string) {
+  return { type: 'OPEN_CHANNEL', payload: channel }
 }
 
 export function makeCurrentChannel(channel: string) {

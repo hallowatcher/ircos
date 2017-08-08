@@ -19,6 +19,8 @@ export class ChatView extends React.Component<Props, any> {
         let userType = UserType.regular;
         if (msg.name === this.props.selfNick)
           userType = UserType.self;
+        if (msg.name === 'System')
+          userType = UserType.system;
 
         return <Message
                   key={index}

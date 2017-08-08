@@ -4,7 +4,8 @@ import * as moment from 'moment';
 export enum UserType {
   regular,
   moderator,
-  self
+  self,
+  system
 }
 
 type Props = {
@@ -32,6 +33,9 @@ const styles = {
   message: {
 
   } as React.CSSProperties,
+  systemMessage: {
+    color: '#ADADAD'
+  } as React.CSSProperties,
   time: {
     color: '#b2b2b2'
   } as React.CSSProperties
@@ -56,10 +60,21 @@ export class Message extends React.Component<Props, any> {
     const hours = ('0' + momentDate.hours()).slice(-2);
     const minutes = ('0' + momentDate.minutes()).slice(-2);
 
-    return (
+    let message = (
       <div>
-        <span style={styles.time}>[{hours}:{minutes}]</span> <span style={userStyle}>{this.props.user}:</span> <span style={styles.message}>{this.props.message}</span>
+        <span style={styles.time}>[{hours}:{minutes}] </span> 
+        <span style={userStyle}>{this.props.user}: </span> 
+        <span style={styles.message}>{this.props.message}</span>
       </div>
-    )
+    );
+
+    if (this.props.userType === UserType.system)
+      message = (
+        <div>
+          <span style={styles.systemMessage}>{this.props.message}</span>
+        </div>
+      );
+
+    return message;
   }
 }

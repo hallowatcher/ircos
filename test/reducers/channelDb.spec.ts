@@ -11,7 +11,7 @@ describe('Channel DB reducer', () => {
 
   it('should join a channel', () => {
     let initialState = Immutable.fromJS({});
-    let actualState = channelDbReducer(initialState, { type: 'JOINED_CHANNEL', payload: '#osu' });
+    let actualState = channelDbReducer(initialState, { type: 'OPEN_CHANNEL', payload: '#osu' });
     let expectedState = { '#osu': { displayName: '#osu', messages: [] } };
     expect(actualState.toJS()).toEqual(expectedState);
   });

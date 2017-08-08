@@ -44,8 +44,32 @@ describe('Client actions', function () {
     const expectedActions = [
       { type: 'CONNECTING_TO_SERVER' },
       { type: 'CONNECTED_TO_SERVER', payload: nick },
-      { type: 'JOINED_CHANNEL', payload: '#osu' },
-      { type: 'JOINED_CHANNEL', payload: '#english' },
+      { type: 'OPEN_CHANNEL', payload: '#osu' },
+      { type: 'RECEIVED_MESSAGE', payload: {
+        nick: 'System',
+        text: 'Connecting to #osu...',
+        to: '#osu',
+        date: new Date(datenow)
+      }},
+      { type: 'RECEIVED_MESSAGE', payload: {
+        nick: 'System',
+        text: 'Connected to #osu!',
+        to: '#osu',
+        date: new Date(datenow)
+      }},
+      { type: 'OPEN_CHANNEL', payload: '#english' },
+      { type: 'RECEIVED_MESSAGE', payload: {
+        nick: 'System',
+        text: 'Connecting to #english...',
+        to: '#english',
+        date: new Date(datenow)
+      }},
+      { type: 'RECEIVED_MESSAGE', payload: {
+        nick: 'System',
+        text: 'Connected to #english!',
+        to: '#english',
+        date: new Date(datenow)
+      }},
       { type: 'MAKE_CURRENT_CHANNEL', payload: { messages: undefined, name: '#osu' } },
       { type: 'SELF_INFO_FETCHED', payload: { userInfo: { userName: nick } } }
     ]
@@ -71,7 +95,13 @@ describe('Client actions', function () {
 
     let user = 'someoneElse'
     const expectedActions = [
-      { type: 'JOINED_CHANNEL', payload: user }
+      { type: 'OPEN_CHANNEL', payload: user },
+      { type: 'RECEIVED_MESSAGE', payload: {
+        nick: 'System',
+        text: 'Connected to someoneElse!',
+        to: 'someoneElse',
+        date: new Date(datenow)
+      } }
     ]
 
     return store.dispatch(actions.join(user)).then(() => {

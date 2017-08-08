@@ -32,9 +32,8 @@ exports[`ChatView should not scroll to bottom 1`] = `
           00
           :
           00
-          ]
+          ] 
         </span>
-         
         <span
           style={
             Object {
@@ -44,9 +43,8 @@ exports[`ChatView should not scroll to bottom 1`] = `
           }
         >
           nick
-          :
+          : 
         </span>
-         
         <span
           style={Object {}}
         >
@@ -99,9 +97,8 @@ exports[`ChatView should render message as self 1`] = `
           00
           :
           00
-          ]
+          ] 
         </span>
-         
         <span
           style={
             Object {
@@ -111,11 +108,46 @@ exports[`ChatView should render message as self 1`] = `
           }
         >
           nick
-          :
+          : 
         </span>
-         
         <span
           style={Object {}}
+        >
+          text
+        </span>
+      </div>
+    </Message>
+  </div>
+</ChatView>
+`;
+
+exports[`ChatView should render message as system 1`] = `
+<ChatView
+  messages={
+    Array [
+      Object {
+        "date": "2017-01-01T00:00:00.000Z",
+        "name": "System",
+        "text": "text",
+      },
+    ]
+  }
+  selfNick="nick"
+>
+  <div>
+    <Message
+      message="text"
+      sentDate={"2017-01-01T00:00:00.000Z"}
+      user="System"
+      userType={3}
+    >
+      <div>
+        <span
+          style={
+            Object {
+              "color": "#ADADAD",
+            }
+          }
         >
           text
         </span>
@@ -157,9 +189,8 @@ exports[`ChatView should render messages 1`] = `
           00
           :
           00
-          ]
+          ] 
         </span>
-         
         <span
           style={
             Object {
@@ -169,9 +200,8 @@ exports[`ChatView should render messages 1`] = `
           }
         >
           name
-          :
+          : 
         </span>
-         
         <span
           style={Object {}}
         >

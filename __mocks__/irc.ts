@@ -11,7 +11,10 @@ export class Client extends EventEmitter {
     callback()
   }
 
-  join() {}
+  join(channel: string, callback) {
+    callback()
+  }
+  
   say() {}
   part() {}
 }

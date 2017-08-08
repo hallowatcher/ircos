@@ -2,8 +2,8 @@ import { Map, List } from 'immutable';
 
 export default function (state: Map<any, any>, action: any) {
   switch (action.type) {
-    case 'JOINED_CHANNEL':
-      return joinedChannel(state, action);
+    case 'OPEN_CHANNEL':
+      return openChannel(state, action);
     case 'RECEIVED_MESSAGE':
       return receivedMessage(state, action);
     case 'RECEIVED_PM':
@@ -17,7 +17,7 @@ export default function (state: Map<any, any>, action: any) {
   return state;
 }
 
-function joinedChannel(state: Map<any, any>, action: any) {
+function openChannel(state: Map<any, any>, action: any) {
   state = state.set(action.payload.toLowerCase(), Map({
     displayName: action.payload,
     messages: List()
@@ -44,7 +44,7 @@ function receivedPm(state: Map<any, any>, action: any) {
 
   // Check if the channel has been previously opened
   if (state.get(nick.toLowerCase()) === undefined)
-    state = joinedChannel(state, { payload: nick })
+    state = openChannel(state, { payload: nick })
 
   state = state.updateIn(
     [nick.toLowerCase(), 'messages'],

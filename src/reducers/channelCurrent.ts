@@ -27,7 +27,7 @@ function leftChannel(state: Map<any, any>, action: any) {
 }
 
 function receivedMessage(state: Map<any, any>, action: any) {
-  if (action.payload.to.toLowerCase() === state.get('name').toLowerCase()) 
+  if (state.get('name') !== null && action.payload.to.toLowerCase() === state.get('name').toLowerCase()) 
     return state.updateIn(
       ['messages'],
       messages => messages.push({name: action.payload.nick, text: action.payload.text, date: action.payload.date})

@@ -31,6 +31,11 @@ describe('ChatView', function () {
     expect(toJson(component)).toMatchSnapshot()
   })
 
+  it('should render message as system', function () {
+    component.setProps({ messages: [{ name: 'System', text: 'text', date: moment.utc('2017-01-01T00:00:00.000Z') }] })
+    expect(toJson(component)).toMatchSnapshot()
+  })
+
   it('should not scroll to bottom', function () {
     let instance = component.instance() as any;
     instance.refs.container = { scrollTop: 0, scrollHeight: 100, clientHeight: 0 };

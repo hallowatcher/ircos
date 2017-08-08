@@ -30,4 +30,9 @@ describe('Message', function () {
     expect(component).toMatchSnapshot()
   })
 
+  it('should render as system', function () {
+    component.setProps({ userType: UserType.system })
+    expect(component).toMatchSnapshot()
+  })
+
 })

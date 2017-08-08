@@ -4,57 +4,46 @@ import * as ReactDOM from 'react-dom';
 import { Message, UserType } from './Message';
 import * as moment from 'moment';
 
-interface Props {
-  messages: any[]
-  selfNick: string
-  style?: React.CSSProperties
+interface IProps {
+  messages: any[];
+  selfNick: string;
+  style?: React.CSSProperties;
 }
 
-export class ChatView extends React.Component<Props, any> {
+export class ChatView extends React.Component<IProps, any> {
 
-  mapMessages() {
-    return this.props.messages.map((msg: any, index: number) => {
+  private scrollAtBottom: boolean = true;
+  private scrollAtTop: boolean = false;
+  private topMessage: any = null;
+  private historyChanged: boolean = false;
+  private multiplier: number = 1;
 
-        // User type check
-        let userType = UserType.regular;
-        if (msg.name === this.props.selfNick)
-          userType = UserType.self;
-        if (msg.name === 'System')
-          userType = UserType.system;
-
-        return <Message
-                  key={index}
-                  message={msg.text}
-                  user={msg.name}
-                  userType={userType}
-                  sentDate={moment(msg.date)}
-                />;
-      })
-  }
-
-  scrollAtBottom: boolean = true;
-  scrollAtTop: boolean = false;
-  topMessage: any = null;
-  historyChanged: boolean = false;
-  multiplier: number = 1;
-
-  componentWillUpdate(nextProps: Props) {
+  public componentWillUpdate(nextProps: IProps) {
     this.historyChanged = nextProps.messages.length !== this.props.messages.length;
-    if (!this.historyChanged || !this.refs.container) return;
+    if (!this.historyChanged || !this.refs.container) { return; }
 
     const container = this.refs.container as HTMLDivElement;
     const scrollPos = container.scrollTop;
     const scrollBottom = container.scrollHeight - container.clientHeight;
-    this.scrollAtBottom = (scrollBottom <= 0) || (scrollPos === scrollBottom)
+    this.scrollAtBottom = (scrollBottom <= 0) || (scrollPos === scrollBottom);
   }
 
-  componentDidUpdate() {
-    if (this.scrollAtBottom)
-      this.scrollToBottom(); 
+  public componentDidUpdate() {
+    if (this.scrollAtBottom) {
+      this.scrollToBottom();
+    }
+  }
+
+  public render() {
+    return (
+      <div style={this.props.style} ref="container">
+        {this.mapMessages()}
+      </div>
+    );
   }
 
   /* istanbul ignore next */
-  scrollToBottom() {
+  private scrollToBottom() {
     const container = this.refs.container as HTMLDivElement;
     const scrollHeight = container.scrollHeight;
     const height = container.clientHeight;
@@ -62,11 +51,27 @@ export class ChatView extends React.Component<Props, any> {
     ReactDOM.findDOMNode(container).scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
   }
 
-  render() {
-    return (
-      <div style={this.props.style} ref="container">
-        {this.mapMessages()}
-      </div>
-    )
+  private mapMessages() {
+    return this.props.messages.map((msg: any, index: number) => {
+
+        // User type check
+        let userType = UserType.regular;
+        if (msg.name === this.props.selfNick) {
+          userType = UserType.self;
+        }
+        if (msg.name === 'System') {
+          userType = UserType.system;
+        }
+
+        return (
+          <Message
+            key={index}
+            message={msg.text}
+            user={msg.name}
+            userType={userType}
+            sentDate={moment(msg.date)}
+          />
+        );
+      });
   }
 }

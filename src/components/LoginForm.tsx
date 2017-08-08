@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-type Props = {
-  error: string
-  submitLogin: (user: string, pass: string) => void
+interface IProps {
+  error: string;
+  submitLogin: (user: string, pass: string) => void;
 }
 
 type State = {

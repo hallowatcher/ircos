@@ -1,8 +1,8 @@
 
 import * as React from 'react';
 
-type Props = {
-  clickAddTab: () => void
+interface IProps {
+  clickAddTab: () => void;
 }
 
 const divStyle: React.CSSProperties = {
@@ -18,14 +18,14 @@ const divStyle: React.CSSProperties = {
   transform: 'skew(-15deg)',
   boxSizing: 'border-box',
   WebkitUserSelect: 'none'
-}
+};
 
-export class AddTab extends React.Component<Props, any> {
-  render() {
+export class AddTab extends React.Component<IProps, any> {
+  public render() {
     return (
       <div style={divStyle} onClick={this.props.clickAddTab}>
         <span style={{ transform: 'skew(15deg)' }}>+</span>
       </div>
-    )
+    );
   }
 }

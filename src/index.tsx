@@ -14,20 +14,25 @@ import Reducers, { initialState } from './reducers';
 import { Iterable } from 'immutable';
 
 const stateTransformer = (state: any) => {
-  if (Iterable.isIterable(state)) return state.toJS();
-  else return state;
+  if (Iterable.isIterable(state)) {
+    return state.toJS();
+  } else {
+    return state;
+  }
 };
 
 const predicate = (getState: any, action: any) => {
-  if (action.type === 'RECEIVED_MESSAGE')
+  if (action.type === 'RECEIVED_MESSAGE') {
     return false;
+  }
+
   return true;
-}
+};
 
 const store = createStore(
   Reducers,
   initialState,
-  applyMiddleware( thunk, createLogger({ stateTransformer, predicate }) )
+  applyMiddleware(thunk, createLogger({ stateTransformer, predicate }))
 );
 
 export function render() {
@@ -39,4 +44,4 @@ export function render() {
   );
 }
 
-render()
+render();

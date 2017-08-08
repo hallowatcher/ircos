@@ -47,26 +47,26 @@ describe('Client actions', function () {
       { type: 'OPEN_CHANNEL', payload: '#osu' },
       { type: 'RECEIVED_MESSAGE', payload: {
         nick: 'System',
-        text: 'Connecting to #osu...',
+        text: 'Attempting to join #osu...',
         to: '#osu',
         date: new Date(datenow)
       }},
       { type: 'RECEIVED_MESSAGE', payload: {
         nick: 'System',
-        text: 'Connected to #osu!',
+        text: 'Joined #osu!',
         to: '#osu',
         date: new Date(datenow)
       }},
       { type: 'OPEN_CHANNEL', payload: '#english' },
       { type: 'RECEIVED_MESSAGE', payload: {
         nick: 'System',
-        text: 'Connecting to #english...',
+        text: 'Attempting to join #english...',
         to: '#english',
         date: new Date(datenow)
       }},
       { type: 'RECEIVED_MESSAGE', payload: {
         nick: 'System',
-        text: 'Connected to #english!',
+        text: 'Joined #english!',
         to: '#english',
         date: new Date(datenow)
       }},
@@ -98,13 +98,37 @@ describe('Client actions', function () {
       { type: 'OPEN_CHANNEL', payload: user },
       { type: 'RECEIVED_MESSAGE', payload: {
         nick: 'System',
-        text: 'Connected to someoneElse!',
+        text: 'Joined someoneElse!',
         to: 'someoneElse',
         date: new Date(datenow)
       } }
     ]
 
     return store.dispatch(actions.join(user)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions)
+    })
+  })
+
+  it('should fail to connect to channel', function () {
+
+    let channel = '#error'
+    const expectedActions = [
+      { type: 'OPEN_CHANNEL', payload: channel },
+      { type: 'RECEIVED_MESSAGE', payload: {
+        nick: 'System',
+        text: 'Attempting to join #error...',
+        to: '#error',
+        date: new Date(datenow)
+      } },
+      { type: 'RECEIVED_MESSAGE', payload: {
+        nick: 'System',
+        text: 'Failed to join #error!',
+        to: '#error',
+        date: new Date(datenow)
+      } }
+    ]
+
+    return store.dispatch(actions.join(channel)).then(() => {
       expect(store.getActions()).toEqual(expectedActions)
     })
   })

@@ -79,12 +79,17 @@ export function join(channel: string) {
       
       if (channel.charAt(0) !== '#') {
         // If channel is a user
-        dispatch(receivedMessage('System', channel, `Connected to ${channel}!`, new Date()));
+        dispatch(receivedMessage('System', channel, `Joined ${channel}!`, new Date()));
       } else {
         // Else it's a channel
-        dispatch(receivedMessage('System', channel, `Connecting to ${channel}...`, new Date()));
+        dispatch(receivedMessage('System', channel, `Attempting to join ${channel}...`, new Date()));
+        client.on('error', () => {
+          client.removeAllListeners('error');
+          dispatch(receivedMessage('System', channel, `Failed to join ${channel}!`, new Date()));
+        })
         client.join(channel, () => {
-          dispatch(receivedMessage('System', channel, `Connected to ${channel}!`, new Date()));
+          client.removeAllListeners('error');
+          dispatch(receivedMessage('System', channel, `Joined ${channel}!`, new Date()));
         });
       }
 

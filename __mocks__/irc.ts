@@ -12,7 +12,11 @@ export class Client extends EventEmitter {
   }
 
   join(channel: string, callback) {
-    callback()
+    if (channel === '#error') {
+      this.emit('error')
+    } else {
+      callback()
+    }
   }
   
   say() {}

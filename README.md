@@ -34,8 +34,12 @@ git clone https://github.com/Hallowatcher/ircos.git
 
 Install dependencies
 
+`npm install` or `yarn`
+
+Pack the project
+
 ```
-npm install
+npm run webpack
 ```
 
 Run the project
@@ -44,6 +48,24 @@ Run the project
 npm start
 ```
 
+## Building the app
+
+Build the app as an executable/installer
+
+Pack the project
+
+```
+npm run webpack
+```
+
+Build the project
+
+```
+npm run build
+```
+
+Your binaries will be in `./build`
+
 ## Running the tests
 
 Tests are ran using jest + enzyme. To run them, simply
@@ -51,9 +73,6 @@ Tests are ran using jest + enzyme. To run them, simply
 ```
 npm t
 ```
-
-Currently, react will display warnings for React.CreateClass usages.
-Ignore these for now.
 
 
 ## Built With

@@ -263,6 +263,7 @@ exports[`Client should mount with channel tabs 1`] = `
       style={
         Object {
           "flexGrow": 1,
+          "marginBottom": 10,
           "overflowX": "hidden",
           "overflowY": "auto",
           "wordBreak": "break-word",
@@ -274,6 +275,7 @@ exports[`Client should mount with channel tabs 1`] = `
         style={
           Object {
             "flexGrow": 1,
+            "marginBottom": 10,
             "overflowX": "hidden",
             "overflowY": "auto",
             "wordBreak": "break-word",
@@ -283,16 +285,33 @@ exports[`Client should mount with channel tabs 1`] = `
     </ChatView>
     <form
       onSubmit={[Function]}
+      style={
+        Object {
+          "display": "flex",
+          "flexShrink": 0,
+          "height": 40,
+        }
+      }
     >
       <input
         onChange={[Function]}
         placeholder="Enter a message..."
+        style={
+          Object {
+            "padding": 10,
+          }
+        }
         type="text"
         value=""
       />
       <input
+        style={
+          Object {
+            "width": 200,
+          }
+        }
         type="submit"
-        value="Submit"
+        value="Send"
       />
     </form>
   </div>
@@ -393,6 +412,7 @@ ShallowWrapper {
         style={
             Object {
                 "flexGrow": 1,
+                "marginBottom": 10,
                 "overflowX": "hidden",
                 "overflowY": "auto",
                 "wordBreak": "break-word",
@@ -402,16 +422,33 @@ ShallowWrapper {
     />
     <form
         onSubmit={[Function]}
+        style={
+            Object {
+                "display": "flex",
+                "flexShrink": 0,
+                "height": 40,
+              }
+        }
     >
         <input
             onChange={[Function]}
             placeholder="Enter a message..."
+            style={
+                Object {
+                    "padding": 10,
+                  }
+            }
             type="text"
             value=""
         />
         <input
+            style={
+                Object {
+                    "width": 200,
+                  }
+            }
             type="submit"
-            value="Submit"
+            value="Send"
         />
     </form>
 </div>,
@@ -502,6 +539,7 @@ ShallowWrapper {
             style={
                   Object {
                         "flexGrow": 1,
+                        "marginBottom": 10,
                         "overflowX": "hidden",
                         "overflowY": "auto",
                         "wordBreak": "break-word",
@@ -511,16 +549,33 @@ ShallowWrapper {
       />
       <form
             onSubmit={[Function]}
+            style={
+                  Object {
+                        "display": "flex",
+                        "flexShrink": 0,
+                        "height": 40,
+                      }
+            }
       >
             <input
                   onChange={[Function]}
                   placeholder="Enter a message..."
+                  style={
+                        Object {
+                              "padding": 10,
+                            }
+                  }
                   type="text"
                   value=""
             />
             <input
+                  style={
+                        Object {
+                              "width": 200,
+                            }
+                  }
                   type="submit"
-                  value="Submit"
+                  value="Send"
             />
       </form>
 </div>,
@@ -679,6 +734,7 @@ ShallowWrapper {
                     style={
                               Object {
                                         "flexGrow": 1,
+                                        "marginBottom": 10,
                                         "overflowX": "hidden",
                                         "overflowY": "auto",
                                         "wordBreak": "break-word",
@@ -688,16 +744,33 @@ ShallowWrapper {
           />
           <form
                     onSubmit={[Function]}
+                    style={
+                              Object {
+                                        "display": "flex",
+                                        "flexShrink": 0,
+                                        "height": 40,
+                                      }
+                    }
           >
                     <input
                               onChange={[Function]}
                               placeholder="Enter a message..."
+                              style={
+                                        Object {
+                                                  "padding": 10,
+                                                }
+                              }
                               type="text"
                               value=""
                     />
                     <input
+                              style={
+                                        Object {
+                                                  "width": 200,
+                                                }
+                              }
                               type="submit"
-                              value="Submit"
+                              value="Send"
                     />
           </form>
 </div>,
@@ -788,6 +861,7 @@ ShallowWrapper {
                     style={
                               Object {
                                         "flexGrow": 1,
+                                        "marginBottom": 10,
                                         "overflowX": "hidden",
                                         "overflowY": "auto",
                                         "wordBreak": "break-word",
@@ -797,16 +871,33 @@ ShallowWrapper {
           />
           <form
                     onSubmit={[Function]}
+                    style={
+                              Object {
+                                        "display": "flex",
+                                        "flexShrink": 0,
+                                        "height": 40,
+                                      }
+                    }
           >
                     <input
                               onChange={[Function]}
                               placeholder="Enter a message..."
+                              style={
+                                        Object {
+                                                  "padding": 10,
+                                                }
+                              }
                               type="text"
                               value=""
                     />
                     <input
+                              style={
+                                        Object {
+                                                  "width": 200,
+                                                }
+                              }
                               type="submit"
-                              value="Submit"
+                              value="Send"
                     />
           </form>
 </div>,

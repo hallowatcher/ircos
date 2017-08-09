@@ -4,8 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "jest",
-    "start": "electron ."
+    "test": "npm run lint && jest",
+    "start": "electron .",
+    "lint": "tslint -p tslint.json"
   },
   "jest": {
     "transform": {
@@ -47,6 +48,8 @@
     "redux-mock-store": "^1.2.2",
     "source-map-loader": "^0.2.0",
     "ts-jest": "^20.0.8",
+    "tslint": "^5.6.0",
+    "tslint-react": "^3.2.0",
     "typescript": "^2.4.2"
   },
   "dependencies": {

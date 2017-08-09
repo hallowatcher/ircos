@@ -1,11 +1,11 @@
 
 import * as React from 'react';
 
-type Props = {
-  tabName: string,
-  tabClick: () => void,
-  closeTab: () => void,
-  isActive: boolean
+interface IProps {
+  tabName: string;
+  tabClick: (name: string) => void;
+  closeTab: (name: string) => void;
+  isActive: boolean;
 }
 
 const xStyle: React.CSSProperties = {
@@ -16,7 +16,7 @@ const xStyle: React.CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   fontWeight: 400
-}
+};
 
 const divStyle: React.CSSProperties = {
   padding: '0 0 0 10px',
@@ -31,20 +31,24 @@ const divStyle: React.CSSProperties = {
   transform: 'skew(-15deg)',
   boxSizing: 'border-box',
   WebkitUserSelect: 'none'
-}
+};
 
 const divStyleActive: React.CSSProperties = {
   ...divStyle,
   backgroundColor: 'rgba(255, 255, 255, 0.3)'
-}
+};
 
-export class Tab extends React.Component<Props, null> {
-  render() {
+export class Tab extends React.Component<IProps, null> {
+  public render() {
     return (
       <div style={this.props.isActive ? divStyleActive : divStyle}>
-        <div onClick={this.props.tabClick.bind(this, this.props.tabName)} style={ { transform: 'skew(15deg)' } }>{this.props.tabName}</div>
+        <div
+          onClick={this.props.tabClick.bind(this, this.props.tabName)}
+          style={{ transform: 'skew(15deg)' }}
+        >{this.props.tabName}
+        </div>
         <div onClick={this.props.closeTab.bind(this, this.props.tabName)} style={xStyle}>&times;</div>
       </div>
-    )
+    );
   }
 }

@@ -9,10 +9,12 @@
         "experimentalDecorators": true
     },
     "files": [
-        "./**/*"
+        "src/**/*",
+        "test/**/*"
     ],
     "include": [
-        "./**/*"
+        "src/**/*",
+        "test/**/*"
     ],
     "exclude": [
         "./node_modules/*"

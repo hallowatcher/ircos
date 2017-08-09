@@ -1,7 +1,7 @@
 
 import { Map } from 'immutable';
 
-export default function (state: Map<any, any>, action: any) {
+export default function(state: Map<any, any>, action: any) {
   switch (action.type) {
     case 'MAKE_CURRENT_CHANNEL':
       return makeCurrentChannel(state, action);
@@ -27,31 +27,34 @@ function leftChannel(state: Map<any, any>, action: any) {
 }
 
 function receivedMessage(state: Map<any, any>, action: any) {
-  if (state.get('name') !== null && action.payload.to.toLowerCase() === state.get('name').toLowerCase()) 
+  if (state.get('name') !== null && action.payload.to.toLowerCase() === state.get('name').toLowerCase()) {
     return state.updateIn(
       ['messages'],
-      messages => messages.push({name: action.payload.nick, text: action.payload.text, date: action.payload.date})
-    )
+      (messages) => messages.push({name: action.payload.nick, text: action.payload.text, date: action.payload.date})
+    );
+  }
 
   return state;
 }
 
 function receivedPm(state: Map<any, any>, action: any) {
-  if (action.payload.nick.toLowerCase() === state.get('name').toLowerCase()) 
+  if (action.payload.nick.toLowerCase() === state.get('name').toLowerCase()) {
     return state.updateIn(
       ['messages'],
-      messages => messages.push({name: action.payload.nick, text: action.payload.text, date: action.payload.date})
-    )
+      (messages) => messages.push({name: action.payload.nick, text: action.payload.text, date: action.payload.date})
+    );
+  }
 
   return state;
 }
 
 function sentMessage(state: Map<any, any>, action: any) {
-  if (action.payload.channel.toLowerCase() === state.get('name').toLowerCase()) 
+  if (action.payload.channel.toLowerCase() === state.get('name').toLowerCase()) {
     return state.updateIn(
       ['messages'],
-      messages => messages.push({name: action.payload.nick, text: action.payload.message, date: action.payload.date})
-    )
+      (messages) => messages.push({name: action.payload.nick, text: action.payload.message, date: action.payload.date})
+    );
+  }
 
   return state;
 }

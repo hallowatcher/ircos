@@ -547,6 +547,9 @@ ShallowWrapper {
         "context": Object {},
         "displayMessages": Array [],
         "displayMessagesAmount": 50,
+        "handleChangeMsg": [Function],
+        "handleSubmit": [Function],
+        "hideJoinModal": [Function],
         "props": Object {
           "channelLength": 5,
           "channels": Array [],
@@ -560,6 +563,7 @@ ShallowWrapper {
           "userId": 1,
         },
         "refs": Object {},
+        "showJoinModal": [Function],
         "state": Object {
           "msg": "",
           "showJoinModal": false,

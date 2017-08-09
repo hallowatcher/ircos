@@ -14,36 +14,40 @@ import { AddTab } from '../components/AddTab';
 import { ChatView } from '../components/ChatView';
 import { JoinModal } from './JoinModal';
 
-type StateProps = {
-  channels: any,
-  messages: any[],
-  currentChannel: string,
-  nick: string,
-  userId: number,
-  channelLength: number
+interface IStateProps {
+  channels: any;
+  messages: any[];
+  currentChannel: string;
+  nick: string;
+  userId: number;
+  channelLength: number;
 }
 
-type DispatchProps = {
-  makeCurrentChannel: (channel: string) => void,
-  sendMessage: (channel: string, message: string) => void,
-  closeChannel: (channel: string) => void ,
-  joinChannel: (channel: string) => void
+interface IDispatchProps {
+  makeCurrentChannel: (channel: string) => void;
+  sendMessage: (channel: string, message: string) => void;
+  closeChannel: (channel: string) => void;
+  joinChannel: (channel: string) => void;
 }
 
-let styles = {
+interface IStyles {
+  [key: string]: React.CSSProperties;
+}
+
+const styles: IStyles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
     height: '100%',
     overflow: 'hidden'
-  } as React.CSSProperties,
+  },
   topBar: {
     backgroundColor: '#FE4590',
     flexShrink: 0,
     display: 'flex',
     flexDirection: 'row'
-  } as React.CSSProperties,
+  },
   tabs: {
     flexGrow: 1,
     padding: '0 5px',
@@ -51,38 +55,41 @@ let styles = {
     overflowY: 'hidden',
     overflowX: 'auto',
     alignItems: 'flex-end'
-  } as React.CSSProperties,
+  },
   currentUser: {
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     display: 'flex',
     color: 'white'
-  } as React.CSSProperties,
+  },
   currentUserImageContainer: {
     height: '35px',
     width: '35px',
     backgroundColor: 'rgba(255, 255, 255, 0.8)'
-  } as React.CSSProperties,
+  },
   currentUserImage: {
     maxHeight: '100%'
-  } as React.CSSProperties,
+  },
   currentUserNick: {
     padding: 5,
     display: 'flex',
     alignItems: 'center'
-  } as React.CSSProperties,
+  },
   chat: {
     flexGrow: 1,
     overflowY: 'auto',
     overflowX: 'hidden',
     wordBreak: 'break-word'
-  } as React.CSSProperties,
+  },
   dummyDiv: {
     float: 'left',
     clear: 'both'
-  } as React.CSSProperties
-}
+  }
+};
 
-export class Client extends React.Component<StateProps & DispatchProps, any> {
+export class Client extends React.Component<IStateProps & IDispatchProps, any> {
+
+  private displayMessages = [];
+  private displayMessagesAmount: number = 50;
 
   constructor(props: any) {
     super(props);
@@ -90,40 +97,34 @@ export class Client extends React.Component<StateProps & DispatchProps, any> {
     this.state = {
       msg: '',
       showJoinModal: false
-    }
+    };
+
+    this.hideJoinModal = this.hideJoinModal.bind(this);
+    this.showJoinModal = this.showJoinModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeMsg = this.handleChangeMsg.bind(this);
   }
 
-  displayMessages = [];
-  displayMessagesAmount: number = 50
-
-  handleChangeMsg(event: any) {
-    this.setState({ msg: event.target.value });
-  }
-
-  handleSubmit(event: any) {
-    event.preventDefault();
-
-    this.props.sendMessage(this.props.currentChannel, this.state.msg);
-    this.setState({ msg: '' });
-  }
-
-  render() {
+  public render() {
 
     // Tabs
-    let channels = Object.keys(this.props.channels);
-    let channelMap = channels.map((channel, index) => 
+    const channels = Object.keys(this.props.channels);
+    const channelMap = channels.map((channel, index) =>
+    (
       <Tab
         key={index}
         tabName={channel}
-        tabClick={this.props.makeCurrentChannel.bind(this)}
-        closeTab={this.props.closeChannel.bind(this)}
+        tabClick={this.props.makeCurrentChannel}
+        closeTab={this.props.closeChannel}
         isActive={this.props.currentChannel === channel}
       />
+    )
     );
 
-    let userImage = (() => {
-      if (this.props.userId !== 0)
+    const userImage = (() => {
+      if (this.props.userId !== 0) {
         return <img style={styles.currentUserImage} src={`https://a.ppy.sh/${this.props.userId}_${Date.now()}.jpg`} />;
+      }
     })();
 
     return (
@@ -132,8 +133,8 @@ export class Client extends React.Component<StateProps & DispatchProps, any> {
         {/*Modals*/}
         <JoinModal
           isOpen={this.state.showJoinModal}
-          onClose={() => { this.setState({ showJoinModal: false }) }}
-          joinChannel={ this.props.joinChannel.bind(this) }
+          onClose={this.hideJoinModal}
+          joinChannel={this.props.joinChannel}
         />
 
         {/*Top bar*/}
@@ -142,7 +143,7 @@ export class Client extends React.Component<StateProps & DispatchProps, any> {
           {/*Tabs*/}
           <div style={styles.tabs}>
             {channelMap}
-            <AddTab clickAddTab={() => this.setState({ showJoinModal: true })} />
+            <AddTab clickAddTab={this.showJoinModal} />
           </div>
 
           {/*Current user*/}
@@ -161,13 +162,36 @@ export class Client extends React.Component<StateProps & DispatchProps, any> {
         />
 
         {/*Send message*/}
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type="text" placeholder="Enter a message..." value={this.state.msg} onChange={this.handleChangeMsg.bind(this)} />
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            placeholder="Enter a message..."
+            value={this.state.msg}
+            onChange={this.handleChangeMsg}
+          />
           <input type="submit" value="Submit" />
         </form>
-        
       </div>
-    )
+    );
+  }
+
+  private handleChangeMsg(event: any) {
+    this.setState({ msg: event.target.value });
+  }
+
+  private handleSubmit(event: any) {
+    event.preventDefault();
+
+    this.props.sendMessage(this.props.currentChannel, this.state.msg);
+    this.setState({ msg: '' });
+  }
+
+  private hideJoinModal() {
+    this.setState({ showJoinModal: false });
+  }
+
+  private showJoinModal() {
+    this.setState({ showJoinModal: true });
   }
 }
 
@@ -179,18 +203,18 @@ function stateToProps(state: any) {
     currentChannel: state.getIn(['channelCurrent', 'name']),
     nick: state.getIn(['userInfo', 'userName']),
     userId: state.getIn(['userInfo', 'userId']),
-    channelLength: state.getIn(['settings', 'channelLength'])    
-  }
+    channelLength: state.getIn(['settings', 'channelLength'])
+  };
 }
 
 /* istanbul ignore next */
 function dispatchToProps(dispatch: any) {
   return {
-    makeCurrentChannel: (channel: string) => { dispatch( makeCurrentChannel(channel) ) },
-    sendMessage: (channel: string, message: string) => { dispatch( sendMessage(channel, message) ) },
-    closeChannel: (channel: string) => { dispatch( leaveChannel(channel) ) },
-    joinChannel: (channel: string) => { dispatch( join(channel) ) }
-  }
+    makeCurrentChannel: (channel: string) => { dispatch(makeCurrentChannel(channel)); },
+    sendMessage: (channel: string, message: string) => { dispatch(sendMessage(channel, message)); },
+    closeChannel: (channel: string) => { dispatch(leaveChannel(channel)); },
+    joinChannel: (channel: string) => { dispatch(join(channel)); }
+  };
 }
 
 /* istanbul ignore next */

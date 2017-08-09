@@ -4,35 +4,36 @@
  * by hallowatcher
  */
 
-import { EventEmitter } from 'events'
+import { EventEmitter } from 'events';
 
 export class Client extends EventEmitter {
-  
-  username: string = null;
+
+  private username: string = null;
 
   constructor(server: string, user: string, options: any) {
-    super()
+    super();
 
     this.username = user;
   }
 
-  connect(retryCount: number, callback) {
-    if (this.username === 'error')
-      this.emit('error')
-    else
-      callback()
-  }
-
-  disconnect(param1, param2) {}
-
-  join(channel: string, callback) {
-    if (channel === '#error') {
-      this.emit('error')
+  public connect(retryCount: number, callback) {
+    if (this.username === 'error') {
+      this.emit('error');
     } else {
-      callback()
+      callback();
     }
   }
-  
-  say() {}
-  part() {}
+
+  public disconnect(param1, param2) { /* Stub */ }
+
+  public join(channel: string, callback) {
+    if (channel === '#error') {
+      this.emit('error');
+    } else {
+      callback();
+    }
+  }
+
+  public say() { /* Stub */ }
+  public part() { /* Stub */ }
 }

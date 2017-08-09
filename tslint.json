@@ -1,0 +1,14 @@
+{
+	"extends": ["tslint:latest", "tslint-react"],
+	"rules": {
+		"quotemark": ["single"],
+		"ordered-imports": [false],
+		"trailing-comma": [false],
+		"object-literal-sort-keys": [false],
+		"jsx-wrap-multiline": true,
+		"jsx-no-string-ref": false,
+		"only-arrow-functions": [
+			false
+		]
+	}
+}

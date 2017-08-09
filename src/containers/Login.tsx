@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { LoginForm } from '../components/LoginForm';
 import { createConnection } from '../actions/client';
 
-type StateProps = {
-  error: string
+interface IStateProps {
+  error: string;
 }
 
-type DispatchProps = {
-  createConnection: any
+interface IDispatchProps {
+  createConnection: (user: string, pass: string) => void;
 }
 
 const divStyle: React.CSSProperties = {
@@ -22,37 +22,38 @@ const divStyle: React.CSSProperties = {
   alignItems: 'center',
   justifyContent: 'center',
   alignContent: 'center'
-}
+};
+
 const divChild: React.CSSProperties = {
   backgroundColor: 'white',
   alignSelf: 'center',
   boxShadow: '0 0 4px rgba(0, 0, 0, 0.35)'
-}
+};
 
-export class Login extends React.Component<StateProps & DispatchProps, null> {
-  render() {
+export class Login extends React.Component<IStateProps & IDispatchProps, null> {
+  public render() {
     return (
       <div style={divStyle}>
         <div style={divChild}>
-          <LoginForm error={this.props.error} submitLogin={this.props.createConnection.bind(this)} />
+          <LoginForm error={this.props.error} submitLogin={this.props.createConnection} />
         </div>
       </div>
-    )
+    );
   }
 }
 
 /* istanbul ignore next */
-function stateToProps(state: any): StateProps {
+function stateToProps(state: any): IStateProps {
   return {
     error: state.getIn(['serverInfo', 'error'])
-  }
+  };
 }
 
 /* istanbul ignore next */
-function dispatchToProps(dispatch: any): DispatchProps {
+function dispatchToProps(dispatch: any): IDispatchProps {
    return {
-    createConnection: (user: string, pass: string) => { dispatch( createConnection(user, pass) ) }
-  }
+    createConnection: (user: string, pass: string) => { dispatch(createConnection(user, pass)); }
+  };
 }
 
 /* istanbul ignore next */

@@ -81,11 +81,20 @@ const styles: IStyles = {
     flexGrow: 1,
     overflowY: 'auto',
     overflowX: 'hidden',
-    wordBreak: 'break-word'
+    wordBreak: 'break-word',
+    marginBottom: 10
   },
   dummyDiv: {
     float: 'left',
     clear: 'both'
+  },
+  sendMessage: {
+    display: 'flex',
+    flexShrink: 0,
+    height: 40
+  },
+  sendMessageButton: {
+    width: 200
   }
 };
 
@@ -167,14 +176,15 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
         />
 
         {/*Send message*/}
-        <form onSubmit={this.handleSubmit}>
+        <form style={styles.sendMessage} onSubmit={this.handleSubmit}>
           <input
             type="text"
             placeholder="Enter a message..."
             value={this.state.msg}
             onChange={this.handleChangeMsg}
+            style={{ padding: 10 }}
           />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Send" style={styles.sendMessageButton} />
         </form>
       </div>
     );

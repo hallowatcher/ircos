@@ -1,12 +1,16 @@
 {
   "name": "ircos",
   "version": "0.0.1",
-  "description": "",
+  "description": "Welcome to ircos",
   "main": "main.js",
   "scripts": {
     "test": "npm run lint && jest",
     "start": "electron .",
-    "lint": "tslint -p tslint.json"
+    "lint": "tslint -p tslint.json",
+    "pack": "electron-builder --dir",
+    "build": "electron-builder",
+    "webpack": "webpack",
+    "webpack:watch": "webpack --watch"
   },
   "jest": {
     "transform": {
@@ -31,8 +35,21 @@
       "lcov"
     ]
   },
-  "author": "Uwe Wiemer",
+  "author": "Uwe Wiemer <hallowatcher@gmail.com> (http://hwchr.com/)",
   "license": "MIT",
+  "build": {
+    "appId": "hallowatcher.ircos",
+    "directories": {
+      "output": "build"
+    },
+    "win": {
+      "target": ["portable"]
+    },
+    "portable": {
+      "unicode": false,
+      "artifactName": "${productName}Portable.${version}.${ext}"
+    }
+  },
   "devDependencies": {
     "@types/enzyme": "^2.7.6",
     "@types/jest": "^19.2.2",
@@ -40,8 +57,11 @@
     "@types/redux-mock-store": "0.0.7",
     "awesome-typescript-loader": "^3.1.2",
     "electron": "^1.7.5",
+    "electron-builder": "^19.19.1",
     "enzyme": "^2.9.1",
     "enzyme-to-json": "^1.5.1",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.30.1",
     "jest": "^20.0.4",
     "mockdate": "^2.0.1",
     "react-test-renderer": "^15.6.1",
@@ -50,7 +70,8 @@
     "ts-jest": "^20.0.8",
     "tslint": "^5.6.0",
     "tslint-react": "^3.2.0",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.2"
   },
   "dependencies": {
     "@types/irc": "^0.3.32",

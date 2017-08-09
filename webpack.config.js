@@ -1,3 +1,5 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   entry: "./src/index.tsx",
   target: "electron-renderer",
@@ -5,6 +7,8 @@ module.exports = {
     filename: "bundle.js",
     path: __dirname + "/dist"
   },
+
+  plugins: [new HtmlWebpackPlugin({ template: 'src/index.html' })],
 
   // Enable sourcemaps for debugging webpack's output.
   devtool: "source-map",

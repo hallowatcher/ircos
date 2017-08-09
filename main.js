@@ -12,7 +12,7 @@ app.on('ready', function () {
 
   // Specify entry point
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'src/index.html'),
+    pathname: path.join(__dirname, 'dist/index.html'),
     protocol: 'file:',
     slashes: true
   }));

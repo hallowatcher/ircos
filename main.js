@@ -5,7 +5,17 @@ const url = require('url');
 
 let win = null;
 
+const {autoUpdater} = require('electron-updater');
+
+autoUpdater.on('update-downloaded', (info) => {
+  setTimeout(function() {
+    autoUpdater.quitAndInstall();  
+  }, 5000)
+});
+
 app.on('ready', function () {
+
+  autoUpdater.checkForUpdates();
 
   // Initialize the window to our specified dimensions
   win = new BrowserWindow({width: 1000, height: 600});

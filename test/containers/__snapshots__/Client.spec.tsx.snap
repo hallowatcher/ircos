@@ -15,6 +15,7 @@ exports[`Client should mount with channel tabs 1`] = `
   makeCurrentChannel={[Function]}
   messages={Array []}
   nick=""
+  openExternal={[Function]}
   sendMessage={[Function]}
   userId={1}
 >
@@ -267,6 +268,7 @@ exports[`Client should mount with channel tabs 1`] = `
           "wordBreak": "break-word",
         }
       }
+      userClicked={[Function]}
     >
       <div
         style={
@@ -396,6 +398,7 @@ ShallowWrapper {
                 "wordBreak": "break-word",
               }
         }
+        userClicked={[Function]}
     />
     <form
         onSubmit={[Function]}
@@ -504,6 +507,7 @@ ShallowWrapper {
                         "wordBreak": "break-word",
                       }
             }
+            userClicked={[Function]}
       />
       <form
             onSubmit={[Function]}
@@ -536,6 +540,7 @@ ShallowWrapper {
         makeCurrentChannel={[Function]}
         messages={Array []}
         nick=""
+        openExternal={[Function]}
         sendMessage={[Function]}
         userId={1}
 />,
@@ -559,6 +564,7 @@ ShallowWrapper {
           "makeCurrentChannel": [Function],
           "messages": Array [],
           "nick": "",
+          "openExternal": [Function],
           "sendMessage": [Function],
           "userId": 1,
         },
@@ -578,6 +584,7 @@ ShallowWrapper {
           "isMounted": [Function],
           "validateCallback": [Function],
         },
+        "userClicked": [Function],
       },
       "_mountOrder": 1,
       "_pendingCallbacks": null,
@@ -677,6 +684,7 @@ ShallowWrapper {
                                         "wordBreak": "break-word",
                                       }
                     }
+                    userClicked={[Function]}
           />
           <form
                     onSubmit={[Function]}
@@ -785,6 +793,7 @@ ShallowWrapper {
                                         "wordBreak": "break-word",
                                       }
                     }
+                    userClicked={[Function]}
           />
           <form
                     onSubmit={[Function]}
@@ -821,6 +830,7 @@ ShallowWrapper {
     makeCurrentChannel={[Function]}
     messages={Array []}
     nick=""
+    openExternal={[Function]}
     sendMessage={[Function]}
     userId={1}
 />,

@@ -23,9 +23,11 @@ ShallowWrapper {
         ] 
     </span>
     <span
+        onClick={[Function]}
         style={
             Object {
                 "color": "#BF3434",
+                "cursor": "pointer",
                 "fontWeight": 800,
               }
         }
@@ -55,9 +57,11 @@ ShallowWrapper {
             ] 
       </span>
       <span
+            onClick={[Function]}
             style={
                   Object {
                         "color": "#BF3434",
+                        "cursor": "pointer",
                         "fontWeight": 800,
                       }
             }
@@ -82,6 +86,7 @@ ShallowWrapper {
         message="bar456"
         sentDate={"2017-01-01T00:00:00.000Z"}
         user="foo123"
+        userClicked={[Function]}
         userType={1}
 />,
       "_debugID": 3,
@@ -94,6 +99,7 @@ ShallowWrapper {
           "message": "bar456",
           "sentDate": "2017-01-01T00:00:00.000Z",
           "user": "foo123",
+          "userClicked": [Function],
           "userType": 1,
         },
         "refs": Object {},
@@ -108,6 +114,7 @@ ShallowWrapper {
           "isMounted": [Function],
           "validateCallback": [Function],
         },
+        "userClicked": [Function],
       },
       "_mountOrder": 2,
       "_pendingCallbacks": null,
@@ -131,9 +138,11 @@ ShallowWrapper {
                     ] 
           </span>
           <span
+                    onClick={[Function]}
                     style={
                               Object {
                                         "color": "#BF3434",
+                                        "cursor": "pointer",
                                         "fontWeight": 800,
                                       }
                     }
@@ -163,9 +172,11 @@ ShallowWrapper {
                     ] 
           </span>
           <span
+                    onClick={[Function]}
                     style={
                               Object {
                                         "color": "#BF3434",
+                                        "cursor": "pointer",
                                         "fontWeight": 800,
                                       }
                     }
@@ -194,6 +205,7 @@ ShallowWrapper {
     message="bar456"
     sentDate={"2017-01-01T00:00:00.000Z"}
     user="foo123"
+    userClicked={[Function]}
     userType={1}
 />,
 }
@@ -222,9 +234,11 @@ ShallowWrapper {
         ] 
     </span>
     <span
+        onClick={[Function]}
         style={
             Object {
                 "color": "#ffc561",
+                "cursor": "pointer",
                 "fontWeight": 800,
               }
         }
@@ -254,9 +268,11 @@ ShallowWrapper {
             ] 
       </span>
       <span
+            onClick={[Function]}
             style={
                   Object {
                         "color": "#ffc561",
+                        "cursor": "pointer",
                         "fontWeight": 800,
                       }
             }
@@ -281,6 +297,7 @@ ShallowWrapper {
         message="bar456"
         sentDate={"2017-01-01T00:00:00.000Z"}
         user="foo123"
+        userClicked={[Function]}
 />,
       "_debugID": 1,
       "_hostContainerInfo": null,
@@ -292,6 +309,7 @@ ShallowWrapper {
           "message": "bar456",
           "sentDate": "2017-01-01T00:00:00.000Z",
           "user": "foo123",
+          "userClicked": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -305,6 +323,7 @@ ShallowWrapper {
           "isMounted": [Function],
           "validateCallback": [Function],
         },
+        "userClicked": [Function],
       },
       "_mountOrder": 1,
       "_pendingCallbacks": null,
@@ -328,9 +347,11 @@ ShallowWrapper {
                     ] 
           </span>
           <span
+                    onClick={[Function]}
                     style={
                               Object {
                                         "color": "#ffc561",
+                                        "cursor": "pointer",
                                         "fontWeight": 800,
                                       }
                     }
@@ -360,9 +381,11 @@ ShallowWrapper {
                     ] 
           </span>
           <span
+                    onClick={[Function]}
                     style={
                               Object {
                                         "color": "#ffc561",
+                                        "cursor": "pointer",
                                         "fontWeight": 800,
                                       }
                     }
@@ -391,6 +414,7 @@ ShallowWrapper {
     message="bar456"
     sentDate={"2017-01-01T00:00:00.000Z"}
     user="foo123"
+    userClicked={[Function]}
 />,
 }
 `;
@@ -418,9 +442,11 @@ ShallowWrapper {
         ] 
     </span>
     <span
+        onClick={[Function]}
         style={
             Object {
                 "color": "#CECECE",
+                "cursor": "pointer",
                 "fontWeight": 800,
               }
         }
@@ -450,9 +476,11 @@ ShallowWrapper {
             ] 
       </span>
       <span
+            onClick={[Function]}
             style={
                   Object {
                         "color": "#CECECE",
+                        "cursor": "pointer",
                         "fontWeight": 800,
                       }
             }
@@ -477,6 +505,7 @@ ShallowWrapper {
         message="bar456"
         sentDate={"2017-01-01T00:00:00.000Z"}
         user="foo123"
+        userClicked={[Function]}
         userType={2}
 />,
       "_debugID": 5,
@@ -489,6 +518,7 @@ ShallowWrapper {
           "message": "bar456",
           "sentDate": "2017-01-01T00:00:00.000Z",
           "user": "foo123",
+          "userClicked": [Function],
           "userType": 2,
         },
         "refs": Object {},
@@ -503,6 +533,7 @@ ShallowWrapper {
           "isMounted": [Function],
           "validateCallback": [Function],
         },
+        "userClicked": [Function],
       },
       "_mountOrder": 3,
       "_pendingCallbacks": null,
@@ -526,9 +557,11 @@ ShallowWrapper {
                     ] 
           </span>
           <span
+                    onClick={[Function]}
                     style={
                               Object {
                                         "color": "#CECECE",
+                                        "cursor": "pointer",
                                         "fontWeight": 800,
                                       }
                     }
@@ -558,9 +591,11 @@ ShallowWrapper {
                     ] 
           </span>
           <span
+                    onClick={[Function]}
                     style={
                               Object {
                                         "color": "#CECECE",
+                                        "cursor": "pointer",
                                         "fontWeight": 800,
                                       }
                     }
@@ -589,6 +624,7 @@ ShallowWrapper {
     message="bar456"
     sentDate={"2017-01-01T00:00:00.000Z"}
     user="foo123"
+    userClicked={[Function]}
     userType={2}
 />,
 }
@@ -636,6 +672,7 @@ ShallowWrapper {
         message="bar456"
         sentDate={"2017-01-01T00:00:00.000Z"}
         user="foo123"
+        userClicked={[Function]}
         userType={3}
 />,
       "_debugID": 7,
@@ -648,6 +685,7 @@ ShallowWrapper {
           "message": "bar456",
           "sentDate": "2017-01-01T00:00:00.000Z",
           "user": "foo123",
+          "userClicked": [Function],
           "userType": 3,
         },
         "refs": Object {},
@@ -662,6 +700,7 @@ ShallowWrapper {
           "isMounted": [Function],
           "validateCallback": [Function],
         },
+        "userClicked": [Function],
       },
       "_mountOrder": 4,
       "_pendingCallbacks": null,
@@ -708,6 +747,7 @@ ShallowWrapper {
     message="bar456"
     sentDate={"2017-01-01T00:00:00.000Z"}
     user="foo123"
+    userClicked={[Function]}
     userType={3}
 />,
 }

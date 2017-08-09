@@ -7,12 +7,14 @@ import toJson from 'enzyme-to-json';
 
 describe('ChatView', function() {
   let component: enzyme.ReactWrapper<any, any>;
+  const userClicked = jest.fn();
 
   beforeEach(function() {
     component = enzyme.mount(
       <ChatView
         messages={[]}
         selfNick='nick'
+        userClicked={userClicked}
       />
     );
   });

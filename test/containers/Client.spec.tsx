@@ -9,6 +9,7 @@ describe('Client', function() {
   let component: enzyme.ShallowWrapper<any, any>;
   let datenow;
   const sendMessage = jest.fn();
+  const userClicked = jest.fn();
 
   beforeEach(function() {
     datenow = 1262304000000;
@@ -28,6 +29,7 @@ describe('Client', function() {
         sendMessage={sendMessage}
         userId={1}
         messages={[]}
+        openExternal={userClicked}
       />
     );
   });
@@ -53,6 +55,7 @@ describe('Client', function() {
         sendMessage={jest.fn()}
         userId={1}
         messages={[]}
+        openExternal={jest.fn()}
       />
     );
   });
@@ -70,6 +73,7 @@ describe('Client', function() {
         sendMessage={jest.fn()}
         userId={0}
         messages={[]}
+        openExternal={jest.fn()}
       />
     );
   });
@@ -87,6 +91,7 @@ describe('Client', function() {
         sendMessage={jest.fn()}
         userId={1}
         messages={[]}
+        openExternal={jest.fn()}
       />
     );
 
@@ -118,5 +123,12 @@ describe('Client', function() {
       .simulate('submit', { preventDefault() { /**/ } });
     expect(sendMessage).toHaveBeenCalledWith('', 'changed');
     expect(component.state('msg')).toEqual('');
+  });
+
+  it('should call user clicked with osu URL', function() {
+    const props = component.find('ChatView').first().props() as any;
+    props.userClicked('user');
+
+    expect(userClicked).toHaveBeenCalledWith('http://osu.ppy.sh/u/user');
   });
 });

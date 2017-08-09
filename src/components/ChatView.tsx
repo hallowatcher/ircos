@@ -7,6 +7,7 @@ import * as moment from 'moment';
 interface IProps {
   messages: any[];
   selfNick: string;
+  userClicked: (user: string) => void;
   style?: React.CSSProperties;
 }
 
@@ -70,6 +71,7 @@ export class ChatView extends React.Component<IProps, any> {
             user={msg.name}
             userType={userType}
             sentDate={moment(msg.date)}
+            userClicked={this.props.userClicked}
           />
         );
       });

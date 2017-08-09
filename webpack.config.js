@@ -1,6 +1,6 @@
 module.exports = {
   entry: "./src/index.tsx",
-  target: "node",
+  target: "electron-renderer",
   output: {
     filename: "bundle.js",
     path: __dirname + "/dist"

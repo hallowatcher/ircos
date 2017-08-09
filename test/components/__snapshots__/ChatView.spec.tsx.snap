@@ -12,12 +12,14 @@ exports[`ChatView should not scroll to bottom 1`] = `
     ]
   }
   selfNick="nick"
+  userClicked={[Function]}
 >
   <div>
     <Message
       message="text"
       sentDate={"2017-01-01T00:00:00.000Z"}
       user="nick"
+      userClicked={[Function]}
       userType={2}
     >
       <div>
@@ -35,9 +37,11 @@ exports[`ChatView should not scroll to bottom 1`] = `
           ] 
         </span>
         <span
+          onClick={[Function]}
           style={
             Object {
               "color": "#CECECE",
+              "cursor": "pointer",
               "fontWeight": 800,
             }
           }
@@ -60,6 +64,7 @@ exports[`ChatView should render 1`] = `
 <ChatView
   messages={Array []}
   selfNick="nick"
+  userClicked={[Function]}
 >
   <div />
 </ChatView>
@@ -77,12 +82,14 @@ exports[`ChatView should render message as self 1`] = `
     ]
   }
   selfNick="nick"
+  userClicked={[Function]}
 >
   <div>
     <Message
       message="text"
       sentDate={"2017-01-01T00:00:00.000Z"}
       user="nick"
+      userClicked={[Function]}
       userType={2}
     >
       <div>
@@ -100,9 +107,11 @@ exports[`ChatView should render message as self 1`] = `
           ] 
         </span>
         <span
+          onClick={[Function]}
           style={
             Object {
               "color": "#CECECE",
+              "cursor": "pointer",
               "fontWeight": 800,
             }
           }
@@ -133,12 +142,14 @@ exports[`ChatView should render message as system 1`] = `
     ]
   }
   selfNick="nick"
+  userClicked={[Function]}
 >
   <div>
     <Message
       message="text"
       sentDate={"2017-01-01T00:00:00.000Z"}
       user="System"
+      userClicked={[Function]}
       userType={3}
     >
       <div>
@@ -169,12 +180,14 @@ exports[`ChatView should render messages 1`] = `
     ]
   }
   selfNick="nick"
+  userClicked={[Function]}
 >
   <div>
     <Message
       message="text"
       sentDate={"2017-01-01T00:00:00.000Z"}
       user="name"
+      userClicked={[Function]}
       userType={0}
     >
       <div>
@@ -192,9 +205,11 @@ exports[`ChatView should render messages 1`] = `
           ] 
         </span>
         <span
+          onClick={[Function]}
           style={
             Object {
               "color": "#ffc561",
+              "cursor": "pointer",
               "fontWeight": 800,
             }
           }

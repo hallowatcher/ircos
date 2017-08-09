@@ -9,6 +9,8 @@ import {
   join
 } from '../actions/client';
 
+import { openExternal } from '../actions/electron';
+
 import { Tab } from '../components/Tab';
 import { AddTab } from '../components/AddTab';
 import { ChatView } from '../components/ChatView';
@@ -28,6 +30,7 @@ interface IDispatchProps {
   sendMessage: (channel: string, message: string) => void;
   closeChannel: (channel: string) => void;
   joinChannel: (channel: string) => void;
+  openExternal: (url: string) => void;
 }
 
 interface IStyles {
@@ -103,6 +106,7 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
     this.showJoinModal = this.showJoinModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeMsg = this.handleChangeMsg.bind(this);
+    this.userClicked = this.userClicked.bind(this);
   }
 
   public render() {
@@ -159,6 +163,7 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
           style={styles.chat}
           messages={this.props.messages}
           selfNick={this.props.nick}
+          userClicked={this.userClicked}
         />
 
         {/*Send message*/}
@@ -193,6 +198,10 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
   private showJoinModal() {
     this.setState({ showJoinModal: true });
   }
+
+  private userClicked(user: string) {
+    this.props.openExternal(`http://osu.ppy.sh/u/${user}`);
+  }
 }
 
 /* istanbul ignore next */
@@ -213,7 +222,8 @@ function dispatchToProps(dispatch: any) {
     makeCurrentChannel: (channel: string) => { dispatch(makeCurrentChannel(channel)); },
     sendMessage: (channel: string, message: string) => { dispatch(sendMessage(channel, message)); },
     closeChannel: (channel: string) => { dispatch(leaveChannel(channel)); },
-    joinChannel: (channel: string) => { dispatch(join(channel)); }
+    joinChannel: (channel: string) => { dispatch(join(channel)); },
+    openExternal: (url: string) => { dispatch(openExternal(url)); }
   };
 }
 

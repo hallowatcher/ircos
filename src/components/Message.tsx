@@ -12,6 +12,7 @@ interface IProps {
   user: string;
   message: string;
   sentDate: moment.Moment;
+  userClicked: (user: string) => void;
   userType?: UserType;
 }
 
@@ -25,15 +26,18 @@ const styles: IStyles = {
   users: {
     regular: {
       color: '#ffc561',
-      fontWeight: 800
+      fontWeight: 800,
+      cursor: 'pointer'
     },
     moderator: {
       color: '#BF3434',
-      fontWeight: 800
+      fontWeight: 800,
+      cursor: 'pointer'
     },
     self: {
       color: '#CECECE',
-      fontWeight: 800
+      fontWeight: 800,
+      cursor: 'pointer'
     }
   },
   message: {},
@@ -46,6 +50,7 @@ const styles: IStyles = {
 };
 
 export class Message extends React.Component<IProps, any> {
+
   public render() {
 
     let userStyle = styles.users.regular;
@@ -67,7 +72,7 @@ export class Message extends React.Component<IProps, any> {
     let message = (
       <div>
         <span style={styles.time}>[{hours}:{minutes}] </span>
-        <span style={userStyle}>{this.props.user}: </span>
+        <span style={userStyle} onClick={this.userClicked}>{this.props.user}: </span>
         <span style={styles.message}>{this.props.message}</span>
       </div>
     );
@@ -81,5 +86,9 @@ export class Message extends React.Component<IProps, any> {
     }
 
     return message;
+  }
+
+  private userClicked = () => {
+    this.props.userClicked(this.props.user);
   }
 }

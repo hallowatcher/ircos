@@ -8,15 +8,15 @@ import channelCurrent from './channelCurrent';
 import userInfo from './userInfo';
 import settings from './settings';
 
-export interface State {
-  serverInfo,
-  userInfo,
-  settings,
-  channelDb,
-  channelCurrent
+export interface IState {
+  serverInfo;
+  userInfo;
+  settings;
+  channelDb;
+  channelCurrent;
 }
 
-export const initialState: Immutable.Map<any, any> = Immutable.fromJS(<State>{
+const initialStateJS: IState = {
   serverInfo: {
     connecting: false,
     connected: false,
@@ -27,7 +27,7 @@ export const initialState: Immutable.Map<any, any> = Immutable.fromJS(<State>{
     userId: 0
   },
   settings: {
-    channelLength: 10 
+    channelLength: 10
   },
   channelDb: {},
   channelCurrent: {
@@ -36,7 +36,9 @@ export const initialState: Immutable.Map<any, any> = Immutable.fromJS(<State>{
     currentLength: 10,
     messages: []
   }
-});
+};
+
+export const initialState: Immutable.Map<any, any> = Immutable.fromJS(initialStateJS);
 
 /* istanbul ignore next */
 export default combineReducers({

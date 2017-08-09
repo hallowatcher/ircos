@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run lint && jest",
     "start": "electron .",
-    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+    "lint": "tslint -p tslint.json"
   },
   "jest": {
     "transform": {

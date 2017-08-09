@@ -6,6 +6,9 @@
 		"trailing-comma": [false],
 		"object-literal-sort-keys": [false],
 		"jsx-wrap-multiline": true,
-		"jsx-no-string-ref": false
+		"jsx-no-string-ref": false,
+		"only-arrow-functions": [
+			false
+		]
 	}
 }

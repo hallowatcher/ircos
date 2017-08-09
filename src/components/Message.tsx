@@ -8,53 +8,57 @@ export enum UserType {
   system
 }
 
-type Props = {
-  user: string,
-  message: string,
-  sentDate: moment.Moment,
-  userType?: UserType
+interface IProps {
+  user: string;
+  message: string;
+  sentDate: moment.Moment;
+  userType?: UserType;
 }
 
-const styles = {
+interface IStyles {
+  [key: string]: {
+    [key: string]: React.CSSProperties
+  } | React.CSSProperties;
+}
+
+const styles: IStyles = {
   users: {
     regular: {
       color: '#ffc561',
       fontWeight: 800
-    } as React.CSSProperties,
+    },
     moderator: {
       color: '#BF3434',
       fontWeight: 800
-    } as React.CSSProperties,
+    },
     self: {
       color: '#CECECE',
       fontWeight: 800
-    } as React.CSSProperties
+    }
   },
-  message: {
-
-  } as React.CSSProperties,
+  message: {},
   systemMessage: {
     color: '#ADADAD'
-  } as React.CSSProperties,
+  },
   time: {
     color: '#b2b2b2'
-  } as React.CSSProperties
-}
+  }
+};
 
-export class Message extends React.Component<Props, any> {
-  render() {
+export class Message extends React.Component<IProps, any> {
+  public render() {
 
     let userStyle = styles.users.regular;
     switch (this.props.userType) {
       case UserType.moderator:
-        userStyle = styles.users.moderator
+        userStyle = styles.users.moderator;
         break;
       case UserType.self:
-        userStyle = styles.users.self
+        userStyle = styles.users.self;
         break;
     }
 
-    let momentDate = moment(this.props.sentDate);
+    const momentDate = moment(this.props.sentDate);
 
     // Build date
     const hours = ('0' + momentDate.hours()).slice(-2);
@@ -62,18 +66,19 @@ export class Message extends React.Component<Props, any> {
 
     let message = (
       <div>
-        <span style={styles.time}>[{hours}:{minutes}] </span> 
-        <span style={userStyle}>{this.props.user}: </span> 
+        <span style={styles.time}>[{hours}:{minutes}] </span>
+        <span style={userStyle}>{this.props.user}: </span>
         <span style={styles.message}>{this.props.message}</span>
       </div>
     );
 
-    if (this.props.userType === UserType.system)
+    if (this.props.userType === UserType.system) {
       message = (
         <div>
           <span style={styles.systemMessage}>{this.props.message}</span>
         </div>
       );
+    }
 
     return message;
   }

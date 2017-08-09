@@ -103,6 +103,8 @@ ShallowWrapper {
       "_instance": JoinModal {
         "_reactInternalInstance": [Circular],
         "context": Object {},
+        "handleChange": [Function],
+        "joinChannel": [Function],
         "props": Object {
           "isOpen": false,
           "joinChannel": [Function],

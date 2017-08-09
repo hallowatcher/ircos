@@ -136,6 +136,8 @@ ShallowWrapper {
       "_instance": LoginForm {
         "_reactInternalInstance": [Circular],
         "context": Object {},
+        "handleSubmit": [Function],
+        "inputChanged": [Function],
         "props": Object {
           "error": null,
           "submitLogin": [Function],
@@ -448,6 +450,8 @@ ShallowWrapper {
       "_instance": LoginForm {
         "_reactInternalInstance": [Circular],
         "context": Object {},
+        "handleSubmit": [Function],
+        "inputChanged": [Function],
         "props": Object {
           "error": "Error",
           "submitLogin": [Function],

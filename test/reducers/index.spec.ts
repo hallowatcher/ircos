@@ -4,7 +4,7 @@ import { initialState } from '../../src/reducers/index';
 describe('Initial state', () => {
   it('should be exporting the right values', () => {
 
-    let expectedState = {
+    const expectedState = {
       serverInfo: {
         connecting: false,
         connected: false,
@@ -15,7 +15,7 @@ describe('Initial state', () => {
         userId: 0
       },
       settings: {
-        channelLength: 10 
+        channelLength: 10
       },
       channelDb: {},
       channelCurrent: {
@@ -24,8 +24,8 @@ describe('Initial state', () => {
         currentLength: 10,
         messages: []
       }
-    }
+    };
 
     expect(initialState.toJS()).toEqual(expectedState);
-  })
-})
+  });
+});

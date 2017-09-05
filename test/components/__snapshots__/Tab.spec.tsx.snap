@@ -1,145 +1,183 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddTab should render 1`] = `
-<DragDropContext(DragSource(Tab))
+<DragDropContext(DropTarget(DragSource(Tab)))
   closeTab={[Function]}
+  index={1}
   isActive={true}
   tabClick={[Function]}
+  tabMove={[Function]}
   tabName="foo123"
 >
-  <DragSource(Tab)
+  <DropTarget(DragSource(Tab))
     closeTab={[Function]}
+    index={1}
     isActive={true}
     tabClick={[Function]}
+    tabMove={[Function]}
     tabName="foo123"
   >
-    <Tab
+    <DragSource(Tab)
       closeTab={[Function]}
-      connectDragSource={[Function]}
+      connectDropTarget={[Function]}
+      index={1}
       isActive={true}
-      isDragging={false}
+      isOver={false}
       tabClick={[Function]}
+      tabMove={[Function]}
       tabName="foo123"
     >
-      <div
-        onMouseDown={[Function]}
-        style={
-          Object {
-            "WebkitUserSelect": "none",
-            "alignItems": "center",
-            "backgroundColor": "rgba(255, 255, 255, 0.3)",
-            "boxSizing": "border-box",
-            "color": "white",
-            "cursor": "pointer",
-            "display": "flex",
-            "fontWeight": 800,
-            "height": 25,
-            "margin": "0 2px",
-            "padding": "0 0 0 10px",
-            "transform": "skew(-15deg)",
-          }
-        }
+      <Tab
+        closeTab={[Function]}
+        connectDragSource={[Function]}
+        connectDropTarget={[Function]}
+        index={1}
+        isActive={true}
+        isDragging={false}
+        isOver={false}
+        tabClick={[Function]}
+        tabMove={[Function]}
+        tabName="foo123"
       >
         <div
-          onClick={[Function]}
+          onMouseDown={[Function]}
           style={
             Object {
-              "transform": "skew(15deg)",
-            }
-          }
-        >
-          foo123
-        </div>
-        <div
-          onClick={[Function]}
-          style={
-            Object {
+              "WebkitUserSelect": "none",
               "alignItems": "center",
-              "backgroundColor": "rgba(255, 255, 255, 0.15)",
+              "backgroundColor": "rgba(255, 255, 255, 0.3)",
+              "boxSizing": "border-box",
+              "color": "white",
+              "cursor": "pointer",
               "display": "flex",
-              "fontWeight": 400,
-              "height": "100%",
-              "margin": "0 0 0 10px",
-              "padding": "0 10px",
+              "fontWeight": 800,
+              "height": 25,
+              "margin": "0 2px",
+              "padding": "0 0 0 10px",
+              "transform": "skew(-15deg)",
             }
           }
         >
-          ×
+          <div
+            onClick={[Function]}
+            style={
+              Object {
+                "transform": "skew(15deg)",
+              }
+            }
+          >
+            foo123
+          </div>
+          <div
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                "display": "flex",
+                "fontWeight": 400,
+                "height": "100%",
+                "margin": "0 0 0 10px",
+                "padding": "0 10px",
+              }
+            }
+          >
+            ×
+          </div>
         </div>
-      </div>
-    </Tab>
-  </DragSource(Tab)>
-</DragDropContext(DragSource(Tab))>
+      </Tab>
+    </DragSource(Tab)>
+  </DropTarget(DragSource(Tab))>
+</DragDropContext(DropTarget(DragSource(Tab)))>
 `;
 
 exports[`AddTab should render with inactive class 1`] = `
-<DragDropContext(DragSource(Tab))
+<DragDropContext(DropTarget(DragSource(Tab)))
   closeTab={[Function]}
+  index={1}
   isActive={false}
   tabClick={[Function]}
+  tabMove={[Function]}
   tabName="foo123"
 >
-  <DragSource(Tab)
+  <DropTarget(DragSource(Tab))
     closeTab={[Function]}
+    index={1}
     isActive={false}
     tabClick={[Function]}
+    tabMove={[Function]}
     tabName="foo123"
   >
-    <Tab
+    <DragSource(Tab)
       closeTab={[Function]}
-      connectDragSource={[Function]}
+      connectDropTarget={[Function]}
+      index={1}
       isActive={false}
-      isDragging={false}
+      isOver={false}
       tabClick={[Function]}
+      tabMove={[Function]}
       tabName="foo123"
     >
-      <div
-        onMouseDown={[Function]}
-        style={
-          Object {
-            "WebkitUserSelect": "none",
-            "alignItems": "center",
-            "backgroundColor": "rgba(255, 255, 255, 0.1)",
-            "boxSizing": "border-box",
-            "color": "white",
-            "cursor": "pointer",
-            "display": "flex",
-            "fontWeight": 800,
-            "height": 25,
-            "margin": "0 2px",
-            "padding": "0 0 0 10px",
-            "transform": "skew(-15deg)",
-          }
-        }
+      <Tab
+        closeTab={[Function]}
+        connectDragSource={[Function]}
+        connectDropTarget={[Function]}
+        index={1}
+        isActive={false}
+        isDragging={false}
+        isOver={false}
+        tabClick={[Function]}
+        tabMove={[Function]}
+        tabName="foo123"
       >
         <div
-          onClick={[Function]}
+          onMouseDown={[Function]}
           style={
             Object {
-              "transform": "skew(15deg)",
-            }
-          }
-        >
-          foo123
-        </div>
-        <div
-          onClick={[Function]}
-          style={
-            Object {
+              "WebkitUserSelect": "none",
               "alignItems": "center",
-              "backgroundColor": "rgba(255, 255, 255, 0.15)",
+              "backgroundColor": "rgba(255, 255, 255, 0.1)",
+              "boxSizing": "border-box",
+              "color": "white",
+              "cursor": "pointer",
               "display": "flex",
-              "fontWeight": 400,
-              "height": "100%",
-              "margin": "0 0 0 10px",
-              "padding": "0 10px",
+              "fontWeight": 800,
+              "height": 25,
+              "margin": "0 2px",
+              "padding": "0 0 0 10px",
+              "transform": "skew(-15deg)",
             }
           }
         >
-          ×
+          <div
+            onClick={[Function]}
+            style={
+              Object {
+                "transform": "skew(15deg)",
+              }
+            }
+          >
+            foo123
+          </div>
+          <div
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                "display": "flex",
+                "fontWeight": 400,
+                "height": "100%",
+                "margin": "0 0 0 10px",
+                "padding": "0 10px",
+              }
+            }
+          >
+            ×
+          </div>
         </div>
-      </div>
-    </Tab>
-  </DragSource(Tab)>
-</DragDropContext(DragSource(Tab))>
+      </Tab>
+    </DragSource(Tab)>
+  </DropTarget(DragSource(Tab))>
+</DragDropContext(DropTarget(DragSource(Tab)))>
 `;

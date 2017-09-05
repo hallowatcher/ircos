@@ -54,7 +54,7 @@ describe('Client', function() {
       <DnDClient
         nick={''}
         channelLength={5}
-        channels={[]}
+        tabs={[]}
         closeChannel={jest.fn()}
         currentChannel={''}
         joinChannel={jest.fn()}
@@ -72,7 +72,7 @@ describe('Client', function() {
       <DnDClient
         nick={''}
         channelLength={5}
-        channels={[]}
+        tabs={[]}
         closeChannel={jest.fn()}
         currentChannel={''}
         joinChannel={jest.fn()}
@@ -89,8 +89,8 @@ describe('Client', function() {
     const mountedComponent = enzyme.mount(
       <DnDClient
         nick={''}
+        tabs={['one', 'two']}
         channelLength={5}
-        channels={['one', 'two']}
         closeChannel={jest.fn()}
         currentChannel={''}
         joinChannel={jest.fn()}

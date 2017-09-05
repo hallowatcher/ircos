@@ -114,6 +114,16 @@ describe('Client actions', function() {
     });
   });
 
+  it('should move a tab', function() {
+    const expectedActions = [
+      { type: 'TAB_MOVE', payload: { from: 0, to: 1 } }
+    ];
+
+    store.dispatch(actions.tabMove(0, 1));
+    expect(store.getActions()).toEqual(expectedActions);
+
+  });
+
   it('should open a private chat', function() {
 
     const user = 'someoneElse';
@@ -272,7 +282,7 @@ describe('Client actions', function() {
       channelDb: {
         player: {}
       },
-      tabs: [],
+      tabs: ['player'],
       channelCurrent: null,
       serverInfo: null,
       settings: null

@@ -232,7 +232,7 @@ function dispatchToProps(dispatch: any) {
     makeCurrentChannel: (channel: string) => { dispatch(makeCurrentChannel(channel)); },
     sendMessage: (channel: string, message: string) => { dispatch(sendMessage(channel, message)); },
     closeChannel: (channel: string) => { dispatch(leaveChannel(channel)); },
-    joinChannel: (channel: string) => { dispatch(join(channel)); },
+    joinChannel: (channel: string) => { dispatch(join(channel)); dispatch(makeCurrentChannel(channel)); },
     openExternal: (url: string) => { dispatch(openExternal(url)); }
   };
 }

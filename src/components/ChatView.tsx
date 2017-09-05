@@ -24,8 +24,8 @@ export class ChatView extends React.Component<IProps, any> {
     if (!this.historyChanged || !this.refs.container) { return; }
 
     const container = this.refs.container as HTMLDivElement;
-    const scrollPos = container.scrollTop;
-    const scrollBottom = container.scrollHeight - container.clientHeight;
+    const scrollPos = Math.ceil(container.scrollTop);
+    const scrollBottom = Math.ceil(container.scrollHeight - container.clientHeight);
     this.scrollAtBottom = (scrollBottom <= 0) || (scrollPos === scrollBottom);
   }
 

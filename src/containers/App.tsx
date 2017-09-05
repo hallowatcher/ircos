@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
+// Drag n Drop
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
 import Login from './Login';
 import Client from './Client';
 
@@ -27,4 +31,4 @@ function stateToProps(state: any): IStateProps {
 }
 
 /* istanbul ignore next */
-export default connect<IStateProps, any, any>(stateToProps)(App);
+export default connect<IStateProps, any, any>(stateToProps)(DragDropContext(HTML5Backend)(App));

@@ -6,18 +6,20 @@ import {
   makeCurrentChannel,
   sendMessage,
   leaveChannel,
-  join
+  join,
+  tabMove
 } from '../actions/client';
 
 import { openExternal } from '../actions/electron';
 
-import { Tab } from '../components/Tab';
+import Tab from '../components/Tab';
 import { AddTab } from '../components/AddTab';
 import { ChatView } from '../components/ChatView';
 import { JoinModal } from './JoinModal';
 
 interface IStateProps {
   channels: any;
+  tabs: any[];
   messages: any[];
   currentChannel: string;
   nick: string;
@@ -27,6 +29,7 @@ interface IStateProps {
 
 interface IDispatchProps {
   makeCurrentChannel: (channel: string) => void;
+  tabMove: (from: number, to: number) => void;
   sendMessage: (channel: string, message: string) => void;
   closeChannel: (channel: string) => void;
   joinChannel: (channel: string) => void;
@@ -121,13 +124,15 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
   public render() {
 
     // Tabs
-    const channels = Object.keys(this.props.channels);
+    const channels = this.props.tabs;
     const channelMap = channels.map((channel, index) =>
     (
       <Tab
         key={index}
+        index={index}
         tabName={channel}
         tabClick={this.props.makeCurrentChannel}
+        tabMove={this.props.tabMove}
         closeTab={this.props.closeChannel}
         isActive={this.props.currentChannel === channel}
       />
@@ -217,6 +222,7 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
 /* istanbul ignore next */
 function stateToProps(state: any) {
   return {
+    tabs: state.get('tabs').toJS(),
     channels: state.get('channelDb').toJS(),
     messages: state.getIn(['channelCurrent', 'messages']).toJS(),
     currentChannel: state.getIn(['channelCurrent', 'name']),
@@ -230,6 +236,7 @@ function stateToProps(state: any) {
 function dispatchToProps(dispatch: any) {
   return {
     makeCurrentChannel: (channel: string) => { dispatch(makeCurrentChannel(channel)); },
+    tabMove: (from: number, to: number) => { dispatch(tabMove(from , to)); },
     sendMessage: (channel: string, message: string) => { dispatch(sendMessage(channel, message)); },
     closeChannel: (channel: string) => { dispatch(leaveChannel(channel)); },
     joinChannel: (channel: string) => { dispatch(join(channel)); dispatch(makeCurrentChannel(channel)); },

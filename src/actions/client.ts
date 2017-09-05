@@ -115,6 +115,10 @@ export function openChannel(channel: string) {
   return { type: 'OPEN_CHANNEL', payload: channel };
 }
 
+export function tabMove(from: number, to: number) {
+  return { type: 'TAB_MOVE', payload: { from, to } };
+}
+
 export function makeCurrentChannel(channel: string) {
   return (dispatch, getState) => {
     return new Promise((resolve) => {
@@ -144,7 +148,7 @@ export function sendMessage(channel: string, message: string) {
 export function leaveChannel(channel: string) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return new Promise((resolve, reject) => {
-      const channels = Object.keys(getState().get('channelDb').toJS());
+      const channels = getState().get('tabs').toJS();
       const currentChannel = getState().getIn(['channelCurrent', 'name']);
       let nextChannel = currentChannel || '';
 

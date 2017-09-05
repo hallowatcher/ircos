@@ -36,6 +36,7 @@ describe('Client actions', function() {
         '#osu': {},
         '#english': {}
       },
+      tabs: ['#osu', '#english'],
       serverInfo: null,
       settings: null
     };
@@ -214,6 +215,7 @@ describe('Client actions', function() {
         '#german': {},
         '#english': {}
       },
+      tabs: ['#osu', '#german', '#english'],
       serverInfo: null,
       settings: null
     };
@@ -241,6 +243,7 @@ describe('Client actions', function() {
       channelDb: {
         '#osu': {}
       },
+      tabs: ['#osu'],
       channelCurrent: null,
       serverInfo: null,
       settings: null
@@ -269,6 +272,7 @@ describe('Client actions', function() {
       channelDb: {
         player: {}
       },
+      tabs: [],
       channelCurrent: null,
       serverInfo: null,
       settings: null

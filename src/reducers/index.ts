@@ -7,6 +7,7 @@ import channelDb from './channelDb';
 import channelCurrent from './channelCurrent';
 import userInfo from './userInfo';
 import settings from './settings';
+import tabs from './tabs';
 
 export interface IState {
   serverInfo;
@@ -14,6 +15,7 @@ export interface IState {
   settings;
   channelDb;
   channelCurrent;
+  tabs;
 }
 
 const initialStateJS: IState = {
@@ -29,6 +31,7 @@ const initialStateJS: IState = {
   settings: {
     channelLength: 10
   },
+  tabs: [],
   channelDb: {},
   channelCurrent: {
     name: null,
@@ -46,5 +49,6 @@ export default combineReducers({
   userInfo,
   settings,
   channelDb,
-  channelCurrent
+  channelCurrent,
+  tabs
 });

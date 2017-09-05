@@ -9,6 +9,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
+    onMouseDown={[Function]}
     style={
         Object {
             "WebkitUserSelect": "none",
@@ -55,6 +56,7 @@ ShallowWrapper {
 </div>,
   "nodes": Array [
     <div
+      onMouseDown={[Function]}
       style={
             Object {
                   "WebkitUserSelect": "none",
@@ -118,6 +120,8 @@ ShallowWrapper {
       "_instance": Tab {
         "_reactInternalInstance": [Circular],
         "context": Object {},
+        "handleClick": [Function],
+        "handleMiddleClick": [Function],
         "props": Object {
           "closeTab": [Function],
           "isActive": true,
@@ -145,6 +149,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
+          onMouseDown={[Function]}
           style={
                     Object {
                               "WebkitUserSelect": "none",
@@ -191,6 +196,7 @@ ShallowWrapper {
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
+          onMouseDown={[Function]}
           style={
                     Object {
                               "WebkitUserSelect": "none",
@@ -264,6 +270,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
+    onMouseDown={[Function]}
     style={
         Object {
             "WebkitUserSelect": "none",
@@ -310,6 +317,7 @@ ShallowWrapper {
 </div>,
   "nodes": Array [
     <div
+      onMouseDown={[Function]}
       style={
             Object {
                   "WebkitUserSelect": "none",
@@ -373,6 +381,8 @@ ShallowWrapper {
       "_instance": Tab {
         "_reactInternalInstance": [Circular],
         "context": Object {},
+        "handleClick": [Function],
+        "handleMiddleClick": [Function],
         "props": Object {
           "closeTab": [Function],
           "isActive": false,
@@ -400,6 +410,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
+          onMouseDown={[Function]}
           style={
                     Object {
                               "WebkitUserSelect": "none",
@@ -446,6 +457,7 @@ ShallowWrapper {
 </div>,
         "_debugID": 8,
         "_renderedOutput": <div
+          onMouseDown={[Function]}
           style={
                     Object {
                               "WebkitUserSelect": "none",

@@ -88,6 +88,7 @@ exports[`Client should mount with channel tabs 1`] = `
           tabName="0"
         >
           <div
+            onMouseDown={[Function]}
             style={
               Object {
                 "WebkitUserSelect": "none",
@@ -140,6 +141,7 @@ exports[`Client should mount with channel tabs 1`] = `
           tabName="1"
         >
           <div
+            onMouseDown={[Function]}
             style={
               Object {
                 "WebkitUserSelect": "none",

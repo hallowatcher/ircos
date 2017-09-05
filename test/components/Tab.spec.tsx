@@ -56,4 +56,14 @@ describe('AddTab', function() {
     component.find('div > div').first().simulate('click', { preventDefault });
     expect(tabClick).toHaveBeenCalled();
   });
+
+  it('should close tab on middle click handler', function() {
+    component.find('div').first().simulate('mousedown', { preventDefault, nativeEvent: { which: 2 } });
+    expect(closeTab).toHaveBeenCalled();
+  });
+
+  it('should not close tab', function() {
+    component.find('div').first().simulate('mousedown', { preventDefault, nativeEvent: { which: 1 } });
+    expect(closeTab).toHaveBeenCalledTimes(0);
+  });
 });

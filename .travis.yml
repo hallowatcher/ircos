@@ -6,4 +6,4 @@ node_js:
 script:
   - yarn global add codecov
 after_script:
-  - codecov
+  - codecov^

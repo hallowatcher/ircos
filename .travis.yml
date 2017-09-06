@@ -3,8 +3,7 @@ sudo: false
 
 node_js:
   - "7"
-install:
+before_install:
   - npm install -g codecov
-  - npm install
 after_script:
   - codecov

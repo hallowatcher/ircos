@@ -3,6 +3,7 @@ sudo: false
 
 node_js:
   - "7"
-after_script:
+after_install:
   - yarn global codecov
+after_script:
   - codecov

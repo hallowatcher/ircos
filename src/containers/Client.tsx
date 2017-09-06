@@ -14,6 +14,7 @@ import { openExternal } from '../actions/electron';
 
 import Tab from '../components/Tab';
 import { AddTab } from '../components/AddTab';
+import { TabBar } from '../components/TabBar';
 import { ChatView } from '../components/ChatView';
 import { JoinModal } from './JoinModal';
 
@@ -49,7 +50,9 @@ const styles: IStyles = {
     overflow: 'hidden'
   },
   topBar: {
-    backgroundColor: '#FE4590',
+    backgroundImage: 'url(../src/assets/images/bg-light.png)',
+    backgroundColor: 'rgba(198, 18, 125, 1)',
+    backgroundBlendMode: 'multiply',
     flexShrink: 0,
     display: 'flex',
     flexDirection: 'row'
@@ -122,23 +125,6 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
   }
 
   public render() {
-
-    // Tabs
-    const channels = this.props.tabs;
-    const channelMap = channels.map((channel, index) =>
-    (
-      <Tab
-        key={index}
-        index={index}
-        tabName={channel}
-        tabClick={this.props.makeCurrentChannel}
-        tabMove={this.props.tabMove}
-        closeTab={this.props.closeChannel}
-        isActive={this.props.currentChannel === channel}
-      />
-    )
-    );
-
     const userImage = (() => {
       if (this.props.userId !== 0) {
         return <img style={styles.currentUserImage} src={`https://a.ppy.sh/${this.props.userId}_${Date.now()}.jpg`} />;
@@ -159,10 +145,14 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
         <div style={styles.topBar}>
 
           {/*Tabs*/}
-          <div style={styles.tabs}>
-            {channelMap}
-            <AddTab clickAddTab={this.showJoinModal} />
-          </div>
+          <TabBar
+            tabAdd={this.showJoinModal}
+            tabClick={this.props.makeCurrentChannel}
+            tabClose={this.props.closeChannel}
+            tabMove={this.props.tabMove}
+            tabs={this.props.tabs}
+            currentChannel={this.props.currentChannel}
+          />
 
           {/*Current user*/}
           <div style={styles.currentUser}>

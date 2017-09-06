@@ -33,8 +33,8 @@ describe('Client actions', function() {
         messages: []
       },
       channelDb: {
-        '#osu': {},
-        '#english': {}
+        '#osu': { messages: [] },
+        '#english': { messages: [] }
       },
       tabs: ['#osu', '#english'],
       serverInfo: null,
@@ -79,7 +79,7 @@ describe('Client actions', function() {
         to: '#english',
         date: new Date(datenow)
       }},
-      { type: 'MAKE_CURRENT_CHANNEL', payload: { messages: undefined, name: '#osu' } },
+      { type: 'MAKE_CURRENT_CHANNEL', payload: { messages: [], name: '#osu' } },
       { type: 'SELF_INFO_FETCHED', payload: { userInfo: { userName: nick } } }
     ];
 
@@ -200,7 +200,7 @@ describe('Client actions', function() {
 
   it('should change to correct channel when leaving', function() {
     const channel = '#osu';
-    const nextChannel = { name: '#english', messages: undefined };
+    const nextChannel = { name: '#english', messages: [] };
     const expectedActions = [
       { type: 'LEFT_CHANNEL', payload: { channel, nextChannel } }
     ];
@@ -221,9 +221,9 @@ describe('Client actions', function() {
         messages: []
       },
       channelDb: {
-        '#osu': {},
-        '#german': {},
-        '#english': {}
+        '#osu': { messages: [] },
+        '#german': { messages: [] },
+        '#english': { messages: [] }
       },
       tabs: ['#osu', '#german', '#english'],
       serverInfo: null,
@@ -234,7 +234,7 @@ describe('Client actions', function() {
     store = mockStore(initialState);
 
     const channel = '#english';
-    const nextChannel = { name: '#german', messages: undefined };
+    const nextChannel = { name: '#german', messages: [] };
     const expectedActions = [
       { type: 'LEFT_CHANNEL', payload: { channel, nextChannel } }
     ];

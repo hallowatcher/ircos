@@ -18,7 +18,7 @@ describe('Current channel reducer', () => {
 
   it('should change active channel', () => {
     const initialState = Immutable.fromJS({ name: null, messages: null });
-    const expectedState = { name: 'someChannel', messages: [] };
+    const expectedState = { name: 'somechannel', messages: [] };
     const actualState = channelCurrentReducer(initialState, {
       type: 'MAKE_CURRENT_CHANNEL',
       payload: {
@@ -32,7 +32,7 @@ describe('Current channel reducer', () => {
 
   it('should leave channel and join next', () => {
     const initialState = Immutable.fromJS({ name: null, messages: null });
-    const expectedState = { name: 'someChannel', messages: [] };
+    const expectedState = { name: 'somechannel', messages: [] };
     const actualState = channelCurrentReducer(initialState, {
       type: 'LEFT_CHANNEL',
       payload: {

@@ -105,12 +105,6 @@ describe('Client', function() {
     expect(toJson(mountedComponent)).toMatchSnapshot();
   });
 
-  it('should open join modal', function() {
-    const props = component.find('AddTab').first().props() as any;
-    props.clickAddTab();
-    expect(component.state('showJoinModal')).toEqual(true);
-  });
-
   it('should close join modal', function() {
     const props = component.find('JoinModal').first().props() as any;
     props.onClose();

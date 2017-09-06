@@ -15,7 +15,6 @@ const divStyle: React.CSSProperties = {
   backgroundColor: 'rgb(241, 196, 15)',
   fontWeight: 800,
   color: 'white',
-  transform: 'skew(-15deg)',
   boxSizing: 'border-box',
   WebkitUserSelect: 'none'
 };
@@ -23,9 +22,7 @@ const divStyle: React.CSSProperties = {
 export class AddTab extends React.Component<IProps, any> {
   public render() {
     return (
-      <div style={divStyle} onClick={this.props.clickAddTab}>
-        <span style={{ transform: 'skew(15deg)' }}>+</span>
-      </div>
+      <div style={divStyle} onClick={this.props.clickAddTab}>+</div>
     );
   }
 }

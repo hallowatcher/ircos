@@ -101,6 +101,7 @@
     "react-dnd": "^2.4.0",
     "react-dnd-html5-backend": "^2.4.1",
     "react-dom": "^15.6.1",
+    "react-flip-move": "^2.9.15",
     "react-modal": "^2.2.2",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",

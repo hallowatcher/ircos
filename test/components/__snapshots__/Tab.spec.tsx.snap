@@ -54,17 +54,11 @@ exports[`AddTab should render 1`] = `
               "height": 25,
               "margin": "0 2px",
               "padding": "0 0 0 10px",
-              "transform": "skew(-15deg)",
             }
           }
         >
           <div
             onClick={[Function]}
-            style={
-              Object {
-                "transform": "skew(15deg)",
-              }
-            }
           >
             foo123
           </div>
@@ -136,7 +130,7 @@ exports[`AddTab should render with inactive class 1`] = `
             Object {
               "WebkitUserSelect": "none",
               "alignItems": "center",
-              "backgroundColor": "rgba(255, 255, 255, 0.1)",
+              "backgroundColor": "rgba(255, 255, 255, 0.15)",
               "boxSizing": "border-box",
               "color": "white",
               "cursor": "pointer",
@@ -145,17 +139,11 @@ exports[`AddTab should render with inactive class 1`] = `
               "height": 25,
               "margin": "0 2px",
               "padding": "0 0 0 10px",
-              "transform": "skew(-15deg)",
             }
           }
         >
           <div
             onClick={[Function]}
-            style={
-              Object {
-                "transform": "skew(15deg)",
-              }
-            }
           >
             foo123
           </div>

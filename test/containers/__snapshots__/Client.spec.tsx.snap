@@ -80,211 +80,281 @@ exports[`Client should mount with channel tabs 1`] = `
       <div
         style={
           Object {
-            "backgroundColor": "#FE4590",
+            "backgroundBlendMode": "multiply",
+            "backgroundColor": "rgba(198, 18, 125, 1)",
+            "backgroundImage": "url(../src/assets/images/bg-light.png)",
             "display": "flex",
             "flexDirection": "row",
             "flexShrink": 0,
           }
         }
       >
-        <div
-          style={
-            Object {
-              "alignItems": "flex-end",
-              "display": "flex",
-              "flexGrow": 1,
-              "overflowX": "auto",
-              "overflowY": "hidden",
-              "padding": "0 5px",
-            }
+        <TabBar
+          currentChannel=""
+          tabAdd={[Function]}
+          tabClick={[Function]}
+          tabClose={[Function]}
+          tabs={
+            Array [
+              "one",
+              "two",
+            ]
           }
         >
-          <DropTarget(DragSource(Tab))
-            closeTab={[Function]}
-            index={0}
-            isActive={false}
-            tabClick={[Function]}
-            tabName="one"
+          <FlipMovePropConverter
+            delay={0}
+            disableAllAnimations={false}
+            duration={125}
+            easing="ease-out"
+            enterAnimation="elevator"
+            getPosition={[Function]}
+            leaveAnimation="elevator"
+            maintainContainerHeight={false}
+            staggerDelayBy={0}
+            staggerDurationBy={0}
+            style={
+              Object {
+                "alignItems": "flex-end",
+                "display": "flex",
+                "flexGrow": 1,
+                "overflowX": "auto",
+                "overflowY": "hidden",
+                "padding": "0 5px",
+              }
+            }
+            typeName="div"
+            verticalAlignment="top"
           >
-            <DragSource(Tab)
-              closeTab={[Function]}
-              connectDropTarget={[Function]}
-              index={0}
-              isActive={false}
-              isOver={false}
-              tabClick={[Function]}
-              tabName="one"
-            >
-              <Tab
-                closeTab={[Function]}
-                connectDragSource={[Function]}
-                connectDropTarget={[Function]}
-                index={0}
-                isActive={false}
-                isDragging={false}
-                isOver={false}
-                tabClick={[Function]}
-                tabName="one"
-              >
-                <div
-                  onMouseDown={[Function]}
-                  style={
-                    Object {
-                      "WebkitUserSelect": "none",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255, 255, 255, 0.1)",
-                      "boxSizing": "border-box",
-                      "color": "white",
-                      "cursor": "pointer",
-                      "display": "flex",
-                      "fontWeight": 800,
-                      "height": 25,
-                      "margin": "0 2px",
-                      "padding": "0 0 0 10px",
-                      "transform": "skew(-15deg)",
-                    }
-                  }
-                >
-                  <div
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "transform": "skew(15deg)",
-                      }
-                    }
-                  >
-                    one
-                  </div>
-                  <div
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "backgroundColor": "rgba(255, 255, 255, 0.15)",
-                        "display": "flex",
-                        "fontWeight": 400,
-                        "height": "100%",
-                        "margin": "0 0 0 10px",
-                        "padding": "0 10px",
-                      }
-                    }
-                  >
-                    ×
-                  </div>
-                </div>
-              </Tab>
-            </DragSource(Tab)>
-          </DropTarget(DragSource(Tab))>
-          <DropTarget(DragSource(Tab))
-            closeTab={[Function]}
-            index={1}
-            isActive={false}
-            tabClick={[Function]}
-            tabName="two"
-          >
-            <DragSource(Tab)
-              closeTab={[Function]}
-              connectDropTarget={[Function]}
-              index={1}
-              isActive={false}
-              isOver={false}
-              tabClick={[Function]}
-              tabName="two"
-            >
-              <Tab
-                closeTab={[Function]}
-                connectDragSource={[Function]}
-                connectDropTarget={[Function]}
-                index={1}
-                isActive={false}
-                isDragging={false}
-                isOver={false}
-                tabClick={[Function]}
-                tabName="two"
-              >
-                <div
-                  onMouseDown={[Function]}
-                  style={
-                    Object {
-                      "WebkitUserSelect": "none",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255, 255, 255, 0.1)",
-                      "boxSizing": "border-box",
-                      "color": "white",
-                      "cursor": "pointer",
-                      "display": "flex",
-                      "fontWeight": 800,
-                      "height": 25,
-                      "margin": "0 2px",
-                      "padding": "0 0 0 10px",
-                      "transform": "skew(-15deg)",
-                    }
-                  }
-                >
-                  <div
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "transform": "skew(15deg)",
-                      }
-                    }
-                  >
-                    two
-                  </div>
-                  <div
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "backgroundColor": "rgba(255, 255, 255, 0.15)",
-                        "display": "flex",
-                        "fontWeight": 400,
-                        "height": "100%",
-                        "margin": "0 0 0 10px",
-                        "padding": "0 10px",
-                      }
-                    }
-                  >
-                    ×
-                  </div>
-                </div>
-              </Tab>
-            </DragSource(Tab)>
-          </DropTarget(DragSource(Tab))>
-          <AddTab
-            clickAddTab={[Function]}
-          >
-            <div
-              onClick={[Function]}
-              style={
+            <FlipMove
+              delay={0}
+              delegated={
                 Object {
-                  "WebkitUserSelect": "none",
-                  "alignItems": "center",
-                  "backgroundColor": "rgb(241, 196, 15)",
-                  "boxSizing": "border-box",
-                  "color": "white",
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "fontWeight": 800,
-                  "height": 25,
-                  "margin": "0 2px",
-                  "padding": "10px",
-                  "transform": "skew(-15deg)",
+                  "style": Object {
+                    "alignItems": "flex-end",
+                    "display": "flex",
+                    "flexGrow": 1,
+                    "overflowX": "auto",
+                    "overflowY": "hidden",
+                    "padding": "0 5px",
+                    "position": "relative",
+                  },
                 }
               }
+              disableAllAnimations={false}
+              duration={125}
+              easing="ease-out"
+              enterAnimation={
+                Object {
+                  "from": Object {
+                    "opacity": "0",
+                    "transform": "scale(0)",
+                  },
+                  "to": Object {
+                    "opacity": "",
+                    "transform": "",
+                  },
+                }
+              }
+              getPosition={[Function]}
+              leaveAnimation={
+                Object {
+                  "from": Object {
+                    "opacity": "1",
+                    "transform": "scale(1)",
+                  },
+                  "to": Object {
+                    "opacity": "0",
+                    "transform": "scale(0)",
+                  },
+                }
+              }
+              maintainContainerHeight={false}
+              staggerDelayBy={0}
+              staggerDurationBy={0}
+              typeName="div"
+              verticalAlignment="top"
             >
-              <span
+              <div
                 style={
                   Object {
-                    "transform": "skew(15deg)",
+                    "alignItems": "flex-end",
+                    "display": "flex",
+                    "flexGrow": 1,
+                    "overflowX": "auto",
+                    "overflowY": "hidden",
+                    "padding": "0 5px",
+                    "position": "relative",
                   }
                 }
               >
-                +
-              </span>
-            </div>
-          </AddTab>
-        </div>
+                <DropTarget(DragSource(Tab))
+                  closeTab={[Function]}
+                  index={0}
+                  isActive={false}
+                  tabClick={[Function]}
+                  tabName="one"
+                >
+                  <DragSource(Tab)
+                    closeTab={[Function]}
+                    connectDropTarget={[Function]}
+                    index={0}
+                    isActive={false}
+                    isOver={false}
+                    tabClick={[Function]}
+                    tabName="one"
+                  >
+                    <Tab
+                      closeTab={[Function]}
+                      connectDragSource={[Function]}
+                      connectDropTarget={[Function]}
+                      index={0}
+                      isActive={false}
+                      isDragging={false}
+                      isOver={false}
+                      tabClick={[Function]}
+                      tabName="one"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        style={
+                          Object {
+                            "WebkitUserSelect": "none",
+                            "alignItems": "center",
+                            "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                            "boxSizing": "border-box",
+                            "color": "white",
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "fontWeight": 800,
+                            "height": 25,
+                            "margin": "0 2px",
+                            "padding": "0 0 0 10px",
+                          }
+                        }
+                      >
+                        <div
+                          onClick={[Function]}
+                        >
+                          one
+                        </div>
+                        <div
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                              "display": "flex",
+                              "fontWeight": 400,
+                              "height": "100%",
+                              "margin": "0 0 0 10px",
+                              "padding": "0 10px",
+                            }
+                          }
+                        >
+                          ×
+                        </div>
+                      </div>
+                    </Tab>
+                  </DragSource(Tab)>
+                </DropTarget(DragSource(Tab))>
+                <DropTarget(DragSource(Tab))
+                  closeTab={[Function]}
+                  index={1}
+                  isActive={false}
+                  tabClick={[Function]}
+                  tabName="two"
+                >
+                  <DragSource(Tab)
+                    closeTab={[Function]}
+                    connectDropTarget={[Function]}
+                    index={1}
+                    isActive={false}
+                    isOver={false}
+                    tabClick={[Function]}
+                    tabName="two"
+                  >
+                    <Tab
+                      closeTab={[Function]}
+                      connectDragSource={[Function]}
+                      connectDropTarget={[Function]}
+                      index={1}
+                      isActive={false}
+                      isDragging={false}
+                      isOver={false}
+                      tabClick={[Function]}
+                      tabName="two"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        style={
+                          Object {
+                            "WebkitUserSelect": "none",
+                            "alignItems": "center",
+                            "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                            "boxSizing": "border-box",
+                            "color": "white",
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "fontWeight": 800,
+                            "height": 25,
+                            "margin": "0 2px",
+                            "padding": "0 0 0 10px",
+                          }
+                        }
+                      >
+                        <div
+                          onClick={[Function]}
+                        >
+                          two
+                        </div>
+                        <div
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                              "display": "flex",
+                              "fontWeight": 400,
+                              "height": "100%",
+                              "margin": "0 0 0 10px",
+                              "padding": "0 10px",
+                            }
+                          }
+                        >
+                          ×
+                        </div>
+                      </div>
+                    </Tab>
+                  </DragSource(Tab)>
+                </DropTarget(DragSource(Tab))>
+                <AddTab
+                  clickAddTab={[Function]}
+                >
+                  <div
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "WebkitUserSelect": "none",
+                        "alignItems": "center",
+                        "backgroundColor": "rgb(241, 196, 15)",
+                        "boxSizing": "border-box",
+                        "color": "white",
+                        "cursor": "pointer",
+                        "display": "flex",
+                        "fontWeight": 800,
+                        "height": 25,
+                        "margin": "0 2px",
+                        "padding": "10px",
+                      }
+                    }
+                  >
+                    +
+                  </div>
+                </AddTab>
+              </div>
+            </FlipMove>
+          </FlipMovePropConverter>
+        </TabBar>
         <div
           style={
             Object {
@@ -412,29 +482,23 @@ ShallowWrapper {
     <div
         style={
             Object {
-                "backgroundColor": "#FE4590",
+                "backgroundBlendMode": "multiply",
+                "backgroundColor": "rgba(198, 18, 125, 1)",
+                "backgroundImage": "url(../src/assets/images/bg-light.png)",
                 "display": "flex",
                 "flexDirection": "row",
                 "flexShrink": 0,
               }
         }
     >
-        <div
-            style={
-                Object {
-                    "alignItems": "flex-end",
-                    "display": "flex",
-                    "flexGrow": 1,
-                    "overflowX": "auto",
-                    "overflowY": "hidden",
-                    "padding": "0 5px",
-                  }
-            }
-        >
-            <AddTab
-                clickAddTab={[Function]}
-            />
-        </div>
+        <TabBar
+            currentChannel=""
+            tabAdd={[Function]}
+            tabClick={[Function]}
+            tabClose={[Function]}
+            tabMove={[Function]}
+            tabs={Array []}
+        />
         <div
             style={
                 Object {
@@ -539,29 +603,23 @@ ShallowWrapper {
       <div
             style={
                   Object {
-                        "backgroundColor": "#FE4590",
+                        "backgroundBlendMode": "multiply",
+                        "backgroundColor": "rgba(198, 18, 125, 1)",
+                        "backgroundImage": "url(../src/assets/images/bg-light.png)",
                         "display": "flex",
                         "flexDirection": "row",
                         "flexShrink": 0,
                       }
             }
       >
-            <div
-                  style={
-                        Object {
-                              "alignItems": "flex-end",
-                              "display": "flex",
-                              "flexGrow": 1,
-                              "overflowX": "auto",
-                              "overflowY": "hidden",
-                              "padding": "0 5px",
-                            }
-                  }
-            >
-                  <AddTab
-                        clickAddTab={[Function]}
-                  />
-            </div>
+            <TabBar
+                  currentChannel=""
+                  tabAdd={[Function]}
+                  tabClick={[Function]}
+                  tabClose={[Function]}
+                  tabMove={[Function]}
+                  tabs={Array []}
+            />
             <div
                   style={
                         Object {
@@ -738,29 +796,23 @@ ShallowWrapper {
           <div
                     style={
                               Object {
-                                        "backgroundColor": "#FE4590",
+                                        "backgroundBlendMode": "multiply",
+                                        "backgroundColor": "rgba(198, 18, 125, 1)",
+                                        "backgroundImage": "url(../src/assets/images/bg-light.png)",
                                         "display": "flex",
                                         "flexDirection": "row",
                                         "flexShrink": 0,
                                       }
                     }
           >
-                    <div
-                              style={
-                                        Object {
-                                                  "alignItems": "flex-end",
-                                                  "display": "flex",
-                                                  "flexGrow": 1,
-                                                  "overflowX": "auto",
-                                                  "overflowY": "hidden",
-                                                  "padding": "0 5px",
-                                                }
-                              }
-                    >
-                              <AddTab
-                                        clickAddTab={[Function]}
-                              />
-                    </div>
+                    <TabBar
+                              currentChannel=""
+                              tabAdd={[Function]}
+                              tabClick={[Function]}
+                              tabClose={[Function]}
+                              tabMove={[Function]}
+                              tabs={Array []}
+                    />
                     <div
                               style={
                                         Object {
@@ -865,29 +917,23 @@ ShallowWrapper {
           <div
                     style={
                               Object {
-                                        "backgroundColor": "#FE4590",
+                                        "backgroundBlendMode": "multiply",
+                                        "backgroundColor": "rgba(198, 18, 125, 1)",
+                                        "backgroundImage": "url(../src/assets/images/bg-light.png)",
                                         "display": "flex",
                                         "flexDirection": "row",
                                         "flexShrink": 0,
                                       }
                     }
           >
-                    <div
-                              style={
-                                        Object {
-                                                  "alignItems": "flex-end",
-                                                  "display": "flex",
-                                                  "flexGrow": 1,
-                                                  "overflowX": "auto",
-                                                  "overflowY": "hidden",
-                                                  "padding": "0 5px",
-                                                }
-                              }
-                    >
-                              <AddTab
-                                        clickAddTab={[Function]}
-                              />
-                    </div>
+                    <TabBar
+                              currentChannel=""
+                              tabAdd={[Function]}
+                              tabClick={[Function]}
+                              tabClose={[Function]}
+                              tabMove={[Function]}
+                              tabs={Array []}
+                    />
                     <div
                               style={
                                         Object {

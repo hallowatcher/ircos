@@ -1,5 +1,5 @@
 
-import { Map } from 'immutable';
+import { Map, fromJS } from 'immutable';
 
 export default function(state: Map<any, any>, action: any) {
   switch (action.type) {
@@ -19,11 +19,13 @@ export default function(state: Map<any, any>, action: any) {
 }
 
 function makeCurrentChannel(state: Map<any, any>, action: any) {
-  return state.set('name', action.payload.name).set('messages', action.payload.messages);
+  return state.set('name', action.payload.name.toLowerCase()).set('messages', fromJS(action.payload.messages));
 }
 
 function leftChannel(state: Map<any, any>, action: any) {
-  return state.set('name', action.payload.nextChannel.name).set('messages', action.payload.nextChannel.messages);
+  return state
+    .set('name', action.payload.nextChannel.name.toLowerCase())
+    .set('messages', fromJS(action.payload.nextChannel.messages));
 }
 
 function receivedMessage(state: Map<any, any>, action: any) {

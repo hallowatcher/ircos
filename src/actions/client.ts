@@ -1,6 +1,6 @@
 
 import * as Irc from 'irc';
-import { Map } from 'immutable';
+import { Map, fromJS } from 'immutable';
 import axios from 'axios';
 
 let client: Irc.Client = null;
@@ -124,7 +124,10 @@ export function makeCurrentChannel(channel: string) {
     return new Promise((resolve) => {
       dispatch({
         type: 'MAKE_CURRENT_CHANNEL',
-        payload: { name: channel, messages: getState().getIn(['channelDb', channel, 'messages']) }
+        payload: {
+          name: channel.toLowerCase(),
+          messages: getState().getIn(['channelDb', channel.toLowerCase(), 'messages']).toJS()
+        }
       });
 
       resolve();
@@ -161,6 +164,8 @@ export function leaveChannel(channel: string) {
         nextChannel = channels[channels.length - 2];
       } else if (channel === currentChannel && channels.length > 1) {
         nextChannel = channels[channels.indexOf(channel) + 1];
+      } else if (channel === currentChannel && channels.length === 1) {
+        nextChannel = '';
       }
 
       // Leave from IRC if it's a channel
@@ -168,10 +173,10 @@ export function leaveChannel(channel: string) {
         client.part(channel, null, null);
       }
 
-      const nextChannelObj = {name: null, messages: []};
+      const nextChannelObj = { name: null, messages: [] };
       if (nextChannel !== '') {
         nextChannelObj.name = nextChannel;
-        nextChannelObj.messages = getState().getIn(['channelDb', nextChannel, 'messages']);
+        nextChannelObj.messages = getState().getIn(['channelDb', nextChannel, 'messages']).toJS();
       }
 
       dispatch({ type: 'LEFT_CHANNEL', payload: { channel, nextChannel: nextChannelObj } });

@@ -43,10 +43,9 @@ const divStyle: React.CSSProperties = {
   height: 25,
   alignItems: 'center',
   cursor: 'pointer',
-  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  backgroundColor: 'rgba(255, 255, 255, 0.15)',
   fontWeight: 800,
   color: 'white',
-  transform: 'skew(-15deg)',
   boxSizing: 'border-box',
   WebkitUserSelect: 'none'
 };
@@ -54,6 +53,10 @@ const divStyle: React.CSSProperties = {
 const divStyleActive: React.CSSProperties = {
   ...divStyle,
   backgroundColor: 'rgba(255, 255, 255, 0.3)'
+};
+
+const divStyleDragging: React.CSSProperties = {
+  outline: 'white dashed 1px'
 };
 
 const tabSource: DragSourceSpec<IProps> = {
@@ -137,12 +140,14 @@ class Tab extends React.Component<IProps, null> {
   }
 
   public render() {
-    const { connectDragSource, connectDropTarget, isDragging } = this.props;
+    const { connectDragSource, connectDropTarget, isDragging, isActive } = this.props;
     return connectDragSource(connectDropTarget(
-      <div onMouseDown={this.handleMiddleClick} style={this.props.isActive ? divStyleActive : divStyle}>
+      <div
+        onMouseDown={this.handleMiddleClick}
+        style={{...(isDragging ? divStyleDragging : {}), ...(isActive ? divStyleActive : divStyle)}}
+      >
         <div
           onClick={this.handleClick}
-          style={{ transform: 'skew(15deg)' }}
         >{this.props.tabName}
         </div>
         <div onClick={this.props.closeTab.bind(this, this.props.tabName)} style={xStyle}>&times;</div>

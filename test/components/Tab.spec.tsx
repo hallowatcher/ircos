@@ -17,6 +17,7 @@ describe('AddTab', function() {
   let closeTab: jest.Mock<{}>;
   let isActive;
   let preventDefault;
+  let isDragging;
 
   const DnDTab = DragDropContext(HTML5Backend)(Tab);
 
@@ -29,6 +30,7 @@ describe('AddTab', function() {
     closeTab = jest.fn();
     preventDefault = jest.fn();
     isActive = true;
+    isDragging = false;
 
     component = enzyme.mount(
       <DnDTab
@@ -38,6 +40,7 @@ describe('AddTab', function() {
         tabClick={tabClick}
         closeTab={closeTab}
         isActive={isActive}
+        isDragging={isDragging}
       />
     );
   });

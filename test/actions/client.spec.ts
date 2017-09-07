@@ -254,7 +254,10 @@ describe('Client actions', function() {
         '#osu': {}
       },
       tabs: ['#osu'],
-      channelCurrent: null,
+      channelCurrent: {
+        name: '#osu',
+        messages: []
+      },
       serverInfo: null,
       settings: null
     };

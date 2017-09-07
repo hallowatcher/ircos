@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "npm run lint && jest",
+    "jest": "jest",
     "start": "electron .",
     "lint": "tslint -p tslint.json",
     "pack": "electron-builder --dir",

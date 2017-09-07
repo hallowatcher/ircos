@@ -111,6 +111,12 @@ describe('Client', function() {
     expect(component.state('showJoinModal')).toEqual(false);
   });
 
+  it('should open join modal', function() {
+    const props = component.find('TabBar').first().props() as any;
+    props.tabAdd();
+    expect(component.state('showJoinModal')).toEqual(true);
+  });
+
   it('should change message', function() {
     component.find('input[type="text"]').first()
       .simulate('change', { target: { value: 'changed' } });

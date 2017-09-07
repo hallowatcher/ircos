@@ -68,6 +68,7 @@ const tabSource: DragSourceSpec<IProps> = {
   }
 };
 
+/* istanbul ignore next */
 const tabTarget: DropTargetSpec<IProps> = {
   hover(props, monitor, component) {
     const dragIndex = (monitor.getItem() as any).index;
@@ -139,6 +140,7 @@ class Tab extends React.Component<IProps, null> {
     this.handleMiddleClick = this.handleMiddleClick.bind(this);
   }
 
+  /* istanbul ignore next */
   public render() {
     const { connectDragSource, connectDropTarget, isDragging, isActive } = this.props;
     return connectDragSource(connectDropTarget(
@@ -154,6 +156,7 @@ class Tab extends React.Component<IProps, null> {
       </div>
     ));
   }
+
   private handleMiddleClick(event) {
     const type = event.nativeEvent.which;
     if (type !== 2) { return; }

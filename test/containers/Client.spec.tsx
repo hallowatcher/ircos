@@ -37,6 +37,8 @@ describe('Client', function() {
         userId={1}
         messages={[]}
         openExternal={userClicked}
+        sendCommand={jest.fn()}
+        logout={jest.fn()}
       />
     );
   });

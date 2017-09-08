@@ -160,14 +160,13 @@ export function sendMessage(channel: string, message: string) {
 }
 
 // TODO
-export function sendCommand(channel: string, message: string, args: string[]) {
+export function sendCommand(channel: string, command: string, args: string[]) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return new Promise((resolve, reject) => {
-      const nick = getState().getIn(['userInfo', 'userName']);
-      const date = new Date();
-
-      client.say(channel, message);
-      dispatch({ type: 'SENT_MESSAGE', payload: { nick, channel, message, date } });
+      // TODO
+      console.log('we sent command', command);
+      console.log('to channel', channel);
+      console.log('with args', args);
       resolve();
     });
   };

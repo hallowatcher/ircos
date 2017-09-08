@@ -208,12 +208,12 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
   private handleSubmit(event: any) {
     event.preventDefault();
 
-    const msg = this.state.msg.trim();
+    const msg = this.state.msg.trim() as string;
     const channel = this.props.currentChannel;
 
     if (msg.charAt(0) === '/') {
-      // TODO
-      this.props.sendCommand(channel, msg, [msg]);
+      const args = msg.split(' ');
+      this.props.sendCommand(channel, args[0], args.slice(1));
     } else {
       this.props.sendMessage(channel, msg);
     }
@@ -253,8 +253,8 @@ function dispatchToProps(dispatch: any) {
     makeCurrentChannel: (channel: string) => { dispatch(makeCurrentChannel(channel)); },
     tabMove: (from: number, to: number) => { dispatch(tabMove(from , to)); },
     sendMessage: (channel: string, message: string) => { dispatch(sendMessage(channel, message)); },
-    sendCommand: (channel: string, message: string, args: string[]) => {
-      dispatch(sendCommand(channel, message, args));
+    sendCommand: (channel: string, command: string, args: string[]) => {
+      dispatch(sendCommand(channel, command, args));
     },
     closeChannel: (channel: string) => { dispatch(leaveChannel(channel)); },
     joinChannel: (channel: string) => { dispatch(join(channel)); dispatch(makeCurrentChannel(channel)); },

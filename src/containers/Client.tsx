@@ -7,7 +7,8 @@ import {
   sendMessage,
   leaveChannel,
   join,
-  tabMove
+  tabMove,
+  logout
 } from '../actions/client';
 
 import { openExternal } from '../actions/electron';
@@ -35,6 +36,7 @@ interface IDispatchProps {
   closeChannel: (channel: string) => void;
   joinChannel: (channel: string) => void;
   openExternal: (url: string) => void;
+  logout: () => void;
 }
 
 interface IStyles {
@@ -74,6 +76,17 @@ const styles: IStyles = {
     height: '35px',
     width: '35px',
     backgroundColor: 'rgba(255, 255, 255, 0.8)'
+  },
+  logout: {
+    height: '35px',
+    width: '35px',
+    backgroundColor: 'rgba(255, 0, 0, 0.5)',
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
+    cursor: 'pointer'
   },
   currentUserImage: {
     maxHeight: '100%'
@@ -158,6 +171,7 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
           <div style={styles.currentUser}>
             <div style={styles.currentUserImageContainer}>{userImage}</div>
             <div style={styles.currentUserNick}>{this.props.nick}</div>
+            <div onClick={this.props.logout} style={styles.logout}><i className="fa fa-sign-out" /></div>
           </div>
 
         </div>
@@ -230,7 +244,8 @@ function dispatchToProps(dispatch: any) {
     sendMessage: (channel: string, message: string) => { dispatch(sendMessage(channel, message)); },
     closeChannel: (channel: string) => { dispatch(leaveChannel(channel)); },
     joinChannel: (channel: string) => { dispatch(join(channel)); dispatch(makeCurrentChannel(channel)); },
-    openExternal: (url: string) => { dispatch(openExternal(url)); }
+    openExternal: (url: string) => { dispatch(openExternal(url)); },
+    logout: () => { dispatch(logout()); }
   };
 }
 

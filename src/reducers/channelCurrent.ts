@@ -13,6 +13,8 @@ export default function(state: Map<any, any>, action: any) {
       return receivedPm(state, action);
     case 'SENT_MESSAGE':
       return sentMessage(state, action);
+    case 'LOG_OUT':
+      return logout();
   }
 
   return state;
@@ -59,4 +61,13 @@ function sentMessage(state: Map<any, any>, action: any) {
   }
 
   return state;
+}
+
+function logout() {
+  return fromJS({
+    name: null,
+    initialLength: 10,
+    currentLength: 10,
+    messages: []
+  });
 }

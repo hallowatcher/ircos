@@ -138,4 +138,21 @@ describe('Current channel reducer', () => {
     expect(actualState.toJS()).toEqual(expectedState);
   });
 
+  it('should remove current channel on logout', () => {
+    const initialState = Immutable.fromJS({
+      name: '#osu',
+      initialLength: 10,
+      currentLength: 10,
+      messages: ['1', '2']
+    });
+    const expectedState = Immutable.fromJS({
+      name: null,
+      initialLength: 10,
+      currentLength: 10,
+      messages: []
+    });
+    const actualState = channelCurrentReducer(initialState, { type: 'LOG_OUT' });
+
+    expect(actualState).toEqual(expectedState);
+  });
 });

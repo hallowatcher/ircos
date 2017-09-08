@@ -24,7 +24,9 @@ export class Client extends EventEmitter {
     }
   }
 
-  public disconnect(param1, param2) { /* Stub */ }
+  public disconnect(param1, param2) {
+    if (param2) { param2(); }
+  }
 
   public join(channel: string, callback) {
     if (channel === '#error') {

@@ -102,6 +102,17 @@ describe('Client actions', function() {
       });
   });
 
+  it('should logout', function() {
+    const expectedActions = [
+      { type: 'LOG_OUT' }
+    ];
+
+    return store.dispatch(actions.logout())
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+  });
+
   it('should fetch someone\'s user info', function() {
 
     const user = 'someoneElse';

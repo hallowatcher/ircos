@@ -1,4 +1,4 @@
-import { Map, List } from 'immutable';
+import { Map, List, fromJS } from 'immutable';
 
 export default function(state: Map<any, any>, action: any) {
   switch (action.type) {
@@ -12,6 +12,8 @@ export default function(state: Map<any, any>, action: any) {
       return sentMessage(state, action);
     case 'LEFT_CHANNEL':
       return leftChannel(state, action);
+    case 'LOG_OUT':
+      return logout();
   }
 
   return state;
@@ -73,4 +75,8 @@ function leftChannel(state: Map<any, any>, action: any) {
 
   // Filter is used here so the tab order is preserved
   return state.filter((val: any, key: any) => key.toLowerCase() !== channel.toLowerCase());
+}
+
+function logout() {
+  return fromJS({});
 }

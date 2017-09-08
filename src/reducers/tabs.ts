@@ -10,6 +10,8 @@ export default function(state: List<any>, action: any) {
       return moveTab(state, action);
     case 'RECEIVED_PM':
       return receivedPm(state, action);
+    case 'LOG_OUT':
+      return logout();
   }
 
   return state;
@@ -42,4 +44,8 @@ function moveTab(state: List<any>, action: any) {
   newArray[from] = oldArray[to];
 
   return fromJS(newArray);
+}
+
+function logout() {
+  return fromJS([]);
 }

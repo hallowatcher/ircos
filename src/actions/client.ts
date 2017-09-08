@@ -47,6 +47,17 @@ export function createConnection(user: string, pass: string) {
   };
 }
 
+export function logout() {
+  return (dispatch: any, getState: () => Map<any, any>) => {
+    return new Promise((resolve, reject) => {
+      client.disconnect(null, () => {
+        dispatch({ type: 'LOG_OUT' });
+        resolve();
+      });
+    });
+  };
+}
+
 export function getUserInfo(user: string) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return axios

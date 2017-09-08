@@ -71,4 +71,13 @@ describe('Tabs reducer', () => {
 
     expect(actualState.toJS()).toEqual(expectedState);
   });
+
+  it('should remove all tabs on logout', () => {
+    const initialState = Immutable.fromJS(['#osu', '#english']);
+
+    const expectedState = [];
+    const actualState = tabsReducer(initialState, { type: 'LOG_OUT' });
+
+    expect(actualState.toJS()).toEqual(expectedState);
+  });
 });

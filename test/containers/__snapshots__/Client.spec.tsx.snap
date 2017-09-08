@@ -391,6 +391,25 @@ exports[`Client should mount with channel tabs 1`] = `
               }
             }
           />
+          <div
+            style={
+              Object {
+                "alignContent": "center",
+                "alignItems": "center",
+                "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                "cursor": "pointer",
+                "display": "flex",
+                "flexDirection": "column",
+                "height": "35px",
+                "justifyContent": "center",
+                "width": "35px",
+              }
+            }
+          >
+            <i
+              className="fa fa-sign-out"
+            />
+          </div>
         </div>
       </div>
       <ChatView
@@ -535,6 +554,26 @@ ShallowWrapper {
                       }
                 }
             />
+            <div
+                onClick={undefined}
+                style={
+                    Object {
+                        "alignContent": "center",
+                        "alignItems": "center",
+                        "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                        "cursor": "pointer",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "height": "35px",
+                        "justifyContent": "center",
+                        "width": "35px",
+                      }
+                }
+            >
+                <i
+                    className="fa fa-sign-out"
+                />
+            </div>
         </div>
     </div>
     <ChatView
@@ -656,6 +695,26 @@ ShallowWrapper {
                                   }
                         }
                   />
+                  <div
+                        onClick={undefined}
+                        style={
+                              Object {
+                                    "alignContent": "center",
+                                    "alignItems": "center",
+                                    "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                                    "cursor": "pointer",
+                                    "display": "flex",
+                                    "flexDirection": "column",
+                                    "height": "35px",
+                                    "justifyContent": "center",
+                                    "width": "35px",
+                                  }
+                        }
+                  >
+                        <i
+                              className="fa fa-sign-out"
+                        />
+                  </div>
             </div>
       </div>
       <ChatView
@@ -849,6 +908,26 @@ ShallowWrapper {
                                                           }
                                         }
                               />
+                              <div
+                                        onClick={undefined}
+                                        style={
+                                                  Object {
+                                                            "alignContent": "center",
+                                                            "alignItems": "center",
+                                                            "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                                                            "cursor": "pointer",
+                                                            "display": "flex",
+                                                            "flexDirection": "column",
+                                                            "height": "35px",
+                                                            "justifyContent": "center",
+                                                            "width": "35px",
+                                                          }
+                                        }
+                              >
+                                        <i
+                                                  className="fa fa-sign-out"
+                                        />
+                              </div>
                     </div>
           </div>
           <ChatView
@@ -970,6 +1049,26 @@ ShallowWrapper {
                                                           }
                                         }
                               />
+                              <div
+                                        onClick={undefined}
+                                        style={
+                                                  Object {
+                                                            "alignContent": "center",
+                                                            "alignItems": "center",
+                                                            "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                                                            "cursor": "pointer",
+                                                            "display": "flex",
+                                                            "flexDirection": "column",
+                                                            "height": "35px",
+                                                            "justifyContent": "center",
+                                                            "width": "35px",
+                                                          }
+                                        }
+                              >
+                                        <i
+                                                  className="fa fa-sign-out"
+                                        />
+                              </div>
                     </div>
           </div>
           <ChatView

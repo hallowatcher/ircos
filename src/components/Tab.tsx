@@ -146,12 +146,10 @@ class Tab extends React.Component<IProps, null> {
     return connectDragSource(connectDropTarget(
       <div
         onMouseDown={this.handleMiddleClick}
+        onClick={this.handleClick}
         style={{...(isDragging ? divStyleDragging : {}), ...(isActive ? divStyleActive : divStyle)}}
       >
-        <div
-          onClick={this.handleClick}
-        >{this.props.tabName}
-        </div>
+        <div>{this.props.tabName}</div>
         <div onClick={this.props.closeTab.bind(this, this.props.tabName)} style={xStyle}>&times;</div>
       </div>
     ));

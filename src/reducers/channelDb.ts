@@ -1,4 +1,5 @@
 import { Map, List, fromJS } from 'immutable';
+import { IMessage, MessageType } from '../models';
 
 export default function(state: Map<any, any>, action: any) {
   switch (action.type) {
@@ -30,11 +31,11 @@ function openChannel(state: Map<any, any>, action: any) {
 
 function receivedMessage(state: Map<any, any>, action: any) {
 
-  const { nick, to, text, date } = action.payload;
+  const msg: IMessage = action.payload;
 
   state = state.updateIn(
-    [to.toLowerCase(), 'messages'],
-    (messages) => messages.push({ name: nick, text, date })
+    [msg.to.toLowerCase(), 'messages'],
+    (messages: IMessage[]) => messages.push(msg)
   );
 
   return state;
@@ -42,16 +43,16 @@ function receivedMessage(state: Map<any, any>, action: any) {
 
 function receivedPm(state: Map<any, any>, action: any) {
 
-  const { nick, text, date } = action.payload;
+  const msg: IMessage = action.payload;
 
   // Check if the channel has been previously opened
-  if (state.get(nick.toLowerCase()) === undefined) {
-    state = openChannel(state, { payload: nick });
+  if (state.get(msg.nick.toLowerCase()) === undefined) {
+    state = openChannel(state, { payload: msg.nick });
   }
 
   state = state.updateIn(
-    [nick.toLowerCase(), 'messages'],
-    (messages) => messages.push({name: nick, text, date})
+    [msg.nick.toLowerCase(), 'messages'],
+    (messages: IMessage[]) => messages.push(msg)
   );
 
   return state;
@@ -60,11 +61,11 @@ function receivedPm(state: Map<any, any>, action: any) {
 
 function sentMessage(state: Map<any, any>, action: any) {
 
-  const {nick, channel, message, date} = action.payload;
+  const msg: IMessage = action.payload;
 
   state = state.updateIn(
-    [channel.toLowerCase(), 'messages'],
-    (messages) => messages.push({name: nick, text: message, date})
+    [msg.to.toLowerCase(), 'messages'],
+    (messages) => messages.push(msg)
   );
 
   return state;

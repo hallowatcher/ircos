@@ -215,6 +215,7 @@ exports[`Client should mount with channel tabs 1`] = `
                       tabName="one"
                     >
                       <div
+                        onClick={[Function]}
                         onMouseDown={[Function]}
                         style={
                           Object {
@@ -232,9 +233,7 @@ exports[`Client should mount with channel tabs 1`] = `
                           }
                         }
                       >
-                        <div
-                          onClick={[Function]}
-                        >
+                        <div>
                           one
                         </div>
                         <div
@@ -285,6 +284,7 @@ exports[`Client should mount with channel tabs 1`] = `
                       tabName="two"
                     >
                       <div
+                        onClick={[Function]}
                         onMouseDown={[Function]}
                         style={
                           Object {
@@ -302,9 +302,7 @@ exports[`Client should mount with channel tabs 1`] = `
                           }
                         }
                       >
-                        <div
-                          onClick={[Function]}
-                        >
+                        <div>
                           two
                         </div>
                         <div
@@ -555,7 +553,7 @@ ShallowWrapper {
                 }
             />
             <div
-                onClick={undefined}
+                onClick={[Function]}
                 style={
                     Object {
                         "alignContent": "center",
@@ -696,7 +694,7 @@ ShallowWrapper {
                         }
                   />
                   <div
-                        onClick={undefined}
+                        onClick={[Function]}
                         style={
                               Object {
                                     "alignContent": "center",
@@ -776,10 +774,12 @@ ShallowWrapper {
         closeChannel={[Function]}
         currentChannel=""
         joinChannel={[Function]}
+        logout={[Function]}
         makeCurrentChannel={[Function]}
         messages={Array []}
         nick=""
         openExternal={[Function]}
+        sendCommand={[Function]}
         sendMessage={[Function]}
         tabMove={[Function]}
         tabs={Array []}
@@ -802,10 +802,12 @@ ShallowWrapper {
           "closeChannel": [Function],
           "currentChannel": "",
           "joinChannel": [Function],
+          "logout": [Function],
           "makeCurrentChannel": [Function],
           "messages": Array [],
           "nick": "",
           "openExternal": [Function],
+          "sendCommand": [Function],
           "sendMessage": [Function],
           "tabMove": [Function],
           "tabs": Array [],
@@ -909,7 +911,7 @@ ShallowWrapper {
                                         }
                               />
                               <div
-                                        onClick={undefined}
+                                        onClick={[Function]}
                                         style={
                                                   Object {
                                                             "alignContent": "center",
@@ -1050,7 +1052,7 @@ ShallowWrapper {
                                         }
                               />
                               <div
-                                        onClick={undefined}
+                                        onClick={[Function]}
                                         style={
                                                   Object {
                                                             "alignContent": "center",
@@ -1134,10 +1136,12 @@ ShallowWrapper {
     closeChannel={[Function]}
     currentChannel=""
     joinChannel={[Function]}
+    logout={[Function]}
     makeCurrentChannel={[Function]}
     messages={Array []}
     nick=""
     openExternal={[Function]}
+    sendCommand={[Function]}
     sendMessage={[Function]}
     tabMove={[Function]}
     tabs={Array []}

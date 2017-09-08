@@ -58,7 +58,7 @@ describe('Current channel reducer', () => {
     const expectedState = {
       name: '#osu',
       messages: [
-        { name: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }
+        { nick: 'hallowatcher', text: 'yo', to: '#osu', date: new Date(2017, 1, 1) }
       ]
     };
 
@@ -89,7 +89,7 @@ describe('Current channel reducer', () => {
     const expectedState = {
       name: 'hallowatcher',
       messages: [
-        { name: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }
+        { nick: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }
       ]
     };
 
@@ -109,7 +109,7 @@ describe('Current channel reducer', () => {
 
   it('should return default state if sent message is not for current channel', () => {
     const initialState = Immutable.fromJS({ name: '#osu', messages: [] });
-    const actualState = channelCurrentReducer(initialState, { type: 'SENT_MESSAGE', payload: { channel: '#english' } });
+    const actualState = channelCurrentReducer(initialState, { type: 'SENT_MESSAGE', payload: { to: '#english' } });
 
     expect(actualState).toEqual(initialState);
   });
@@ -119,16 +119,16 @@ describe('Current channel reducer', () => {
     const expectedState = {
       name: '#osu',
       messages: [
-        { name: 'hallowatcher', text: 'yo', date: new Date(2017, 1, 1) }
+        { nick: 'hallowatcher', text: 'yo', to: '#osu', date: new Date(2017, 1, 1) }
       ]
     };
 
     const action = {
       type: 'SENT_MESSAGE',
       payload: {
-        channel: '#osu',
+        to: '#osu',
         nick: 'hallowatcher',
-        message: 'yo',
+        text: 'yo',
         date: new Date(2017, 1, 1)
       }
     };

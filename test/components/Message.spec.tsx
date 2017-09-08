@@ -1,8 +1,9 @@
 
 import * as React from 'react';
-import { Message, UserType } from '../../src/components/Message';
+import { Message } from '../../src/components/Message';
 import * as enzyme from 'enzyme';
 import * as moment from 'moment';
+import { MessageType } from '../../src/models';
 
 describe('Message', function() {
 
@@ -16,9 +17,10 @@ describe('Message', function() {
     message = 'bar456';
     component = enzyme.shallow(
       <Message
-        user={user}
-        message={message}
-        sentDate={moment.utc('2017-01-01T00:00:00.000Z')}
+        nick={user}
+        text={message}
+        date={moment.utc('2017-01-01T00:00:00.000Z')}
+        type={MessageType.message}
         userClicked={userClicked}
       />
     );
@@ -28,18 +30,13 @@ describe('Message', function() {
     expect(component).toMatchSnapshot();
   });
 
-  it('should render as moderator', function() {
-    component.setProps({ userType: UserType.moderator });
-    expect(component).toMatchSnapshot();
-  });
-
   it('should render as self', function() {
-    component.setProps({ userType: UserType.self });
+    component.setProps({ type: MessageType.self });
     expect(component).toMatchSnapshot();
   });
 
   it('should render as system', function() {
-    component.setProps({ userType: UserType.system });
+    component.setProps({ type: MessageType.system });
     expect(component).toMatchSnapshot();
   });
 

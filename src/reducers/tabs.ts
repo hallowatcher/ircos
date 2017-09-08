@@ -1,4 +1,5 @@
 import { List, fromJS } from 'immutable';
+import { IMessage, MessageType } from '../models';
 
 export default function(state: List<any>, action: any) {
   switch (action.type) {
@@ -18,9 +19,10 @@ export default function(state: List<any>, action: any) {
 }
 
 function receivedPm(state: List<any>, action: any) {
-  if (state.indexOf(action.payload.nick.toLowerCase()) === -1) {
+  const msg: IMessage = action.payload;
+  if (state.indexOf(msg.nick.toLowerCase()) === -1) {
     return state.update(
-      (tabs) => tabs.push(action.payload.nick.toLowerCase())
+      (tabs) => tabs.push(msg.nick.toLowerCase())
     );
   }
 

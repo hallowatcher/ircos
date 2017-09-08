@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddTab should render 1`] = `
+exports[`Tab should render 1`] = `
 <DragDropContext(DropTarget(DragSource(Tab)))
   closeTab={[Function]}
   index={1}
@@ -43,6 +43,7 @@ exports[`AddTab should render 1`] = `
         tabName="foo123"
       >
         <div
+          onClick={[Function]}
           onMouseDown={[Function]}
           style={
             Object {
@@ -60,9 +61,7 @@ exports[`AddTab should render 1`] = `
             }
           }
         >
-          <div
-            onClick={[Function]}
-          >
+          <div>
             foo123
           </div>
           <div
@@ -88,7 +87,7 @@ exports[`AddTab should render 1`] = `
 </DragDropContext(DropTarget(DragSource(Tab)))>
 `;
 
-exports[`AddTab should render with inactive class 1`] = `
+exports[`Tab should render with inactive class 1`] = `
 <DragDropContext(DropTarget(DragSource(Tab)))
   closeTab={[Function]}
   index={1}
@@ -131,6 +130,7 @@ exports[`AddTab should render with inactive class 1`] = `
         tabName="foo123"
       >
         <div
+          onClick={[Function]}
           onMouseDown={[Function]}
           style={
             Object {
@@ -148,9 +148,7 @@ exports[`AddTab should render with inactive class 1`] = `
             }
           }
         >
-          <div
-            onClick={[Function]}
-          >
+          <div>
             foo123
           </div>
           <div

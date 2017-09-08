@@ -19,11 +19,12 @@ import { AddTab } from '../components/AddTab';
 import { TabBar } from '../components/TabBar';
 import { ChatView } from '../components/ChatView';
 import { JoinModal } from './JoinModal';
+import { MessageType, IMessage } from '../models';
 
 interface IStateProps {
   channels: any;
-  tabs: any[];
-  messages: any[];
+  tabs: string[];
+  messages: IMessage[];
   currentChannel: string;
   nick: string;
   userId: number;

@@ -3,6 +3,8 @@ import * as Irc from 'irc';
 import { Map, fromJS } from 'immutable';
 import axios from 'axios';
 
+import { IMessage, MessageType } from '../models';
+
 let client: Irc.Client = null;
 
 export function createConnection(user: string, pass: string) {
@@ -17,11 +19,15 @@ export function createConnection(user: string, pass: string) {
       });
 
       client.on('message#', (nick: string, to: string, text: string) => {
-        dispatch(receivedMessage(nick, to, text, new Date()));
+        dispatch(receivedMessage({ nick, to, text, date: new Date(), type: MessageType.message }));
+      });
+
+      client.on('action', (nick: string, to: string, text: string) => {
+        dispatch(receivedMessage({ nick, to, text, date: new Date(), type: MessageType.action }));
       });
 
       client.on('pm', (nick: string, text: string) => {
-        dispatch(receivedPm(nick, text, new Date()));
+        dispatch(receivedPm({ nick, text, date: new Date(), type: MessageType.message }));
       });
 
       client.on('error', () => {
@@ -87,12 +93,19 @@ export function connectedToServer(nick: string) {
   return { type: 'CONNECTED_TO_SERVER', payload: nick };
 }
 
-export function receivedMessage(nick: string, to: string, text: string, date: Date) {
-  return { type: 'RECEIVED_MESSAGE', payload: { nick, to, text, date } };
+export function receivedMessage(message: IMessage) {
+  const { nick, to, text, date, type } = message;
+  return { type: 'RECEIVED_MESSAGE', payload: { nick, to, text, date, type } };
 }
 
-export function receivedPm(nick: string, text: string, date: Date) {
-  return { type: 'RECEIVED_PM', payload: { nick, text, date } };
+export function receivedAction(message: IMessage) {
+  const { nick, to, text, date, type } = message;
+  return { type: 'RECEIVED_ACTION', payload: { nick, to, text, date, type } };
+}
+
+export function receivedPm(message: IMessage) {
+  const { nick, text, date, type } = message;
+  return { type: 'RECEIVED_PM', payload: { nick, text, date, type } };
 }
 
 export function join(channel: string) {
@@ -103,17 +116,41 @@ export function join(channel: string) {
 
       if (channel.charAt(0) !== '#') {
         // If channel is a user
-        dispatch(receivedMessage('System', channel, `Joined ${channel}!`, new Date()));
+        dispatch(receivedMessage({
+          nick: 'System',
+          to: channel,
+          text: `Joined ${channel}!`,
+          date: new Date(),
+          type: MessageType.system
+        }));
       } else {
         // Else it's a channel
-        dispatch(receivedMessage('System', channel, `Attempting to join ${channel}...`, new Date()));
+        dispatch(receivedMessage({
+          nick: 'System',
+          to: channel,
+          text: `Attempting to join ${channel}...`,
+          date: new Date(),
+          type: MessageType.system
+        }));
         client.on('error', () => {
           client.removeAllListeners('error');
-          dispatch(receivedMessage('System', channel, `Failed to join ${channel}!`, new Date()));
+          dispatch(receivedMessage({
+            nick: 'System',
+            to: channel,
+            text: `Failed to join ${channel}!`,
+            date: new Date(),
+            type: MessageType.system
+          }));
         });
         client.join(channel, () => {
           client.removeAllListeners('error');
-          dispatch(receivedMessage('System', channel, `Joined ${channel}!`, new Date()));
+          dispatch(receivedMessage({
+            nick: 'System',
+            to: channel,
+            text: `Joined ${channel}!`,
+            date: new Date(),
+            type: MessageType.system
+          }));
         });
       }
 
@@ -151,9 +188,16 @@ export function sendMessage(channel: string, message: string) {
     return new Promise((resolve, reject) => {
       const nick = getState().getIn(['userInfo', 'userName']);
       const date = new Date();
+      const msgObject: IMessage = {
+        nick,
+        date,
+        text: message,
+        to: channel,
+        type: MessageType.self
+      };
 
       client.say(channel, message);
-      dispatch({ type: 'SENT_MESSAGE', payload: { nick, channel, message, date } });
+      dispatch({ type: 'SENT_MESSAGE', payload: msgObject });
       resolve();
     });
   };

@@ -4,6 +4,7 @@ import { ChatView } from '../../src/components/ChatView';
 import * as enzyme from 'enzyme';
 import * as moment from 'moment';
 import toJson from 'enzyme-to-json';
+import { MessageType } from '../../src/models';
 
 describe('ChatView', function() {
   let component: enzyme.ReactWrapper<any, any>;
@@ -24,24 +25,45 @@ describe('ChatView', function() {
   });
 
   it('should render messages', function() {
-    component.setProps({ messages: [{ name: 'name', text: 'text', date: moment.utc('2017-01-01T00:00:00.000Z') }] });
+    component.setProps({
+      messages: [{
+        nick: 'name',
+        text: 'text',
+        date: moment.utc('2017-01-01T00:00:00.000Z'),
+        type: MessageType.message
+      }]
+    });
     expect(toJson(component)).toMatchSnapshot();
   });
 
   it('should render message as self', function() {
-    component.setProps({ messages: [{ name: 'nick', text: 'text', date: moment.utc('2017-01-01T00:00:00.000Z') }] });
+    component.setProps({
+      messages: [{
+        nick: 'nick',
+        text: 'text',
+        date: moment.utc('2017-01-01T00:00:00.000Z'),
+        type: MessageType.self
+      }]
+    });
     expect(toJson(component)).toMatchSnapshot();
   });
 
   it('should render message as system', function() {
-    component.setProps({ messages: [{ name: 'System', text: 'text', date: moment.utc('2017-01-01T00:00:00.000Z') }] });
+    component.setProps({
+      messages: [{
+        nick: 'System',
+        text: 'text',
+        date: moment.utc('2017-01-01T00:00:00.000Z'),
+        type: MessageType.system
+      }]
+    });
     expect(toJson(component)).toMatchSnapshot();
   });
 
   it('should not scroll to bottom', function() {
     const instance = component.instance() as any;
     instance.refs.container = { scrollTop: 0, scrollHeight: 100, clientHeight: 0 };
-    component.setProps({ messages: [{ name: 'nick', text: 'text', date: moment.utc('2017-01-01T00:00:00.000Z') }] });
+    component.setProps({ messages: [{ nick: 'nick', text: 'text', date: moment.utc('2017-01-01T00:00:00.000Z') }] });
     expect(toJson(component)).toMatchSnapshot();
   });
 

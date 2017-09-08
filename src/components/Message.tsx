@@ -1,19 +1,14 @@
 import * as React from 'react';
 import * as moment from 'moment';
-
-export enum UserType {
-  regular,
-  moderator,
-  self,
-  system
-}
+import { IMessage, MessageType } from '../models';
 
 interface IProps {
-  user: string;
-  message: string;
-  sentDate: moment.Moment;
+  nick: string;
+  text: string;
+  type: MessageType;
+  date: moment.Moment;
+
   userClicked: (user: string) => void;
-  userType?: UserType;
 }
 
 interface IStyles {
@@ -54,16 +49,14 @@ export class Message extends React.Component<IProps, any> {
   public render() {
 
     let userStyle = styles.users.regular;
-    switch (this.props.userType) {
-      case UserType.moderator:
-        userStyle = styles.users.moderator;
-        break;
-      case UserType.self:
+    const { nick, text, date, type } = this.props;
+    switch (type) {
+      case MessageType.self:
         userStyle = styles.users.self;
         break;
     }
 
-    const momentDate = moment(this.props.sentDate);
+    const momentDate = moment(date);
 
     // Build date
     const hours = ('0' + momentDate.hours()).slice(-2);
@@ -72,15 +65,15 @@ export class Message extends React.Component<IProps, any> {
     let message = (
       <div>
         <span style={styles.time}>[{hours}:{minutes}] </span>
-        <span style={userStyle} onClick={this.userClicked}>{this.props.user}: </span>
-        <span style={styles.message}>{this.props.message}</span>
+        <span style={userStyle} onClick={this.userClicked}>{nick}: </span>
+        <span style={styles.message}>{text}</span>
       </div>
     );
 
-    if (this.props.userType === UserType.system) {
+    if (type === MessageType.system) {
       message = (
         <div>
-          <span style={styles.systemMessage}>{this.props.message}</span>
+          <span style={styles.systemMessage}>{text}</span>
         </div>
       );
     }
@@ -89,6 +82,6 @@ export class Message extends React.Component<IProps, any> {
   }
 
   private userClicked = () => {
-    this.props.userClicked(this.props.user);
+    this.props.userClicked(this.props.nick);
   }
 }

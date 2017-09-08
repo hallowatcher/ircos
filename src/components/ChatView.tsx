@@ -1,8 +1,9 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Message, UserType } from './Message';
+import { Message } from './Message';
 import * as moment from 'moment';
+import { IMessage } from '../models';
 
 interface IProps {
   messages: any[];
@@ -53,24 +54,14 @@ export class ChatView extends React.Component<IProps, any> {
   }
 
   private mapMessages() {
-    return this.props.messages.map((msg: any, index: number) => {
-
-        // User type check
-        let userType = UserType.regular;
-        if (msg.name === this.props.selfNick) {
-          userType = UserType.self;
-        }
-        if (msg.name === 'System') {
-          userType = UserType.system;
-        }
-
+    return this.props.messages.map((msg: IMessage, index: number) => {
         return (
           <Message
             key={index}
-            message={msg.text}
-            user={msg.name}
-            userType={userType}
-            sentDate={moment(msg.date)}
+            nick={msg.nick}
+            text={msg.text}
+            type={msg.type}
+            date={msg.date}
             userClicked={this.props.userClicked}
           />
         );

@@ -6,7 +6,7 @@ exports[`ChatView should not scroll to bottom 1`] = `
     Array [
       Object {
         "date": "2017-01-01T00:00:00.000Z",
-        "name": "nick",
+        "nick": "nick",
         "text": "text",
       },
     ]
@@ -16,11 +16,10 @@ exports[`ChatView should not scroll to bottom 1`] = `
 >
   <div>
     <Message
-      message="text"
-      sentDate={"2017-01-01T00:00:00.000Z"}
-      user="nick"
+      date={"2017-01-01T00:00:00.000Z"}
+      nick="nick"
+      text="text"
       userClicked={[Function]}
-      userType={2}
     >
       <div>
         <span
@@ -40,7 +39,7 @@ exports[`ChatView should not scroll to bottom 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "color": "#CECECE",
+              "color": "#ffc561",
               "cursor": "pointer",
               "fontWeight": 800,
             }
@@ -76,8 +75,9 @@ exports[`ChatView should render message as self 1`] = `
     Array [
       Object {
         "date": "2017-01-01T00:00:00.000Z",
-        "name": "nick",
+        "nick": "nick",
         "text": "text",
+        "type": 3,
       },
     ]
   }
@@ -86,11 +86,11 @@ exports[`ChatView should render message as self 1`] = `
 >
   <div>
     <Message
-      message="text"
-      sentDate={"2017-01-01T00:00:00.000Z"}
-      user="nick"
+      date={"2017-01-01T00:00:00.000Z"}
+      nick="nick"
+      text="text"
+      type={3}
       userClicked={[Function]}
-      userType={2}
     >
       <div>
         <span
@@ -136,8 +136,9 @@ exports[`ChatView should render message as system 1`] = `
     Array [
       Object {
         "date": "2017-01-01T00:00:00.000Z",
-        "name": "System",
+        "nick": "System",
         "text": "text",
+        "type": 2,
       },
     ]
   }
@@ -146,11 +147,11 @@ exports[`ChatView should render message as system 1`] = `
 >
   <div>
     <Message
-      message="text"
-      sentDate={"2017-01-01T00:00:00.000Z"}
-      user="System"
+      date={"2017-01-01T00:00:00.000Z"}
+      nick="System"
+      text="text"
+      type={2}
       userClicked={[Function]}
-      userType={3}
     >
       <div>
         <span
@@ -174,8 +175,9 @@ exports[`ChatView should render messages 1`] = `
     Array [
       Object {
         "date": "2017-01-01T00:00:00.000Z",
-        "name": "name",
+        "nick": "name",
         "text": "text",
+        "type": 0,
       },
     ]
   }
@@ -184,11 +186,11 @@ exports[`ChatView should render messages 1`] = `
 >
   <div>
     <Message
-      message="text"
-      sentDate={"2017-01-01T00:00:00.000Z"}
-      user="name"
+      date={"2017-01-01T00:00:00.000Z"}
+      nick="name"
+      text="text"
+      type={0}
       userClicked={[Function]}
-      userType={0}
     >
       <div>
         <span

@@ -1,5 +1,6 @@
 
 import { Map, fromJS } from 'immutable';
+import { IMessage, MessageType } from '../models';
 
 export default function(state: Map<any, any>, action: any) {
   switch (action.type) {
@@ -31,10 +32,11 @@ function leftChannel(state: Map<any, any>, action: any) {
 }
 
 function receivedMessage(state: Map<any, any>, action: any) {
-  if (state.get('name') !== null && action.payload.to.toLowerCase() === state.get('name').toLowerCase()) {
+  const msg: IMessage = action.payload;
+  if (state.get('name') !== null && msg.to.toLowerCase() === state.get('name').toLowerCase()) {
     return state.updateIn(
       ['messages'],
-      (messages) => messages.push({name: action.payload.nick, text: action.payload.text, date: action.payload.date})
+      (messages: IMessage[]) => messages.push(msg)
     );
   }
 
@@ -42,10 +44,11 @@ function receivedMessage(state: Map<any, any>, action: any) {
 }
 
 function receivedPm(state: Map<any, any>, action: any) {
-  if (action.payload.nick.toLowerCase() === state.get('name').toLowerCase()) {
+  const msg: IMessage = action.payload;
+  if (msg.nick.toLowerCase() === state.get('name').toLowerCase()) {
     return state.updateIn(
       ['messages'],
-      (messages) => messages.push({name: action.payload.nick, text: action.payload.text, date: action.payload.date})
+      (messages: IMessage[]) => messages.push(msg)
     );
   }
 
@@ -53,10 +56,11 @@ function receivedPm(state: Map<any, any>, action: any) {
 }
 
 function sentMessage(state: Map<any, any>, action: any) {
-  if (action.payload.channel.toLowerCase() === state.get('name').toLowerCase()) {
+  const msg: IMessage = action.payload;
+  if (msg.to.toLowerCase() === state.get('name').toLowerCase()) {
     return state.updateIn(
       ['messages'],
-      (messages) => messages.push({name: action.payload.nick, text: action.payload.message, date: action.payload.date})
+      (messages: IMessage[]) => messages.push(msg)
     );
   }
 

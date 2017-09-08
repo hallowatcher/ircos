@@ -1,216 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Message should render as moderator 1`] = `
-ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
-  "length": 1,
-  "node": <div>
-    <span
-        style={
-            Object {
-                "color": "#b2b2b2",
-              }
-        }
-    >
-        [
-        00
-        :
-        00
-        ] 
-    </span>
-    <span
-        onClick={[Function]}
-        style={
-            Object {
-                "color": "#BF3434",
-                "cursor": "pointer",
-                "fontWeight": 800,
-              }
-        }
-    >
-        foo123
-        : 
-    </span>
-    <span
-        style={Object {}}
-    >
-        bar456
-    </span>
-</div>,
-  "nodes": Array [
-    <div>
-      <span
-            style={
-                  Object {
-                        "color": "#b2b2b2",
-                      }
-            }
-      >
-            [
-            00
-            :
-            00
-            ] 
-      </span>
-      <span
-            onClick={[Function]}
-            style={
-                  Object {
-                        "color": "#BF3434",
-                        "cursor": "pointer",
-                        "fontWeight": 800,
-                      }
-            }
-      >
-            foo123
-            : 
-      </span>
-      <span
-            style={Object {}}
-      >
-            bar456
-      </span>
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
-      "_context": Object {},
-      "_currentElement": <Message
-        message="bar456"
-        sentDate={"2017-01-01T00:00:00.000Z"}
-        user="foo123"
-        userClicked={[Function]}
-        userType={1}
-/>,
-      "_debugID": 3,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": Message {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "message": "bar456",
-          "sentDate": "2017-01-01T00:00:00.000Z",
-          "user": "foo123",
-          "userClicked": [Function],
-          "userType": 1,
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-        "userClicked": [Function],
-      },
-      "_mountOrder": 2,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div>
-          <span
-                    style={
-                              Object {
-                                        "color": "#b2b2b2",
-                                      }
-                    }
-          >
-                    [
-                    00
-                    :
-                    00
-                    ] 
-          </span>
-          <span
-                    onClick={[Function]}
-                    style={
-                              Object {
-                                        "color": "#BF3434",
-                                        "cursor": "pointer",
-                                        "fontWeight": 800,
-                                      }
-                    }
-          >
-                    foo123
-                    : 
-          </span>
-          <span
-                    style={Object {}}
-          >
-                    bar456
-          </span>
-</div>,
-        "_debugID": 4,
-        "_renderedOutput": <div>
-          <span
-                    style={
-                              Object {
-                                        "color": "#b2b2b2",
-                                      }
-                    }
-          >
-                    [
-                    00
-                    :
-                    00
-                    ] 
-          </span>
-          <span
-                    onClick={[Function]}
-                    style={
-                              Object {
-                                        "color": "#BF3434",
-                                        "cursor": "pointer",
-                                        "fontWeight": 800,
-                                      }
-                    }
-          >
-                    foo123
-                    : 
-          </span>
-          <span
-                    style={Object {}}
-          >
-                    bar456
-          </span>
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Message
-    message="bar456"
-    sentDate={"2017-01-01T00:00:00.000Z"}
-    user="foo123"
-    userClicked={[Function]}
-    userType={1}
-/>,
-}
-`;
-
 exports[`Message should render as regular 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
@@ -294,9 +83,10 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <Message
-        message="bar456"
-        sentDate={"2017-01-01T00:00:00.000Z"}
-        user="foo123"
+        date={"2017-01-01T00:00:00.000Z"}
+        nick="foo123"
+        text="bar456"
+        type={0}
         userClicked={[Function]}
 />,
       "_debugID": 1,
@@ -306,9 +96,10 @@ ShallowWrapper {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
-          "message": "bar456",
-          "sentDate": "2017-01-01T00:00:00.000Z",
-          "user": "foo123",
+          "date": "2017-01-01T00:00:00.000Z",
+          "nick": "foo123",
+          "text": "bar456",
+          "type": 0,
           "userClicked": [Function],
         },
         "refs": Object {},
@@ -411,9 +202,10 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <Message
-    message="bar456"
-    sentDate={"2017-01-01T00:00:00.000Z"}
-    user="foo123"
+    date={"2017-01-01T00:00:00.000Z"}
+    nick="foo123"
+    text="bar456"
+    type={0}
     userClicked={[Function]}
 />,
 }
@@ -502,24 +294,24 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <Message
-        message="bar456"
-        sentDate={"2017-01-01T00:00:00.000Z"}
-        user="foo123"
+        date={"2017-01-01T00:00:00.000Z"}
+        nick="foo123"
+        text="bar456"
+        type={3}
         userClicked={[Function]}
-        userType={2}
 />,
-      "_debugID": 5,
+      "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Message {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
-          "message": "bar456",
-          "sentDate": "2017-01-01T00:00:00.000Z",
-          "user": "foo123",
+          "date": "2017-01-01T00:00:00.000Z",
+          "nick": "foo123",
+          "text": "bar456",
+          "type": 3,
           "userClicked": [Function],
-          "userType": 2,
         },
         "refs": Object {},
         "state": null,
@@ -535,7 +327,7 @@ ShallowWrapper {
         },
         "userClicked": [Function],
       },
-      "_mountOrder": 3,
+      "_mountOrder": 2,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -575,7 +367,7 @@ ShallowWrapper {
                     bar456
           </span>
 </div>,
-        "_debugID": 6,
+        "_debugID": 4,
         "_renderedOutput": <div>
           <span
                     style={
@@ -621,11 +413,11 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <Message
-    message="bar456"
-    sentDate={"2017-01-01T00:00:00.000Z"}
-    user="foo123"
+    date={"2017-01-01T00:00:00.000Z"}
+    nick="foo123"
+    text="bar456"
+    type={3}
     userClicked={[Function]}
-    userType={2}
 />,
 }
 `;
@@ -669,24 +461,24 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <Message
-        message="bar456"
-        sentDate={"2017-01-01T00:00:00.000Z"}
-        user="foo123"
+        date={"2017-01-01T00:00:00.000Z"}
+        nick="foo123"
+        text="bar456"
+        type={2}
         userClicked={[Function]}
-        userType={3}
 />,
-      "_debugID": 7,
+      "_debugID": 5,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Message {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
-          "message": "bar456",
-          "sentDate": "2017-01-01T00:00:00.000Z",
-          "user": "foo123",
+          "date": "2017-01-01T00:00:00.000Z",
+          "nick": "foo123",
+          "text": "bar456",
+          "type": 2,
           "userClicked": [Function],
-          "userType": 3,
         },
         "refs": Object {},
         "state": null,
@@ -702,7 +494,7 @@ ShallowWrapper {
         },
         "userClicked": [Function],
       },
-      "_mountOrder": 4,
+      "_mountOrder": 3,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -720,7 +512,7 @@ ShallowWrapper {
                     bar456
           </span>
 </div>,
-        "_debugID": 8,
+        "_debugID": 6,
         "_renderedOutput": <div>
           <span
                     style={
@@ -744,11 +536,11 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <Message
-    message="bar456"
-    sentDate={"2017-01-01T00:00:00.000Z"}
-    user="foo123"
+    date={"2017-01-01T00:00:00.000Z"}
+    nick="foo123"
+    text="bar456"
+    type={2}
     userClicked={[Function]}
-    userType={3}
 />,
 }
 `;

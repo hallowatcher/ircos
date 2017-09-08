@@ -5,6 +5,7 @@ import * as Immutable from 'immutable';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as MockDate from 'mockdate';
+import { MessageType, IMessage } from '../../src/models';
 
 const middlewares = [ thunk ];
 const mockStore = configureMockStore(middlewares);
@@ -58,26 +59,30 @@ describe('Client actions', function() {
         nick: 'System',
         text: 'Attempting to join #osu...',
         to: '#osu',
-        date: new Date(datenow)
+        date: new Date(datenow),
+        type: MessageType.system
       }},
       { type: 'RECEIVED_MESSAGE', payload: {
         nick: 'System',
         text: 'Joined #osu!',
         to: '#osu',
-        date: new Date(datenow)
+        date: new Date(datenow),
+        type: MessageType.system
       }},
       { type: 'OPEN_CHANNEL', payload: '#english' },
       { type: 'RECEIVED_MESSAGE', payload: {
         nick: 'System',
         text: 'Attempting to join #english...',
         to: '#english',
-        date: new Date(datenow)
+        date: new Date(datenow),
+        type: MessageType.system
       }},
       { type: 'RECEIVED_MESSAGE', payload: {
         nick: 'System',
         text: 'Joined #english!',
         to: '#english',
-        date: new Date(datenow)
+        date: new Date(datenow),
+        type: MessageType.system
       }},
       { type: 'MAKE_CURRENT_CHANNEL', payload: { messages: [], name: '#osu' } },
       { type: 'SELF_INFO_FETCHED', payload: { userInfo: { userName: nick } } }
@@ -144,7 +149,8 @@ describe('Client actions', function() {
         nick: 'System',
         text: 'Joined someoneElse!',
         to: 'someoneElse',
-        date: new Date(datenow)
+        date: new Date(datenow),
+        type: MessageType.system
       } }
     ];
 
@@ -162,13 +168,15 @@ describe('Client actions', function() {
         nick: 'System',
         text: 'Attempting to join #error...',
         to: '#error',
-        date: new Date(datenow)
+        date: new Date(datenow),
+        type: MessageType.system
       } },
       { type: 'RECEIVED_MESSAGE', payload: {
         nick: 'System',
         text: 'Failed to join #error!',
         to: '#error',
-        date: new Date(datenow)
+        date: new Date(datenow),
+        type: MessageType.system
       } }
     ];
 
@@ -183,8 +191,8 @@ describe('Client actions', function() {
       const to = 'someoneElse';
       const text = 'theText';
       const expectedActions = [
-        { type: 'RECEIVED_MESSAGE', payload: { nick, to, text, date: new Date(datenow) } },
-        { type: 'RECEIVED_PM', payload: { nick, text, date: new Date(datenow) } }
+        { type: 'RECEIVED_MESSAGE', payload: { nick, to, text, date: new Date(datenow), type: MessageType.message } },
+        { type: 'RECEIVED_PM', payload: { nick, text, date: new Date(datenow), type: MessageType.message } }
       ];
 
       client.emit('message#', nick, to, text);
@@ -198,13 +206,13 @@ describe('Client actions', function() {
 
   it('should send a message', function() {
 
-    const channel = '#osu';
-    const message = 'theText';
+    const to = '#osu';
+    const text = 'theText';
     const expectedActions = [
-      { type: 'SENT_MESSAGE', payload: { nick, channel, message, date: new Date(datenow) } }
+      { type: 'SENT_MESSAGE', payload: { nick, to, text, date: new Date(datenow), type: MessageType.self } }
     ];
 
-    return store.dispatch(actions.sendMessage(channel, message)).then(() => {
+    return store.dispatch(actions.sendMessage(to, text)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

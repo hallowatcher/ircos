@@ -8,7 +8,7 @@ import toJson from 'enzyme-to-json';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
-describe('AddTab', function() {
+describe('Tab', function() {
 
   let component: enzyme.ReactWrapper<any, any>;
   let tabName;
@@ -50,8 +50,7 @@ describe('AddTab', function() {
   });
 
   it('should have clickable name div', function() {
-    const name = component.find('div > div').first();
-    expect(name.text()).toEqual(tabName);
+    const name = component.find('div').first();
     expect(name.props().onClick).toBeDefined();
   });
 

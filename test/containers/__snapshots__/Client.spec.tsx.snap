@@ -1,14 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Client should mount with channel tabs 1`] = `
-<Client
+<DragDropContext(Client)
   channelLength={5}
-  channels={
-    Array [
-      "one",
-      "two",
-    ]
-  }
   closeChannel={[Function]}
   currentChannel=""
   joinChannel={[Function]}
@@ -17,263 +11,410 @@ exports[`Client should mount with channel tabs 1`] = `
   nick=""
   openExternal={[Function]}
   sendMessage={[Function]}
+  tabs={
+    Array [
+      "one",
+      "two",
+    ]
+  }
   userId={1}
 >
-  <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "height": "100%",
-        "overflow": "hidden",
-        "width": "100%",
-      }
+  <Client
+    channelLength={5}
+    closeChannel={[Function]}
+    currentChannel=""
+    joinChannel={[Function]}
+    makeCurrentChannel={[Function]}
+    messages={Array []}
+    nick=""
+    openExternal={[Function]}
+    sendMessage={[Function]}
+    tabs={
+      Array [
+        "one",
+        "two",
+      ]
     }
+    userId={1}
   >
-    <JoinModal
-      isOpen={false}
-      joinChannel={[Function]}
-      onClose={[Function]}
-    >
-      <Modal
-        ariaHideApp={true}
-        bodyOpenClassName="ReactModal__Body--open"
-        closeTimeoutMS={0}
-        contentLabel="Join channel"
-        isOpen={false}
-        onRequestClose={[Function]}
-        parentSelector={[Function]}
-        portalClassName="ReactModalPortal"
-        shouldCloseOnOverlayClick={true}
-        style={
-          Object {
-            "content": Object {
-              "bottom": "auto",
-              "left": "50%",
-              "marginRight": "-50%",
-              "right": "auto",
-              "top": "50%",
-              "transform": "translate(-50%, -50%)",
-            },
-          }
-        }
-      />
-    </JoinModal>
     <div
       style={
         Object {
-          "backgroundColor": "#FE4590",
           "display": "flex",
-          "flexDirection": "row",
-          "flexShrink": 0,
+          "flexDirection": "column",
+          "height": "100%",
+          "overflow": "hidden",
+          "width": "100%",
         }
       }
     >
-      <div
-        style={
-          Object {
-            "alignItems": "flex-end",
-            "display": "flex",
-            "flexGrow": 1,
-            "overflowX": "auto",
-            "overflowY": "hidden",
-            "padding": "0 5px",
-          }
-        }
+      <JoinModal
+        isOpen={false}
+        joinChannel={[Function]}
+        onClose={[Function]}
       >
-        <Tab
-          closeTab={[Function]}
-          isActive={false}
-          tabClick={[Function]}
-          tabName="0"
-        >
-          <div
-            onMouseDown={[Function]}
-            style={
-              Object {
-                "WebkitUserSelect": "none",
-                "alignItems": "center",
-                "backgroundColor": "rgba(255, 255, 255, 0.1)",
-                "boxSizing": "border-box",
-                "color": "white",
-                "cursor": "pointer",
-                "display": "flex",
-                "fontWeight": 800,
-                "height": 25,
-                "margin": "0 2px",
-                "padding": "0 0 0 10px",
-                "transform": "skew(-15deg)",
-              }
-            }
-          >
-            <div
-              onClick={[Function]}
-              style={
-                Object {
-                  "transform": "skew(15deg)",
-                }
-              }
-            >
-              0
-            </div>
-            <div
-              onClick={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "rgba(255, 255, 255, 0.15)",
-                  "display": "flex",
-                  "fontWeight": 400,
-                  "height": "100%",
-                  "margin": "0 0 0 10px",
-                  "padding": "0 10px",
-                }
-              }
-            >
-              ×
-            </div>
-          </div>
-        </Tab>
-        <Tab
-          closeTab={[Function]}
-          isActive={false}
-          tabClick={[Function]}
-          tabName="1"
-        >
-          <div
-            onMouseDown={[Function]}
-            style={
-              Object {
-                "WebkitUserSelect": "none",
-                "alignItems": "center",
-                "backgroundColor": "rgba(255, 255, 255, 0.1)",
-                "boxSizing": "border-box",
-                "color": "white",
-                "cursor": "pointer",
-                "display": "flex",
-                "fontWeight": 800,
-                "height": 25,
-                "margin": "0 2px",
-                "padding": "0 0 0 10px",
-                "transform": "skew(-15deg)",
-              }
-            }
-          >
-            <div
-              onClick={[Function]}
-              style={
-                Object {
-                  "transform": "skew(15deg)",
-                }
-              }
-            >
-              1
-            </div>
-            <div
-              onClick={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "rgba(255, 255, 255, 0.15)",
-                  "display": "flex",
-                  "fontWeight": 400,
-                  "height": "100%",
-                  "margin": "0 0 0 10px",
-                  "padding": "0 10px",
-                }
-              }
-            >
-              ×
-            </div>
-          </div>
-        </Tab>
-        <AddTab
-          clickAddTab={[Function]}
-        >
-          <div
-            onClick={[Function]}
-            style={
-              Object {
-                "WebkitUserSelect": "none",
-                "alignItems": "center",
-                "backgroundColor": "rgb(241, 196, 15)",
-                "boxSizing": "border-box",
-                "color": "white",
-                "cursor": "pointer",
-                "display": "flex",
-                "fontWeight": 800,
-                "height": 25,
-                "margin": "0 2px",
-                "padding": "10px",
-                "transform": "skew(-15deg)",
-              }
-            }
-          >
-            <span
-              style={
-                Object {
-                  "transform": "skew(15deg)",
-                }
-              }
-            >
-              +
-            </span>
-          </div>
-        </AddTab>
-      </div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "rgba(255, 255, 255, 0.4)",
-            "color": "white",
-            "display": "flex",
-          }
-        }
-      >
-        <div
+        <Modal
+          ariaHideApp={true}
+          bodyOpenClassName="ReactModal__Body--open"
+          closeTimeoutMS={0}
+          contentLabel="Join channel"
+          isOpen={false}
+          onRequestClose={[Function]}
+          parentSelector={[Function]}
+          portalClassName="ReactModalPortal"
+          shouldCloseOnOverlayClick={true}
           style={
             Object {
-              "backgroundColor": "rgba(255, 255, 255, 0.8)",
-              "height": "35px",
-              "width": "35px",
-            }
-          }
-        >
-          <img
-            src="https://a.ppy.sh/1_1262304000000.jpg"
-            style={
-              Object {
-                "maxHeight": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "padding": 5,
+              "content": Object {
+                "bottom": "auto",
+                "left": "50%",
+                "marginRight": "-50%",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              },
             }
           }
         />
-      </div>
-    </div>
-    <ChatView
-      messages={Array []}
-      selfNick=""
-      style={
-        Object {
-          "flexGrow": 1,
-          "marginBottom": 10,
-          "overflowX": "hidden",
-          "overflowY": "auto",
-          "wordBreak": "break-word",
-        }
-      }
-      userClicked={[Function]}
-    >
+      </JoinModal>
       <div
+        style={
+          Object {
+            "backgroundBlendMode": "multiply",
+            "backgroundColor": "rgba(198, 18, 125, 1)",
+            "backgroundImage": "url(../src/assets/images/bg-light.png)",
+            "display": "flex",
+            "flexDirection": "row",
+            "flexShrink": 0,
+          }
+        }
+      >
+        <TabBar
+          currentChannel=""
+          tabAdd={[Function]}
+          tabClick={[Function]}
+          tabClose={[Function]}
+          tabs={
+            Array [
+              "one",
+              "two",
+            ]
+          }
+        >
+          <FlipMovePropConverter
+            delay={0}
+            disableAllAnimations={false}
+            duration={125}
+            easing="ease-out"
+            enterAnimation="elevator"
+            getPosition={[Function]}
+            leaveAnimation="elevator"
+            maintainContainerHeight={false}
+            staggerDelayBy={0}
+            staggerDurationBy={0}
+            style={
+              Object {
+                "alignItems": "flex-end",
+                "display": "flex",
+                "flexGrow": 1,
+                "overflowX": "auto",
+                "overflowY": "hidden",
+                "padding": "0 5px",
+              }
+            }
+            typeName="div"
+            verticalAlignment="top"
+          >
+            <FlipMove
+              delay={0}
+              delegated={
+                Object {
+                  "style": Object {
+                    "alignItems": "flex-end",
+                    "display": "flex",
+                    "flexGrow": 1,
+                    "overflowX": "auto",
+                    "overflowY": "hidden",
+                    "padding": "0 5px",
+                    "position": "relative",
+                  },
+                }
+              }
+              disableAllAnimations={false}
+              duration={125}
+              easing="ease-out"
+              enterAnimation={
+                Object {
+                  "from": Object {
+                    "opacity": "0",
+                    "transform": "scale(0)",
+                  },
+                  "to": Object {
+                    "opacity": "",
+                    "transform": "",
+                  },
+                }
+              }
+              getPosition={[Function]}
+              leaveAnimation={
+                Object {
+                  "from": Object {
+                    "opacity": "1",
+                    "transform": "scale(1)",
+                  },
+                  "to": Object {
+                    "opacity": "0",
+                    "transform": "scale(0)",
+                  },
+                }
+              }
+              maintainContainerHeight={false}
+              staggerDelayBy={0}
+              staggerDurationBy={0}
+              typeName="div"
+              verticalAlignment="top"
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "flex-end",
+                    "display": "flex",
+                    "flexGrow": 1,
+                    "overflowX": "auto",
+                    "overflowY": "hidden",
+                    "padding": "0 5px",
+                    "position": "relative",
+                  }
+                }
+              >
+                <DropTarget(DragSource(Tab))
+                  closeTab={[Function]}
+                  index={0}
+                  isActive={false}
+                  tabClick={[Function]}
+                  tabName="one"
+                >
+                  <DragSource(Tab)
+                    closeTab={[Function]}
+                    connectDropTarget={[Function]}
+                    index={0}
+                    isActive={false}
+                    isOver={false}
+                    tabClick={[Function]}
+                    tabName="one"
+                  >
+                    <Tab
+                      closeTab={[Function]}
+                      connectDragSource={[Function]}
+                      connectDropTarget={[Function]}
+                      index={0}
+                      isActive={false}
+                      isDragging={false}
+                      isOver={false}
+                      tabClick={[Function]}
+                      tabName="one"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        style={
+                          Object {
+                            "WebkitUserSelect": "none",
+                            "alignItems": "center",
+                            "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                            "boxSizing": "border-box",
+                            "color": "white",
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "fontWeight": 800,
+                            "height": 25,
+                            "margin": "0 2px",
+                            "padding": "0 0 0 10px",
+                          }
+                        }
+                      >
+                        <div
+                          onClick={[Function]}
+                        >
+                          one
+                        </div>
+                        <div
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                              "display": "flex",
+                              "fontWeight": 400,
+                              "height": "100%",
+                              "margin": "0 0 0 10px",
+                              "padding": "0 10px",
+                            }
+                          }
+                        >
+                          ×
+                        </div>
+                      </div>
+                    </Tab>
+                  </DragSource(Tab)>
+                </DropTarget(DragSource(Tab))>
+                <DropTarget(DragSource(Tab))
+                  closeTab={[Function]}
+                  index={1}
+                  isActive={false}
+                  tabClick={[Function]}
+                  tabName="two"
+                >
+                  <DragSource(Tab)
+                    closeTab={[Function]}
+                    connectDropTarget={[Function]}
+                    index={1}
+                    isActive={false}
+                    isOver={false}
+                    tabClick={[Function]}
+                    tabName="two"
+                  >
+                    <Tab
+                      closeTab={[Function]}
+                      connectDragSource={[Function]}
+                      connectDropTarget={[Function]}
+                      index={1}
+                      isActive={false}
+                      isDragging={false}
+                      isOver={false}
+                      tabClick={[Function]}
+                      tabName="two"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        style={
+                          Object {
+                            "WebkitUserSelect": "none",
+                            "alignItems": "center",
+                            "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                            "boxSizing": "border-box",
+                            "color": "white",
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "fontWeight": 800,
+                            "height": 25,
+                            "margin": "0 2px",
+                            "padding": "0 0 0 10px",
+                          }
+                        }
+                      >
+                        <div
+                          onClick={[Function]}
+                        >
+                          two
+                        </div>
+                        <div
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "rgba(255, 255, 255, 0.15)",
+                              "display": "flex",
+                              "fontWeight": 400,
+                              "height": "100%",
+                              "margin": "0 0 0 10px",
+                              "padding": "0 10px",
+                            }
+                          }
+                        >
+                          ×
+                        </div>
+                      </div>
+                    </Tab>
+                  </DragSource(Tab)>
+                </DropTarget(DragSource(Tab))>
+                <AddTab
+                  clickAddTab={[Function]}
+                >
+                  <div
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "WebkitUserSelect": "none",
+                        "alignItems": "center",
+                        "backgroundColor": "rgb(241, 196, 15)",
+                        "boxSizing": "border-box",
+                        "color": "white",
+                        "cursor": "pointer",
+                        "display": "flex",
+                        "fontWeight": 800,
+                        "height": 25,
+                        "margin": "0 2px",
+                        "padding": "10px",
+                      }
+                    }
+                  >
+                    +
+                  </div>
+                </AddTab>
+              </div>
+            </FlipMove>
+          </FlipMovePropConverter>
+        </TabBar>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.4)",
+              "color": "white",
+              "display": "flex",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "rgba(255, 255, 255, 0.8)",
+                "height": "35px",
+                "width": "35px",
+              }
+            }
+          >
+            <img
+              src="https://a.ppy.sh/1_1262304000000.jpg"
+              style={
+                Object {
+                  "maxHeight": "100%",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "padding": 5,
+              }
+            }
+          />
+          <div
+            style={
+              Object {
+                "alignContent": "center",
+                "alignItems": "center",
+                "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                "cursor": "pointer",
+                "display": "flex",
+                "flexDirection": "column",
+                "height": "35px",
+                "justifyContent": "center",
+                "width": "35px",
+              }
+            }
+          >
+            <i
+              className="fa fa-sign-out"
+            />
+          </div>
+        </div>
+      </div>
+      <ChatView
+        messages={Array []}
+        selfNick=""
         style={
           Object {
             "flexGrow": 1,
@@ -283,41 +424,54 @@ exports[`Client should mount with channel tabs 1`] = `
             "wordBreak": "break-word",
           }
         }
-      />
-    </ChatView>
-    <form
-      onSubmit={[Function]}
-      style={
-        Object {
-          "display": "flex",
-          "flexShrink": 0,
-          "height": 40,
-        }
-      }
-    >
-      <input
-        onChange={[Function]}
-        placeholder="Enter a message..."
+        userClicked={[Function]}
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+              "marginBottom": 10,
+              "overflowX": "hidden",
+              "overflowY": "auto",
+              "wordBreak": "break-word",
+            }
+          }
+        />
+      </ChatView>
+      <form
+        onSubmit={[Function]}
         style={
           Object {
-            "padding": 10,
+            "display": "flex",
+            "flexShrink": 0,
+            "height": 40,
           }
         }
-        type="text"
-        value=""
-      />
-      <input
-        style={
-          Object {
-            "width": 200,
+      >
+        <input
+          onChange={[Function]}
+          placeholder="Enter a message..."
+          style={
+            Object {
+              "padding": 10,
+            }
           }
-        }
-        type="submit"
-        value="Send"
-      />
-    </form>
-  </div>
-</Client>
+          type="text"
+          value=""
+        />
+        <input
+          style={
+            Object {
+              "width": 200,
+            }
+          }
+          type="submit"
+          value="Send"
+        />
+      </form>
+    </div>
+  </Client>
+</DragDropContext(Client)>
 `;
 
 exports[`Client should render 1`] = `
@@ -347,29 +501,23 @@ ShallowWrapper {
     <div
         style={
             Object {
-                "backgroundColor": "#FE4590",
+                "backgroundBlendMode": "multiply",
+                "backgroundColor": "rgba(198, 18, 125, 1)",
+                "backgroundImage": "url(../src/assets/images/bg-light.png)",
                 "display": "flex",
                 "flexDirection": "row",
                 "flexShrink": 0,
               }
         }
     >
-        <div
-            style={
-                Object {
-                    "alignItems": "flex-end",
-                    "display": "flex",
-                    "flexGrow": 1,
-                    "overflowX": "auto",
-                    "overflowY": "hidden",
-                    "padding": "0 5px",
-                  }
-            }
-        >
-            <AddTab
-                clickAddTab={[Function]}
-            />
-        </div>
+        <TabBar
+            currentChannel=""
+            tabAdd={[Function]}
+            tabClick={[Function]}
+            tabClose={[Function]}
+            tabMove={[Function]}
+            tabs={Array []}
+        />
         <div
             style={
                 Object {
@@ -406,6 +554,26 @@ ShallowWrapper {
                       }
                 }
             />
+            <div
+                onClick={undefined}
+                style={
+                    Object {
+                        "alignContent": "center",
+                        "alignItems": "center",
+                        "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                        "cursor": "pointer",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "height": "35px",
+                        "justifyContent": "center",
+                        "width": "35px",
+                      }
+                }
+            >
+                <i
+                    className="fa fa-sign-out"
+                />
+            </div>
         </div>
     </div>
     <ChatView
@@ -474,29 +642,23 @@ ShallowWrapper {
       <div
             style={
                   Object {
-                        "backgroundColor": "#FE4590",
+                        "backgroundBlendMode": "multiply",
+                        "backgroundColor": "rgba(198, 18, 125, 1)",
+                        "backgroundImage": "url(../src/assets/images/bg-light.png)",
                         "display": "flex",
                         "flexDirection": "row",
                         "flexShrink": 0,
                       }
             }
       >
-            <div
-                  style={
-                        Object {
-                              "alignItems": "flex-end",
-                              "display": "flex",
-                              "flexGrow": 1,
-                              "overflowX": "auto",
-                              "overflowY": "hidden",
-                              "padding": "0 5px",
-                            }
-                  }
-            >
-                  <AddTab
-                        clickAddTab={[Function]}
-                  />
-            </div>
+            <TabBar
+                  currentChannel=""
+                  tabAdd={[Function]}
+                  tabClick={[Function]}
+                  tabClose={[Function]}
+                  tabMove={[Function]}
+                  tabs={Array []}
+            />
             <div
                   style={
                         Object {
@@ -533,6 +695,26 @@ ShallowWrapper {
                                   }
                         }
                   />
+                  <div
+                        onClick={undefined}
+                        style={
+                              Object {
+                                    "alignContent": "center",
+                                    "alignItems": "center",
+                                    "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                                    "cursor": "pointer",
+                                    "display": "flex",
+                                    "flexDirection": "column",
+                                    "height": "35px",
+                                    "justifyContent": "center",
+                                    "width": "35px",
+                                  }
+                        }
+                  >
+                        <i
+                              className="fa fa-sign-out"
+                        />
+                  </div>
             </div>
       </div>
       <ChatView
@@ -599,6 +781,8 @@ ShallowWrapper {
         nick=""
         openExternal={[Function]}
         sendMessage={[Function]}
+        tabMove={[Function]}
+        tabs={Array []}
         userId={1}
 />,
       "_debugID": 1,
@@ -623,6 +807,8 @@ ShallowWrapper {
           "nick": "",
           "openExternal": [Function],
           "sendMessage": [Function],
+          "tabMove": [Function],
+          "tabs": Array [],
           "userId": 1,
         },
         "refs": Object {},
@@ -669,29 +855,23 @@ ShallowWrapper {
           <div
                     style={
                               Object {
-                                        "backgroundColor": "#FE4590",
+                                        "backgroundBlendMode": "multiply",
+                                        "backgroundColor": "rgba(198, 18, 125, 1)",
+                                        "backgroundImage": "url(../src/assets/images/bg-light.png)",
                                         "display": "flex",
                                         "flexDirection": "row",
                                         "flexShrink": 0,
                                       }
                     }
           >
-                    <div
-                              style={
-                                        Object {
-                                                  "alignItems": "flex-end",
-                                                  "display": "flex",
-                                                  "flexGrow": 1,
-                                                  "overflowX": "auto",
-                                                  "overflowY": "hidden",
-                                                  "padding": "0 5px",
-                                                }
-                              }
-                    >
-                              <AddTab
-                                        clickAddTab={[Function]}
-                              />
-                    </div>
+                    <TabBar
+                              currentChannel=""
+                              tabAdd={[Function]}
+                              tabClick={[Function]}
+                              tabClose={[Function]}
+                              tabMove={[Function]}
+                              tabs={Array []}
+                    />
                     <div
                               style={
                                         Object {
@@ -728,6 +908,26 @@ ShallowWrapper {
                                                           }
                                         }
                               />
+                              <div
+                                        onClick={undefined}
+                                        style={
+                                                  Object {
+                                                            "alignContent": "center",
+                                                            "alignItems": "center",
+                                                            "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                                                            "cursor": "pointer",
+                                                            "display": "flex",
+                                                            "flexDirection": "column",
+                                                            "height": "35px",
+                                                            "justifyContent": "center",
+                                                            "width": "35px",
+                                                          }
+                                        }
+                              >
+                                        <i
+                                                  className="fa fa-sign-out"
+                                        />
+                              </div>
                     </div>
           </div>
           <ChatView
@@ -796,29 +996,23 @@ ShallowWrapper {
           <div
                     style={
                               Object {
-                                        "backgroundColor": "#FE4590",
+                                        "backgroundBlendMode": "multiply",
+                                        "backgroundColor": "rgba(198, 18, 125, 1)",
+                                        "backgroundImage": "url(../src/assets/images/bg-light.png)",
                                         "display": "flex",
                                         "flexDirection": "row",
                                         "flexShrink": 0,
                                       }
                     }
           >
-                    <div
-                              style={
-                                        Object {
-                                                  "alignItems": "flex-end",
-                                                  "display": "flex",
-                                                  "flexGrow": 1,
-                                                  "overflowX": "auto",
-                                                  "overflowY": "hidden",
-                                                  "padding": "0 5px",
-                                                }
-                              }
-                    >
-                              <AddTab
-                                        clickAddTab={[Function]}
-                              />
-                    </div>
+                    <TabBar
+                              currentChannel=""
+                              tabAdd={[Function]}
+                              tabClick={[Function]}
+                              tabClose={[Function]}
+                              tabMove={[Function]}
+                              tabs={Array []}
+                    />
                     <div
                               style={
                                         Object {
@@ -855,6 +1049,26 @@ ShallowWrapper {
                                                           }
                                         }
                               />
+                              <div
+                                        onClick={undefined}
+                                        style={
+                                                  Object {
+                                                            "alignContent": "center",
+                                                            "alignItems": "center",
+                                                            "backgroundColor": "rgba(255, 0, 0, 0.5)",
+                                                            "cursor": "pointer",
+                                                            "display": "flex",
+                                                            "flexDirection": "column",
+                                                            "height": "35px",
+                                                            "justifyContent": "center",
+                                                            "width": "35px",
+                                                          }
+                                        }
+                              >
+                                        <i
+                                                  className="fa fa-sign-out"
+                                        />
+                              </div>
                     </div>
           </div>
           <ChatView
@@ -925,6 +1139,8 @@ ShallowWrapper {
     nick=""
     openExternal={[Function]}
     sendMessage={[Function]}
+    tabMove={[Function]}
+    tabs={Array []}
     userId={1}
 />,
 }

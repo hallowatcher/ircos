@@ -23,19 +23,10 @@ ShallowWrapper {
             "height": 25,
             "margin": "0 2px",
             "padding": "10px",
-            "transform": "skew(-15deg)",
           }
     }
 >
-    <span
-        style={
-            Object {
-                "transform": "skew(15deg)",
-              }
-        }
-    >
-        +
-    </span>
+    +
 </div>,
   "nodes": Array [
     <div
@@ -53,19 +44,10 @@ ShallowWrapper {
                   "height": 25,
                   "margin": "0 2px",
                   "padding": "10px",
-                  "transform": "skew(-15deg)",
                 }
       }
 >
-      <span
-            style={
-                  Object {
-                        "transform": "skew(15deg)",
-                      }
-            }
-      >
-            +
-      </span>
+      +
 </div>,
   ],
   "options": Object {},
@@ -121,19 +103,10 @@ ShallowWrapper {
                               "height": 25,
                               "margin": "0 2px",
                               "padding": "10px",
-                              "transform": "skew(-15deg)",
                             }
           }
 >
-          <span
-                    style={
-                              Object {
-                                        "transform": "skew(15deg)",
-                                      }
-                    }
-          >
-                    +
-          </span>
+          +
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -151,19 +124,10 @@ ShallowWrapper {
                               "height": 25,
                               "margin": "0 2px",
                               "padding": "10px",
-                              "transform": "skew(-15deg)",
                             }
           }
 >
-          <span
-                    style={
-                              Object {
-                                        "transform": "skew(15deg)",
-                                      }
-                    }
-          >
-                    +
-          </span>
+          +
 </div>,
       },
       "_renderedNodeType": 0,

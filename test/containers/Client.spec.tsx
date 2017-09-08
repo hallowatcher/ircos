@@ -4,12 +4,17 @@ import * as enzyme from 'enzyme';
 import * as MockDate from 'mockdate';
 import toJson from 'enzyme-to-json';
 
+// Drag n Drop
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
 describe('Client', function() {
 
   let component: enzyme.ShallowWrapper<any, any>;
   let datenow;
   const sendMessage = jest.fn();
   const userClicked = jest.fn();
+  const DnDClient = DragDropContext(HTML5Backend)(Client);
 
   beforeEach(function() {
     datenow = 1262304000000;
@@ -22,7 +27,9 @@ describe('Client', function() {
         nick={''}
         channelLength={5}
         channels={[]}
+        tabs={[]}
         closeChannel={jest.fn()}
+        tabMove={jest.fn()}
         currentChannel={''}
         joinChannel={jest.fn()}
         makeCurrentChannel={jest.fn()}
@@ -44,10 +51,10 @@ describe('Client', function() {
 
   it('should mount', function() {
     enzyme.mount(
-      <Client
+      <DnDClient
         nick={''}
         channelLength={5}
-        channels={[]}
+        tabs={[]}
         closeChannel={jest.fn()}
         currentChannel={''}
         joinChannel={jest.fn()}
@@ -62,10 +69,10 @@ describe('Client', function() {
 
   it('should mount with userid = 0', function() {
     enzyme.mount(
-      <Client
+      <DnDClient
         nick={''}
         channelLength={5}
-        channels={[]}
+        tabs={[]}
         closeChannel={jest.fn()}
         currentChannel={''}
         joinChannel={jest.fn()}
@@ -80,10 +87,10 @@ describe('Client', function() {
 
   it('should mount with channel tabs', function() {
     const mountedComponent = enzyme.mount(
-      <Client
+      <DnDClient
         nick={''}
+        tabs={['one', 'two']}
         channelLength={5}
-        channels={['one', 'two']}
         closeChannel={jest.fn()}
         currentChannel={''}
         joinChannel={jest.fn()}
@@ -98,16 +105,16 @@ describe('Client', function() {
     expect(toJson(mountedComponent)).toMatchSnapshot();
   });
 
-  it('should open join modal', function() {
-    const props = component.find('AddTab').first().props() as any;
-    props.clickAddTab();
-    expect(component.state('showJoinModal')).toEqual(true);
-  });
-
   it('should close join modal', function() {
     const props = component.find('JoinModal').first().props() as any;
     props.onClose();
     expect(component.state('showJoinModal')).toEqual(false);
+  });
+
+  it('should open join modal', function() {
+    const props = component.find('TabBar').first().props() as any;
+    props.tabAdd();
+    expect(component.state('showJoinModal')).toEqual(true);
   });
 
   it('should change message', function() {

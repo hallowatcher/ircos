@@ -1,33 +1,52 @@
 
 import * as React from 'react';
-import { Tab } from '../../src/components/Tab';
+import Tab from '../../src/components/Tab';
 import * as enzyme from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+// Drag n Drop
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 describe('AddTab', function() {
 
-  let component: enzyme.ShallowWrapper<any, any>;
+  let component: enzyme.ReactWrapper<any, any>;
   let tabName;
   let tabClick;
-  let closeTab;
+  let tabMove;
+  let closeTab: jest.Mock<{}>;
   let isActive;
   let preventDefault;
+  let isDragging;
+
+  const DnDTab = DragDropContext(HTML5Backend)(Tab);
 
   beforeEach(function() {
 
     // Setup
     tabName = 'foo123';
     tabClick = jest.fn();
+    tabMove = jest.fn();
     closeTab = jest.fn();
     preventDefault = jest.fn();
     isActive = true;
+    isDragging = false;
 
-    component = enzyme.shallow(
-      <Tab tabName={tabName} tabClick={tabClick} closeTab={closeTab} isActive={isActive} />
+    component = enzyme.mount(
+      <DnDTab
+        tabMove={tabMove}
+        index={1}
+        tabName={tabName}
+        tabClick={tabClick}
+        closeTab={closeTab}
+        isActive={isActive}
+        isDragging={isDragging}
+      />
     );
   });
 
   it('should render', function() {
-    expect(component).toMatchSnapshot();
+    expect(toJson(component)).toMatchSnapshot();
   });
 
   it('should have clickable name div', function() {
@@ -44,12 +63,12 @@ describe('AddTab', function() {
 
   it('should render with inactive class', function() {
     component.setProps({ isActive: false });
-    expect(component).toMatchSnapshot();
+    expect(toJson(component)).toMatchSnapshot();
   });
 
   it('should call close handler', function() {
     component.find('div > div').last().simulate('click', { preventDefault });
-    expect(closeTab).toHaveBeenCalledWith(tabName, { preventDefault });
+    expect(closeTab.mock.calls[0][0]).toBe(tabName);
   });
 
   it('should call click handler', function() {

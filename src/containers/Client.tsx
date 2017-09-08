@@ -6,18 +6,22 @@ import {
   makeCurrentChannel,
   sendMessage,
   leaveChannel,
-  join
+  join,
+  tabMove,
+  logout
 } from '../actions/client';
 
 import { openExternal } from '../actions/electron';
 
-import { Tab } from '../components/Tab';
+import Tab from '../components/Tab';
 import { AddTab } from '../components/AddTab';
+import { TabBar } from '../components/TabBar';
 import { ChatView } from '../components/ChatView';
 import { JoinModal } from './JoinModal';
 
 interface IStateProps {
   channels: any;
+  tabs: any[];
   messages: any[];
   currentChannel: string;
   nick: string;
@@ -27,10 +31,12 @@ interface IStateProps {
 
 interface IDispatchProps {
   makeCurrentChannel: (channel: string) => void;
+  tabMove: (from: number, to: number) => void;
   sendMessage: (channel: string, message: string) => void;
   closeChannel: (channel: string) => void;
   joinChannel: (channel: string) => void;
   openExternal: (url: string) => void;
+  logout: () => void;
 }
 
 interface IStyles {
@@ -46,7 +52,9 @@ const styles: IStyles = {
     overflow: 'hidden'
   },
   topBar: {
-    backgroundColor: '#FE4590',
+    backgroundImage: 'url(../src/assets/images/bg-light.png)',
+    backgroundColor: 'rgba(198, 18, 125, 1)',
+    backgroundBlendMode: 'multiply',
     flexShrink: 0,
     display: 'flex',
     flexDirection: 'row'
@@ -68,6 +76,17 @@ const styles: IStyles = {
     height: '35px',
     width: '35px',
     backgroundColor: 'rgba(255, 255, 255, 0.8)'
+  },
+  logout: {
+    height: '35px',
+    width: '35px',
+    backgroundColor: 'rgba(255, 0, 0, 0.5)',
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
+    cursor: 'pointer'
   },
   currentUserImage: {
     maxHeight: '100%'
@@ -119,21 +138,6 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
   }
 
   public render() {
-
-    // Tabs
-    const channels = Object.keys(this.props.channels);
-    const channelMap = channels.map((channel, index) =>
-    (
-      <Tab
-        key={index}
-        tabName={channel}
-        tabClick={this.props.makeCurrentChannel}
-        closeTab={this.props.closeChannel}
-        isActive={this.props.currentChannel === channel}
-      />
-    )
-    );
-
     const userImage = (() => {
       if (this.props.userId !== 0) {
         return <img style={styles.currentUserImage} src={`https://a.ppy.sh/${this.props.userId}_${Date.now()}.jpg`} />;
@@ -154,15 +158,20 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
         <div style={styles.topBar}>
 
           {/*Tabs*/}
-          <div style={styles.tabs}>
-            {channelMap}
-            <AddTab clickAddTab={this.showJoinModal} />
-          </div>
+          <TabBar
+            tabAdd={this.showJoinModal}
+            tabClick={this.props.makeCurrentChannel}
+            tabClose={this.props.closeChannel}
+            tabMove={this.props.tabMove}
+            tabs={this.props.tabs}
+            currentChannel={this.props.currentChannel}
+          />
 
           {/*Current user*/}
           <div style={styles.currentUser}>
             <div style={styles.currentUserImageContainer}>{userImage}</div>
             <div style={styles.currentUserNick}>{this.props.nick}</div>
+            <div onClick={this.props.logout} style={styles.logout}><i className="fa fa-sign-out" /></div>
           </div>
 
         </div>
@@ -217,6 +226,7 @@ export class Client extends React.Component<IStateProps & IDispatchProps, any> {
 /* istanbul ignore next */
 function stateToProps(state: any) {
   return {
+    tabs: state.get('tabs').toJS(),
     channels: state.get('channelDb').toJS(),
     messages: state.getIn(['channelCurrent', 'messages']).toJS(),
     currentChannel: state.getIn(['channelCurrent', 'name']),
@@ -230,10 +240,12 @@ function stateToProps(state: any) {
 function dispatchToProps(dispatch: any) {
   return {
     makeCurrentChannel: (channel: string) => { dispatch(makeCurrentChannel(channel)); },
+    tabMove: (from: number, to: number) => { dispatch(tabMove(from , to)); },
     sendMessage: (channel: string, message: string) => { dispatch(sendMessage(channel, message)); },
     closeChannel: (channel: string) => { dispatch(leaveChannel(channel)); },
     joinChannel: (channel: string) => { dispatch(join(channel)); dispatch(makeCurrentChannel(channel)); },
-    openExternal: (url: string) => { dispatch(openExternal(url)); }
+    openExternal: (url: string) => { dispatch(openExternal(url)); },
+    logout: () => { dispatch(logout()); }
   };
 }
 

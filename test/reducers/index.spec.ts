@@ -18,6 +18,7 @@ describe('Initial state', () => {
         channelLength: 10
       },
       channelDb: {},
+      tabs: [],
       channelCurrent: {
         name: null,
         initialLength: 10,

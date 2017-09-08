@@ -33,9 +33,10 @@ describe('Client actions', function() {
         messages: []
       },
       channelDb: {
-        '#osu': {},
-        '#english': {}
+        '#osu': { messages: [] },
+        '#english': { messages: [] }
       },
+      tabs: ['#osu', '#english'],
       serverInfo: null,
       settings: null
     };
@@ -78,7 +79,7 @@ describe('Client actions', function() {
         to: '#english',
         date: new Date(datenow)
       }},
-      { type: 'MAKE_CURRENT_CHANNEL', payload: { messages: undefined, name: '#osu' } },
+      { type: 'MAKE_CURRENT_CHANNEL', payload: { messages: [], name: '#osu' } },
       { type: 'SELF_INFO_FETCHED', payload: { userInfo: { userName: nick } } }
     ];
 
@@ -101,6 +102,17 @@ describe('Client actions', function() {
       });
   });
 
+  it('should logout', function() {
+    const expectedActions = [
+      { type: 'LOG_OUT' }
+    ];
+
+    return store.dispatch(actions.logout())
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+  });
+
   it('should fetch someone\'s user info', function() {
 
     const user = 'someoneElse';
@@ -111,6 +123,16 @@ describe('Client actions', function() {
     return store.dispatch(actions.getUserInfo(user)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
+  });
+
+  it('should move a tab', function() {
+    const expectedActions = [
+      { type: 'TAB_MOVE', payload: { from: 0, to: 1 } }
+    ];
+
+    store.dispatch(actions.tabMove(0, 1));
+    expect(store.getActions()).toEqual(expectedActions);
+
   });
 
   it('should open a private chat', function() {
@@ -189,7 +211,7 @@ describe('Client actions', function() {
 
   it('should change to correct channel when leaving', function() {
     const channel = '#osu';
-    const nextChannel = { name: '#english', messages: undefined };
+    const nextChannel = { name: '#english', messages: [] };
     const expectedActions = [
       { type: 'LEFT_CHANNEL', payload: { channel, nextChannel } }
     ];
@@ -210,10 +232,11 @@ describe('Client actions', function() {
         messages: []
       },
       channelDb: {
-        '#osu': {},
-        '#german': {},
-        '#english': {}
+        '#osu': { messages: [] },
+        '#german': { messages: [] },
+        '#english': { messages: [] }
       },
+      tabs: ['#osu', '#german', '#english'],
       serverInfo: null,
       settings: null
     };
@@ -222,7 +245,7 @@ describe('Client actions', function() {
     store = mockStore(initialState);
 
     const channel = '#english';
-    const nextChannel = { name: '#german', messages: undefined };
+    const nextChannel = { name: '#german', messages: [] };
     const expectedActions = [
       { type: 'LEFT_CHANNEL', payload: { channel, nextChannel } }
     ];
@@ -241,7 +264,11 @@ describe('Client actions', function() {
       channelDb: {
         '#osu': {}
       },
-      channelCurrent: null,
+      tabs: ['#osu'],
+      channelCurrent: {
+        name: '#osu',
+        messages: []
+      },
       serverInfo: null,
       settings: null
     };
@@ -269,6 +296,7 @@ describe('Client actions', function() {
       channelDb: {
         player: {}
       },
+      tabs: ['player'],
       channelCurrent: null,
       serverInfo: null,
       settings: null

@@ -18,7 +18,7 @@ describe('Current channel reducer', () => {
 
   it('should change active channel', () => {
     const initialState = Immutable.fromJS({ name: null, messages: null });
-    const expectedState = { name: 'someChannel', messages: [] };
+    const expectedState = { name: 'somechannel', messages: [] };
     const actualState = channelCurrentReducer(initialState, {
       type: 'MAKE_CURRENT_CHANNEL',
       payload: {
@@ -32,7 +32,7 @@ describe('Current channel reducer', () => {
 
   it('should leave channel and join next', () => {
     const initialState = Immutable.fromJS({ name: null, messages: null });
-    const expectedState = { name: 'someChannel', messages: [] };
+    const expectedState = { name: 'somechannel', messages: [] };
     const actualState = channelCurrentReducer(initialState, {
       type: 'LEFT_CHANNEL',
       payload: {
@@ -138,4 +138,21 @@ describe('Current channel reducer', () => {
     expect(actualState.toJS()).toEqual(expectedState);
   });
 
+  it('should remove current channel on logout', () => {
+    const initialState = Immutable.fromJS({
+      name: '#osu',
+      initialLength: 10,
+      currentLength: 10,
+      messages: ['1', '2']
+    });
+    const expectedState = Immutable.fromJS({
+      name: null,
+      initialLength: 10,
+      currentLength: 10,
+      messages: []
+    });
+    const actualState = channelCurrentReducer(initialState, { type: 'LOG_OUT' });
+
+    expect(actualState).toEqual(expectedState);
+  });
 });

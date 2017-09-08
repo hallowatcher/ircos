@@ -69,4 +69,10 @@ describe('Channel DB reducer', () => {
     expect(actualState.toJS()).toEqual(expectedState);
   });
 
+  it('should reset on logout', () => {
+    const initialState = Immutable.fromJS({ '#osu': { messages: [] } });
+    const actualState = channelDbReducer(initialState, { type: 'LOG_OUT' });
+    const expectedState = {};
+    expect(actualState.toJS()).toEqual(expectedState);
+  });
 });

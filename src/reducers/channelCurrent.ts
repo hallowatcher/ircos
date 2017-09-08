@@ -1,5 +1,5 @@
 
-import { Map } from 'immutable';
+import { Map, fromJS } from 'immutable';
 
 export default function(state: Map<any, any>, action: any) {
   switch (action.type) {
@@ -13,17 +13,21 @@ export default function(state: Map<any, any>, action: any) {
       return receivedPm(state, action);
     case 'SENT_MESSAGE':
       return sentMessage(state, action);
+    case 'LOG_OUT':
+      return logout();
   }
 
   return state;
 }
 
 function makeCurrentChannel(state: Map<any, any>, action: any) {
-  return state.set('name', action.payload.name).set('messages', action.payload.messages);
+  return state.set('name', action.payload.name.toLowerCase()).set('messages', fromJS(action.payload.messages));
 }
 
 function leftChannel(state: Map<any, any>, action: any) {
-  return state.set('name', action.payload.nextChannel.name).set('messages', action.payload.nextChannel.messages);
+  return state
+    .set('name', action.payload.nextChannel.name.toLowerCase())
+    .set('messages', fromJS(action.payload.nextChannel.messages));
 }
 
 function receivedMessage(state: Map<any, any>, action: any) {
@@ -57,4 +61,13 @@ function sentMessage(state: Map<any, any>, action: any) {
   }
 
   return state;
+}
+
+function logout() {
+  return fromJS({
+    name: null,
+    initialLength: 10,
+    currentLength: 10,
+    messages: []
+  });
 }

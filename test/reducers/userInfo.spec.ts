@@ -35,4 +35,13 @@ describe('User info reducer', () => {
     expect(actualState.toJS()).toEqual(expectedState);
   });
 
+  it('should reset user info on logout', () => {
+    const initialState = Immutable.fromJS({ userName: 'hallowatcher', userId: 1337 });
+
+    const expectedState = { userName: '', userId: 0 };
+    const actualState = userInfoReducer(initialState, { type: 'LOG_OUT' });
+
+    expect(actualState.toJS()).toEqual(expectedState);
+  });
+
 });

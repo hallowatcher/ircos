@@ -46,4 +46,13 @@ describe('Server info reducer', () => {
     expect(actualState.toJS()).toEqual(expectedState);
   });
 
+  it('should set connected to false on logout', () => {
+    const initialState = Immutable.fromJS({ connecting: false, connected: true, error: null });
+
+    const expectedState = { connecting: false, connected: false, error: null };
+    const actualState = serverInfoReducer(initialState, { type: 'LOG_OUT' });
+
+    expect(actualState.toJS()).toEqual(expectedState);
+  });
+
 });

@@ -7,6 +7,8 @@ export default function(state: Map<any, any>, action: any) {
       return connectedToServer(state, action);
     case 'SELF_INFO_FETCHED':
       return selfInfoFetched(state, action);
+    case 'LOG_OUT':
+      return logout(state, action);
   }
 
   return state;
@@ -21,4 +23,8 @@ function selfInfoFetched(state: Map<any, any>, action: any) {
   const { userInfo } = action.payload;
 
   return state.set('userId', parseInt(userInfo.user_id, 10));
+}
+
+function logout(state: Map<any, any>, action: any) {
+  return state.set('userName', '').set('userId', 0);
 }

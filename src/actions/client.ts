@@ -1,6 +1,6 @@
 
 import * as Irc from 'irc';
-import { Map } from 'immutable';
+import { Map, fromJS } from 'immutable';
 import axios from 'axios';
 
 let client: Irc.Client = null;
@@ -42,6 +42,17 @@ export function createConnection(user: string, pass: string) {
         dispatch(makeCurrentChannel('#osu'));
 
         resolve(client);
+      });
+    });
+  };
+}
+
+export function logout() {
+  return (dispatch: any, getState: () => Map<any, any>) => {
+    return new Promise((resolve, reject) => {
+      client.disconnect(null, () => {
+        dispatch({ type: 'LOG_OUT' });
+        resolve();
       });
     });
   };
@@ -115,12 +126,19 @@ export function openChannel(channel: string) {
   return { type: 'OPEN_CHANNEL', payload: channel };
 }
 
+export function tabMove(from: number, to: number) {
+  return { type: 'TAB_MOVE', payload: { from, to } };
+}
+
 export function makeCurrentChannel(channel: string) {
   return (dispatch, getState) => {
     return new Promise((resolve) => {
       dispatch({
         type: 'MAKE_CURRENT_CHANNEL',
-        payload: { name: channel, messages: getState().getIn(['channelDb', channel, 'messages']) }
+        payload: {
+          name: channel.toLowerCase(),
+          messages: getState().getIn(['channelDb', channel.toLowerCase(), 'messages']).toJS()
+        }
       });
 
       resolve();
@@ -144,7 +162,7 @@ export function sendMessage(channel: string, message: string) {
 export function leaveChannel(channel: string) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return new Promise((resolve, reject) => {
-      const channels = Object.keys(getState().get('channelDb').toJS());
+      const channels = getState().get('tabs').toJS();
       const currentChannel = getState().getIn(['channelCurrent', 'name']);
       let nextChannel = currentChannel || '';
 
@@ -157,6 +175,8 @@ export function leaveChannel(channel: string) {
         nextChannel = channels[channels.length - 2];
       } else if (channel === currentChannel && channels.length > 1) {
         nextChannel = channels[channels.indexOf(channel) + 1];
+      } else if (channel === currentChannel && channels.length === 1) {
+        nextChannel = '';
       }
 
       // Leave from IRC if it's a channel
@@ -164,10 +184,10 @@ export function leaveChannel(channel: string) {
         client.part(channel, null, null);
       }
 
-      const nextChannelObj = {name: null, messages: []};
+      const nextChannelObj = { name: null, messages: [] };
       if (nextChannel !== '') {
         nextChannelObj.name = nextChannel;
-        nextChannelObj.messages = getState().getIn(['channelDb', nextChannel, 'messages']);
+        nextChannelObj.messages = getState().getIn(['channelDb', nextChannel, 'messages']).toJS();
       }
 
       dispatch({ type: 'LEFT_CHANNEL', payload: { channel, nextChannel: nextChannelObj } });

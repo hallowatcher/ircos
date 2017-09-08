@@ -10,6 +10,8 @@ export default function(state: Map<any, any>, action: any) {
       return connectingToServer(state, action);
     case 'CONNECTED_TO_SERVER':
       return connectedToServer(state, action);
+    case 'LOG_OUT':
+      return logout(state, action);
   }
 
   return state;
@@ -25,4 +27,8 @@ function connectingToServer(state: Map<any, any>, action: any) {
 
 function connectedToServer(state: Map<any, any>, action: any) {
   return state.set('connecting', false).set('connected', true);
+}
+
+function logout(state: Map<any, any>, action: any) {
+  return state.set('connected', false);
 }

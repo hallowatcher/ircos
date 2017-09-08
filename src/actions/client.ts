@@ -159,14 +159,22 @@ export function sendMessage(channel: string, message: string) {
   };
 }
 
-// TODO
 export function sendCommand(channel: string, command: string, args: string[]) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return new Promise((resolve, reject) => {
-      // TODO
-      console.log('we sent command', command);
-      console.log('to channel', channel);
-      console.log('with args', args);
+      switch (command) {
+        case '/join':
+        case '/j':
+          dispatch(join(args[0]));
+          dispatch(makeCurrentChannel(args[0]));
+          break;
+        case '/part':
+        case '/p':
+          dispatch(leaveChannel(channel));
+          break;
+        default:
+          reject();
+      }
       resolve();
     });
   };

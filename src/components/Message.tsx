@@ -78,6 +78,16 @@ export class Message extends React.Component<IProps, any> {
       );
     }
 
+    if (type === MessageType.action) {
+      message = (
+        <div>
+          <span style={styles.time}>[{hours}:{minutes}] </span>
+          <span style={styles.message} onClick={this.userClicked}>* {nick} </span>
+          <span style={styles.message}>{text}</span>
+        </div>
+      );
+    }
+
     return message;
   }
 

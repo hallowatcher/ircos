@@ -61,7 +61,7 @@ export class ChatView extends React.Component<IProps, any> {
             nick={msg.nick}
             text={msg.text}
             type={msg.type}
-            date={msg.date}
+            date={moment(msg.date)}
             userClicked={this.props.userClicked}
           />
         );

@@ -23,7 +23,11 @@ export function createConnection(user: string, pass: string) {
       });
 
       client.on('action', (nick: string, to: string, text: string) => {
-        dispatch(receivedMessage({ nick, to, text, date: new Date(), type: MessageType.action }));
+        if (to.trim().charAt(0) === '#') {
+          dispatch(receivedMessage({ nick, to, text, date: new Date(), type: MessageType.action }));
+        } else {
+          dispatch(receivedPm({ nick, text, date: new Date(), type: MessageType.action }));
+        }
       });
 
       client.on('pm', (nick: string, text: string) => {
@@ -203,6 +207,26 @@ export function sendMessage(channel: string, message: string) {
   };
 }
 
+export function sendAction(channel: string, message: string) {
+  return (dispatch: any, getState: () => Map<any, any>) => {
+    return new Promise((resolve, reject) => {
+      const nick = getState().getIn(['userInfo', 'userName']);
+      const date = new Date();
+      const msgObject: IMessage = {
+        nick,
+        date,
+        text: message,
+        to: channel,
+        type: MessageType.action
+      };
+
+      client.action(channel, message);
+      dispatch({ type: 'SENT_MESSAGE', payload: msgObject });
+      resolve();
+    });
+  };
+}
+
 export function sendCommand(channel: string, command: string, args: string[]) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return new Promise((resolve, reject) => {
@@ -215,6 +239,9 @@ export function sendCommand(channel: string, command: string, args: string[]) {
         case '/part':
         case '/p':
           dispatch(leaveChannel(channel));
+          break;
+        case '/me':
+          dispatch(sendAction(channel, args.join(' ')));
           break;
         default:
           reject();

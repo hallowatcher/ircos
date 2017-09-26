@@ -13,6 +13,8 @@ export default function(state: Map<any, any>, action: any) {
       return sentMessage(state, action);
     case 'LEFT_CHANNEL':
       return leftChannel(state, action);
+    case 'CLEAR_CHANNEL':
+      return clearChannel(state, action);
     case 'LOG_OUT':
       return logout();
   }
@@ -25,6 +27,15 @@ function openChannel(state: Map<any, any>, action: any) {
     displayName: action.payload,
     messages: List()
   }));
+
+  return state;
+}
+
+function clearChannel(state: Map<any, any>, action: any) {
+  state = state.updateIn(
+    [action.payload.toLowerCase(), 'messages'],
+    (messages) => List()
+  );
 
   return state;
 }

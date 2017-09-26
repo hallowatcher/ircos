@@ -14,6 +14,8 @@ export default function(state: Map<any, any>, action: any) {
       return receivedPm(state, action);
     case 'SENT_MESSAGE':
       return sentMessage(state, action);
+    case 'CLEAR_CHANNEL':
+      return clearChannel(state, action);
     case 'LOG_OUT':
       return logout();
   }
@@ -23,6 +25,11 @@ export default function(state: Map<any, any>, action: any) {
 
 function makeCurrentChannel(state: Map<any, any>, action: any) {
   return state.set('name', action.payload.name.toLowerCase()).set('messages', fromJS(action.payload.messages));
+}
+
+function clearChannel(state: Map<any, any>, action: any) {
+  return state
+    .set('messages', fromJS([]));
 }
 
 function leftChannel(state: Map<any, any>, action: any) {

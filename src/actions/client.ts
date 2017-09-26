@@ -231,6 +231,7 @@ export function sendCommand(channel: string, command: string, args: string[]) {
   return (dispatch: any, getState: () => Map<any, any>) => {
     return new Promise((resolve, reject) => {
       switch (command) {
+        case '/chat':
         case '/join':
         case '/j':
           dispatch(join(args[0]));
@@ -242,6 +243,9 @@ export function sendCommand(channel: string, command: string, args: string[]) {
           break;
         case '/me':
           dispatch(sendAction(channel, args.join(' ')));
+          break;
+        case '/clear':
+          dispatch({ type: 'CLEAR_CHANNEL', payload: channel });
           break;
         default:
           reject();
